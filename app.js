@@ -90,7 +90,9 @@ function escapeHtml(s) {
 // =====================
 console.log("app.js loaded");
 
-const supabase = window.supabase?.createClient?.(SUPABASE_URL, SUPABASE_ANON_KEY);
+window._sb = window._sb || window.supabase?.createClient?.(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabase = window._sb;
+
 if (!supabase) {
   console.warn("Supabase client not initialized. Check supabase-js CDN load order or keys.");
 }
@@ -603,3 +605,4 @@ document.addEventListener("DOMContentLoaded", () => {
   bindEvents();
   boot();
 });
+
