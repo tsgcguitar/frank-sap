@@ -2,8 +2,23 @@
 // 設定
 // =====================
 const PLAN_URL = "data/reading_plan_365.json"; // 你的 reading plan
-const STORAGE_KEY = "bible_app_progress_v1";
-const START_DATE_KEY = "bible_app_start_date_v1";
+
+// =====================
+// Supabase（請填入你專案的 URL / anon key）
+// Project Settings -> API
+// =====================
+const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
+
+// 你要的「不用 email」做法：把 username 映射成假 email
+// 例如：frank -> frank@bible.local
+const USERNAME_EMAIL_DOMAIN = "bible.local";
+
+// progress_data 存在 DB 的結構
+// {
+//   "startDate": "2026-01-01",
+//   "completed": { "2026-01-20": true, ... }
+// }
 
 // =====================
 // Bible.com / YouVersion 外連（繁中：CUNP-神）
@@ -42,6 +57,26 @@ function youVersionUrl(osis, chapter) {
 // 小工具
 // =====================
 const el = (id) => document.getElementById(id);
+
+function setAuthMsg(msg) {
+  const box = el("authMsg");
+  if (box) box.textContent = msg || "";
+}
+
+function usernameToEmail(username) {
+  const u = String(username || "").trim().toLowerCase();
+  // 允許：英數、底線、點、減號。避免奇怪字元造成 email 不合法
+  if (!/^[a-z0-9._-]{3,30}$/.test(u)) {
+    return null;
+  }
+  return `${u}@${USERNAME_EMAIL_DOMAIN}`;
+}
+
+// Supabase client
+const supabase = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+if (!supabase) {
+  console.warn("Supabase client not initialized. Please check SUPABASE_URL / SUPABASE_ANON_KEY.");
+}
 
 function pad2(n){ return String(n).padStart(2, "0"); }
 
@@ -83,30 +118,56 @@ function escapeHtml(s) {
 }
 
 // =====================
-// localStorage
+// DB Progress（Supabase）
 // =====================
-function loadProgress() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { completed: {} };
-    const obj = JSON.parse(raw);
-    if (!obj.completed) obj.completed = {};
-    return obj;
-  } catch {
-    return { completed: {} };
-  }
+function normalizeProgress(p) {
+  const obj = p && typeof p === "object" ? p : {};
+  if (!obj.completed || typeof obj.completed !== "object") obj.completed = {};
+  if (!obj.startDate) obj.startDate = "";
+  return obj;
 }
 
-function saveProgress(p) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(p, null, 2));
+async function loadProgressFromDB() {
+  const { data: { user }, error: userErr } = await supabase.auth.getUser();
+  if (userErr || !user) throw userErr || new Error("Not logged in");
+
+  const { data, error } = await supabase
+    .from("user_progress")
+    .select("progress_data")
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  if (error) throw error;
+  if (!data) {
+    const empty = normalizeProgress({});
+    // 建一筆空資料（避免後面每次都判斷）
+    const { error: upErr } = await supabase
+      .from("user_progress")
+      .insert({ user_id: user.id, progress_data: empty });
+    if (upErr) throw upErr;
+    return empty;
+  }
+  return normalizeProgress(data.progress_data);
+}
+
+async function saveProgressToDB(p) {
+  const { data: { user }, error: userErr } = await supabase.auth.getUser();
+  if (userErr || !user) throw userErr || new Error("Not logged in");
+
+  const payload = normalizeProgress(p);
+  const { error } = await supabase
+    .from("user_progress")
+    .upsert({ user_id: user.id, progress_data: payload }, { onConflict: "user_id" });
+  if (error) throw error;
 }
 
 function getStartDate() {
-  return localStorage.getItem(START_DATE_KEY) || "";
+  return progress?.startDate || "";
 }
 
-function setStartDate(s) {
-  localStorage.setItem(START_DATE_KEY, s);
+async function setStartDate(s) {
+  progress.startDate = s;
+  await saveProgressToDB(progress);
 }
 
 // =====================
@@ -114,7 +175,7 @@ function setStartDate(s) {
 // =====================
 let plan = null;
 let targetDate = new Date(); // 預設今天
-let progress = loadProgress();
+let progress = normalizeProgress({});
 
 async function loadPlan() {
   const res = await fetch(PLAN_URL, { cache: "no-store" });
@@ -415,10 +476,10 @@ function stopSpeak() {
 // =====================
 // Events
 // =====================
-el("saveStartDate").addEventListener("click", () => {
+el("saveStartDate").addEventListener("click", async () => {
   const v = el("startDate").value;
   if (!v) return;
-  setStartDate(v);
+  await setStartDate(v);
   render();
 });
 
@@ -437,17 +498,17 @@ el("today").addEventListener("click", () => {
   render();
 });
 
-el("checkin").addEventListener("click", () => {
+el("checkin").addEventListener("click", async () => {
   const key = toISODate(targetDate);
   progress.completed[key] = true;
-  saveProgress(progress);
+  try { await saveProgressToDB(progress); } catch (e) { console.error(e); alert("儲存進度失敗，請確認已登入且 Supabase 設定正確"); }
   render();
 });
 
-el("undo").addEventListener("click", () => {
+el("undo").addEventListener("click", async () => {
   const key = toISODate(targetDate);
   delete progress.completed[key];
-  saveProgress(progress);
+  try { await saveProgressToDB(progress); } catch (e) { console.error(e); alert("儲存進度失敗，請確認已登入且 Supabase 設定正確"); }
   render();
 });
 
@@ -484,12 +545,123 @@ el("calNext").addEventListener("click", () => {
 });
 
 // =====================
+// Auth UI
+// =====================
+function setLoggedOutUI() {
+  const authCard = el("authCard");
+  const appWrap = el("appWrap");
+  const userBar = el("userBar");
+  if (authCard) authCard.style.display = "block";
+  if (appWrap) appWrap.style.display = "none";
+  if (userBar) userBar.style.display = "none";
+  setAuthMsg("");
+}
+
+async function setLoggedInUI(session) {
+  const authCard = el("authCard");
+  const appWrap = el("appWrap");
+  const userBar = el("userBar");
+  if (authCard) authCard.style.display = "none";
+  if (appWrap) appWrap.style.display = "block";
+  if (userBar) userBar.style.display = "flex";
+
+  const user = session?.user;
+  const uname = user?.user_metadata?.username
+    || (user?.email ? user.email.split("@")[0] : "");
+  const nameBox = el("userNameText");
+  if (nameBox) nameBox.textContent = uname;
+
+  // 讀取 DB 進度
+  try {
+    progress = await loadProgressFromDB();
+  } catch (e) {
+    console.error(e);
+    alert("讀取進度失敗：請確認 Supabase 資料表 / RLS 設定是否完成");
+    progress = normalizeProgress({});
+  }
+  render();
+}
+
+async function refreshAuthState() {
+  if (!supabase) return;
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) {
+    setLoggedOutUI();
+  } else {
+    await setLoggedInUI(session);
+  }
+}
+
+// Register / Login / Logout
+el("btnRegister")?.addEventListener("click", async () => {
+  if (!supabase) return;
+  setAuthMsg("");
+  const username = el("username").value;
+  const password = el("password").value;
+  const email = usernameToEmail(username);
+  if (!email) {
+    setAuthMsg("Username 請用 3-30 碼英數／._- 例如 frank 或 frank.hsieh");
+    return;
+  }
+  if (!password || password.length < 6) {
+    setAuthMsg("Password 至少 6 碼");
+    return;
+  }
+
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: { data: { username: String(username).trim() } }
+  });
+  if (error) {
+    console.error(error);
+    setAuthMsg(error.message);
+    return;
+  }
+  setAuthMsg("註冊成功！若你已關閉 Email Confirm，現在可直接登入。");
+});
+
+el("btnLogin")?.addEventListener("click", async () => {
+  if (!supabase) return;
+  setAuthMsg("");
+  const username = el("username").value;
+  const password = el("password").value;
+  const email = usernameToEmail(username);
+  if (!email) {
+    setAuthMsg("Username 格式不正確");
+    return;
+  }
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) {
+    console.error(error);
+    setAuthMsg("登入失敗：" + error.message);
+    return;
+  }
+  await refreshAuthState();
+});
+
+el("btnLogout")?.addEventListener("click", async () => {
+  if (!supabase) return;
+  await supabase.auth.signOut();
+  setLoggedOutUI();
+});
+
+// =====================
 // Boot（程式進入點）
 // =====================
 (async function boot(){
   try {
     await loadPlan();
-    render();
+
+    // 初始：先隱藏讀經畫面，等登入狀態確認後再顯示
+    setLoggedOutUI();
+
+    // 監聽登入狀態
+    supabase?.auth?.onAuthStateChange(() => {
+      refreshAuthState();
+    });
+
+    await refreshAuthState();
   } catch (e) {
     console.error(e);
     const list = document.getElementById("readingList");
