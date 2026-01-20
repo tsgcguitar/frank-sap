@@ -11,10 +11,50 @@
     <div class="wrap">
       <h1>每日讀經打卡</h1>
       <p class="sub">顯示今日章節、打卡進度、點擊外連 BibleGateway（CUV）閱讀</p>
+
+      <!-- 登入狀態列（登入後顯示） -->
+      <div id="userBar" class="userbar" style="display:none;">
+        <span class="hint">已登入：</span>
+        <span id="userNameText" class="label"></span>
+        <button id="btnLogout" class="btn ghost">登出</button>
+      </div>
     </div>
   </header>
 
   <main class="wrap">
+
+    <!-- ===== 登入 / 註冊 ===== -->
+    <section id="authCard" class="card">
+      <div class="row">
+        <div>
+          <div class="label">登入後才能讀經</div>
+          <div class="hint">用英文人名（username）+ 密碼註冊；不需要 Email。</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="auth-grid">
+        <div>
+          <div class="hint">Username（英文／數字）</div>
+          <input id="username" type="text" placeholder="e.g. frank" autocomplete="username" />
+        </div>
+        <div>
+          <div class="hint">Password</div>
+          <input id="password" type="password" placeholder="password" autocomplete="current-password" />
+        </div>
+      </div>
+
+      <div class="row right" style="margin-top:12px;">
+        <button id="btnRegister" class="btn ghost">註冊</button>
+        <button id="btnLogin" class="btn primary">登入</button>
+      </div>
+
+      <div id="authMsg" class="hint" style="margin-top:10px;"></div>
+    </section>
+
+    <!-- ===== 讀經主畫面（登入後才顯示） ===== -->
+    <div id="appWrap" style="display:none;">
 
     <section class="card">
       <div class="row">
@@ -112,12 +152,16 @@
   <table class="calendar" id="calendar"></table>
 </section>
 
-    <footer class="footer">
-      <p class="hint">外連閱讀使用 BibleGateway：search=「英文書名 章」+ version=CUV。</p>
-    </footer>
+      <footer class="footer">
+        <p class="hint">外連閱讀使用 Bible.com / YouVersion（CUNP-神）。</p>
+      </footer>
+
+    </div>
 
   </main>
 
+  <!-- Supabase JS（CDN） -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>
