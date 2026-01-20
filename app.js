@@ -1,112 +1,19 @@
 // =====================
 // 設定
 // =====================
-const PLAN_URL = "reading_plan_365.json";
+const PLAN_URL = "data/reading_plan_365.json"; // 你的 reading plan
 const STORAGE_KEY = "bible_app_progress_v1";
 const START_DATE_KEY = "bible_app_start_date_v1";
 
 // =====================
-// Supabase（登入 + 雲端同步）
-// =====================
-// ⚠️ 請務必用 Supabase 後台 Settings -> API 的 Project URL（完全一致）
-// 你之前常見錯誤：...tykfzem vs ...tykfzexm（字母順序不同就會連不到）
-const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
-
-// ✅ Supabase CDN 會提供 window.supabase（全域物件）
-const hasSupabaseSDK = typeof window !== "undefined" && !!window.supabase;
-const hasSupabaseConfig = !!(SUPABASE_URL && SUPABASE_ANON_KEY);
-const supabaseEnabled = hasSupabaseSDK && hasSupabaseConfig;
-
-// ✅ 重要：不要用 supabase 當變數名（會跟 CDN 全域撞名）
-const supabaseClient = supabaseEnabled
-  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
-  : null;
-
-let currentUser = null;
-
-// =====================
-// 小工具（DOM）
-// =====================
-const el = (id) => document.getElementById(id);
-function on(id, event, handler) {
-  const node = el(id);
-  if (!node) return;
-  node.addEventListener(event, handler);
-}
-
-// Supabase 啟用時：要求先登入才顯示讀經內容
-function setAppVisible(isAuthed) {
-  const app = el("appContent");
-  const hint = el("loginHint");
-  if (app) app.style.display = isAuthed ? "block" : "none";
-  if (hint) hint.style.display = isAuthed ? "none" : "block";
-}
-
-function setSupabaseHint(msg = "") {
-  const hint = el("supabaseHint");
-  if (!hint) return;
-
-  if (!hasSupabaseSDK) {
-    hint.textContent = "（Supabase SDK 未載入，請確認 index.html script）";
-    return;
-  }
-  if (!hasSupabaseConfig) {
-    hint.textContent = "（尚未填入 Supabase Project URL / Key）";
-    return;
-  }
-  hint.textContent = msg;
-}
-
-async function refreshAuthUI() {
-  const who = el("whoami");
-  const btnLogout = el("btnLogout");
-  const btnLogin = el("btnLogin");
-  const btnSignup = el("btnSignup");
-
-  if (who) who.textContent = currentUser?.email || "未登入";
-  if (btnLogout) btnLogout.disabled = !currentUser;
-
-  const disableAuth = !supabaseEnabled;
-  if (btnLogin) btnLogin.disabled = disableAuth;
-  if (btnSignup) btnSignup.disabled = disableAuth;
-}
-
-// =====================
-// DB
-// =====================
-async function dbLoadProgress(userId) {
-  const { data, error } = await supabaseClient
-    .from("user_progress")
-    .select("progress_data")
-    .eq("user_id", userId)
-    .maybeSingle();
-
-  if (error) throw error;
-  return data?.progress_data || { start_date: "", completed: {} };
-}
-
-async function dbSaveProgress(userId, progressData) {
-  const { error } = await supabaseClient
-    .from("user_progress")
-    .upsert(
-      {
-        user_id: userId,
-        progress_data: progressData,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: "user_id" }
-    );
-
-  if (error) throw error;
-}
-
-// =====================
 // Bible.com / YouVersion 外連（繁中：CUNP-神）
 // =====================
-const YOUVERSION_BIBLE_ID = 46;
+// 注意：YouVersion 沒有提供給外部任意使用的公開 API，因此這裡採「外連到閱讀/聆聽頁」
+const YOUVERSION_BIBLE_ID = 46;          // CUNP-神
 const YOUVERSION_VERSION_CODE = "CUNP-神";
 
+// book_en (全名) -> OSIS 書卷縮寫（GEN/EXO/...）
+// 直接內建最穩，不依賴 books.json 格式
 const BOOK_OSIS = {
   "Genesis":"GEN","Exodus":"EXO","Leviticus":"LEV","Numbers":"NUM","Deuteronomy":"DEU",
   "Joshua":"JOS","Judges":"JDG","Ruth":"RUT","1 Samuel":"1SA","2 Samuel":"2SA",
@@ -127,22 +34,45 @@ function toOsis(bookEn) {
 }
 
 function youVersionUrl(osis, chapter) {
-  const v = encodeURIComponent(YOUVERSION_VERSION_CODE);
+  const v = encodeURIComponent(YOUVERSION_VERSION_CODE); // CUNP-%E7%A5%9E
   return `https://www.bible.com/bible/${YOUVERSION_BIBLE_ID}/${osis}.${chapter}.${v}`;
 }
 
 // =====================
-// 小工具（日期/字串）
+// 小工具
 // =====================
+const el = (id) => document.getElementById(id);
+
 function pad2(n){ return String(n).padStart(2, "0"); }
-function toISODate(d) { return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`; }
-function parseISODate(s) { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d); }
-function startOfDay(date) { return new Date(date.getFullYear(), date.getMonth(), date.getDate()); }
-function daysBetween(a, b) {
-  const ms = 24*60*60*1000;
-  return Math.floor((startOfDay(b).getTime() - startOfDay(a).getTime()) / ms);
+
+function toISODate(d) {
+  return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`;
 }
-function addDays(date, n) { const d = new Date(date); d.setDate(d.getDate() + n); return d; }
+
+function parseISODate(s) {
+  // YYYY-MM-DD -> Date (local)
+  const [y,m,d] = s.split("-").map(Number);
+  return new Date(y, m-1, d);
+}
+
+function startOfDay(date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
+function daysBetween(a, b) {
+  // whole days between (b - a)
+  const ms = 24*60*60*1000;
+  const aa = startOfDay(a).getTime();
+  const bb = startOfDay(b).getTime();
+  return Math.floor((bb - aa) / ms);
+}
+
+function addDays(date, n) {
+  const d = new Date(date);
+  d.setDate(d.getDate() + n);
+  return d;
+}
+
 function escapeHtml(s) {
   return String(s)
     .replaceAll("&","&amp;")
@@ -153,9 +83,9 @@ function escapeHtml(s) {
 }
 
 // =====================
-// localStorage（僅未啟用 Supabase 時用）
+// localStorage
 // =====================
-function loadProgressLocal() {
+function loadProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return { completed: {} };
@@ -166,54 +96,25 @@ function loadProgressLocal() {
     return { completed: {} };
   }
 }
-function saveProgressLocal(p) { localStorage.setItem(STORAGE_KEY, JSON.stringify(p, null, 2)); }
-function getStartDateLocal() { return localStorage.getItem(START_DATE_KEY) || ""; }
-function setStartDateLocal(s) { localStorage.setItem(START_DATE_KEY, s); }
 
-// =====================
-// Progress（Supabase: 必須登入；未啟用 Supabase 才允許 localStorage）
-// =====================
-let progress = { completed: {} };
-let startDateCache = "";
-function getStartDate() { return startDateCache || ""; }
-function setStartDate(s) { startDateCache = s || ""; }
-
-async function loadAllProgress() {
-  if (supabaseEnabled && !currentUser) {
-    progress = { completed: {} };
-    startDateCache = "";
-    return;
-  }
-  if (!supabaseEnabled) {
-    progress = loadProgressLocal();
-    startDateCache = getStartDateLocal();
-    return;
-  }
-  const pd = await dbLoadProgress(currentUser.id);
-  progress = { completed: pd.completed || {} };
-  startDateCache = pd.start_date || "";
+function saveProgress(p) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(p, null, 2));
 }
 
-async function saveAllProgress() {
-  if (supabaseEnabled && !currentUser) return;
+function getStartDate() {
+  return localStorage.getItem(START_DATE_KEY) || "";
+}
 
-  if (!supabaseEnabled) {
-    saveProgressLocal(progress);
-    setStartDateLocal(startDateCache);
-    return;
-  }
-
-  await dbSaveProgress(currentUser.id, {
-    start_date: startDateCache,
-    completed: progress.completed || {},
-  });
+function setStartDate(s) {
+  localStorage.setItem(START_DATE_KEY, s);
 }
 
 // =====================
 // 主流程
 // =====================
 let plan = null;
-let targetDate = new Date();
+let targetDate = new Date(); // 預設今天
+let progress = loadProgress();
 
 async function loadPlan() {
   const res = await fetch(PLAN_URL, { cache: "no-store" });
@@ -221,28 +122,36 @@ async function loadPlan() {
   plan = await res.json();
 }
 
+// 依起始日算第幾天（1..365）
 function getDayIndexByDate(date) {
   const start = getStartDate();
   if (!start) return null;
   const startDate = parseISODate(start);
-  return daysBetween(startDate, date) + 1;
+  const diff = daysBetween(startDate, date); // 0-based
+  return diff + 1;
 }
 
+// reading_plan_365.json 結構：plan.plan = [{day:1, readings:[...]}...]
 function getReadingsForDay(dayIndex) {
-  const arr = plan?.plan;
+  const arr = plan?.plan;   // ✅ 你的 JSON 是 plan
   if (!Array.isArray(arr)) return null;
   return arr.find(x => Number(x.day) === Number(dayIndex)) || null;
 }
 
+// 把同一本書連續章節合併成「Exodus 27-30」這種顯示（但連結會逐章打開）
 function groupReadings(readings) {
   const groups = [];
   for (const r of readings) {
     const bookEn = r.book_en || r.bookEn || "";
     const bookZh = r.book_zh || r.bookZh || r.book || "";
     const chap = Number(r.chapter);
+
     const last = groups[groups.length - 1];
-    if (last && last.bookEn === bookEn && chap === last.end + 1) last.end = chap;
-    else groups.push({ bookEn, bookZh, start: chap, end: chap });
+    if (last && last.bookEn === bookEn && chap === last.end + 1) {
+      last.end = chap;
+    } else {
+      groups.push({ bookEn, bookZh, start: chap, end: chap });
+    }
   }
   return groups;
 }
@@ -251,18 +160,16 @@ function groupReadings(readings) {
 // UI Render
 // =====================
 function render() {
-    // ✅ 保險：有些瀏覽器/情況 cache 可能是空，但 input 有值
-  if (!getStartDate() && el("startDate")?.value) {
-    setStartDate(el("startDate").value);
-  }
+  // 起始日
   const start = getStartDate();
-  if (el("startDate")) el("startDate").value = start;
-  if (el("targetDateText")) el("targetDateText").textContent = toISODate(targetDate);
+  el("startDate").value = start;
+
+  el("targetDateText").textContent = toISODate(targetDate);
 
   if (!start) {
-    if (el("dayIndex")) el("dayIndex").textContent = "-";
-    if (el("rangeHint")) el("rangeHint").textContent = "先設定起始日";
-    if (el("readingList")) el("readingList").innerHTML = `<li>請先設定「讀經計畫起始日」</li>`;
+    el("dayIndex").textContent = "-";
+    el("rangeHint").textContent = "先設定起始日";
+    el("readingList").innerHTML = `<li>請先設定「讀經計畫起始日」</li>`;
     setButtonsDisabled(true);
     updateStats();
     updateRawData();
@@ -271,12 +178,14 @@ function render() {
   }
 
   const dayIndex = getDayIndexByDate(targetDate);
-  if (el("dayIndex")) el("dayIndex").textContent = String(dayIndex);
+  el("dayIndex").textContent = String(dayIndex);
 
+  // 超出範圍
   const totalDays = Number(plan?.days || 365);
   if (dayIndex < 1 || dayIndex > totalDays) {
-    if (el("rangeHint")) el("rangeHint").textContent = `超出 ${totalDays} 天範圍`;
-    if (el("readingList")) el("readingList").innerHTML = `<li>第 ${dayIndex} 天超出 ${totalDays} 天計畫範圍</li>`;
+    el("rangeHint").textContent = `超出 ${totalDays} 天範圍`;
+    el("readingList").innerHTML =
+      `<li>第 ${dayIndex} 天超出 ${totalDays} 天計畫範圍（請調整起始日或切換日期）</li>`;
     setButtonsDisabled(true);
     updateStats();
     updateRawData();
@@ -286,8 +195,9 @@ function render() {
 
   const dayObj = getReadingsForDay(dayIndex);
   if (!dayObj || !Array.isArray(dayObj.readings)) {
-    if (el("rangeHint")) el("rangeHint").textContent = "找不到資料";
-    if (el("readingList")) el("readingList").innerHTML = `<li>找不到第 ${dayIndex} 天資料</li>`;
+    el("rangeHint").textContent = "找不到資料";
+    el("readingList").innerHTML =
+      `<li>找不到第 ${dayIndex} 天的資料（請確認 data/reading_plan_365.json 結構包含 plan[].readings）</li>`;
     setButtonsDisabled(true);
     updateStats();
     updateRawData();
@@ -295,61 +205,67 @@ function render() {
     return;
   }
 
+  // 合併後顯示提示
   const grouped = groupReadings(dayObj.readings);
-  if (el("rangeHint")) el("rangeHint").textContent = grouped.length ? `${grouped.length} 段` : "-";
+  el("rangeHint").textContent = grouped.length ? `${grouped.length} 段` : "-";
 
+  // 打卡狀態
   const dateKey = toISODate(targetDate);
   const checked = !!progress.completed[dateKey];
 
-  if (el("checkin")) {
-    el("checkin").textContent = checked ? "今日已完成 ✅" : "完成今日 ✅";
-    el("checkin").disabled = checked;
-  }
-  if (el("undo")) el("undo").disabled = !checked;
-  if (el("openAll")) el("openAll").disabled = false;
+  el("checkin").textContent = checked ? "今日已完成 ✅" : "完成今日 ✅";
+  el("checkin").disabled = checked;
+  el("undo").disabled = !checked;
 
-  if (el("readingList")) {
-    el("readingList").innerHTML = grouped.map(g => {
-      const titleZh = (g.start === g.end)
-        ? `${g.bookZh} 第 ${g.start} 章`
-        : `${g.bookZh} 第 ${g.start}–${g.end} 章`;
+  el("openAll").disabled = false;
 
-      const titleEn = (g.start === g.end)
-        ? `${g.bookEn} ${g.start}`
-        : `${g.bookEn} ${g.start}-${g.end}`;
+  // Render reading list：顯示合併段落，但點擊時逐章開啟 Bible.com（最穩）
+  el("readingList").innerHTML = grouped.map(g => {
+    const titleZh = (g.start === g.end)
+      ? `${g.bookZh} 第 ${g.start} 章`
+      : `${g.bookZh} 第 ${g.start}–${g.end} 章`;
 
-      const osis = toOsis(g.bookEn);
-      const right = osis
-        ? `<button class="btn ghost open-yv"
-             data-osis="${osis}"
-             data-start="${g.start}"
-             data-end="${g.end}">
-             開啟/聆聽（Bible.com）
-           </button>`
-        : `<span class="hint">找不到書卷代碼：${escapeHtml(g.bookEn)}</span>`;
+    const titleEn = (g.start === g.end)
+      ? `${g.bookEn} ${g.start}`
+      : `${g.bookEn} ${g.start}-${g.end}`;
 
-      return `
-        <li>
-          <div>
-            <div class="label">${escapeHtml(titleZh)}</div>
-            <div class="hint">${escapeHtml(titleEn)}</div>
-          </div>
-          <div class="row right">${right}</div>
-        </li>
-      `;
-    }).join("");
+    const osis = toOsis(g.bookEn);
 
-    document.querySelectorAll(".open-yv").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const osis = btn.dataset.osis;
-        const startC = Number(btn.dataset.start);
-        const endC = Number(btn.dataset.end);
-        for (let c = startC; c <= endC; c++) {
-          window.open(youVersionUrl(osis, c), "_blank", "noopener,noreferrer");
-        }
-      });
+    const right = osis
+      ? `<button class="btn ghost open-yv"
+           data-osis="${osis}"
+           data-start="${g.start}"
+           data-end="${g.end}">
+           開啟/聆聽（Bible.com）
+         </button>`
+      : `<span class="hint">找不到書卷代碼：${escapeHtml(g.bookEn)}</span>`;
+
+    return `
+      <li>
+        <div>
+          <div class="label">${escapeHtml(titleZh)}</div>
+          <div class="hint">${escapeHtml(titleEn)}</div>
+        </div>
+        <div class="row right">
+          ${right}
+        </div>
+      </li>
+    `;
+  }).join("");
+
+  // 綁定按鈕事件：逐章開新分頁（避免範圍格式不支援）
+  document.querySelectorAll(".open-yv").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const osis = btn.dataset.osis;
+      const startC = Number(btn.dataset.start);
+      const endC = Number(btn.dataset.end);
+
+      // ⚠️ 可能被瀏覽器擋彈出視窗：需要允許 localhost popups
+      for (let c = startC; c <= endC; c++) {
+        window.open(youVersionUrl(osis, c), "_blank", "noopener,noreferrer");
+      }
     });
-  }
+  });
 
   updateStats();
   updateRawData();
@@ -357,20 +273,19 @@ function render() {
 }
 
 function setButtonsDisabled(disabled) {
-  if (el("checkin")) el("checkin").disabled = disabled || el("checkin").disabled;
-  if (el("undo")) el("undo").disabled = disabled || el("undo").disabled;
-  if (el("openAll")) el("openAll").disabled = disabled;
+  el("checkin").disabled = disabled || el("checkin").disabled;
+  el("undo").disabled = disabled || el("undo").disabled;
+  el("openAll").disabled = disabled;
 }
 
 function updateStats() {
-  if (!el("completed") || !el("rate") || !el("streak")) return;
-
   const completedDates = Object.keys(progress.completed).filter(k => progress.completed[k]);
   const completedCount = completedDates.length;
 
   const totalDays = plan?.days ? Number(plan.days) : 365;
   const rate = totalDays ? (completedCount / totalDays) : 0;
 
+  // streak：從「今天」往回連續完成
   const today = new Date();
   let streak = 0;
   for (let i = 0; i < 400; i++) {
@@ -386,14 +301,13 @@ function updateStats() {
 }
 
 function updateRawData() {
-  if (!el("rawData")) return;
   el("rawData").value = JSON.stringify(progress, null, 2);
 }
 
 // =====================
-// Calendar
+// Calendar（月曆）
 // =====================
-let calDate = new Date();
+let calDate = new Date(); // 顯示中的月份
 
 function renderCalendar() {
   const cal = el("calendar");
@@ -402,11 +316,12 @@ function renderCalendar() {
   const year = calDate.getFullYear();
   const month = calDate.getMonth();
 
+// ✅【加在這裡】年月標題
   const title = el("calTitle");
   if (title) title.textContent = `${year} 年 ${month + 1} 月`;
 
   const firstDay = new Date(year, month, 1);
-  const startWeekday = firstDay.getDay();
+  const startWeekday = firstDay.getDay(); // 0=Sun
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
   let html = `
@@ -418,16 +333,23 @@ function renderCalendar() {
   `;
 
   let cell = 0;
-  for (let i = 0; i < startWeekday; i++) { html += "<td></td>"; cell++; }
+  for (let i = 0; i < startWeekday; i++) {
+    html += "<td></td>";
+    cell++;
+  }
 
   for (let d = 1; d <= daysInMonth; d++) {
     const date = new Date(year, month, d);
     const iso = toISODate(date);
+
     const isToday = toISODate(date) === toISODate(new Date());
     const isDone = !!progress.completed[iso];
 
     html += `
-      <td class="${isToday ? "today" : ""} ${isDone ? "done" : ""}" data-date="${iso}">
+      <td
+        class="${isToday ? "today" : ""} ${isDone ? "done" : ""}"
+        data-date="${iso}"
+      >
         ${d}
       </td>
     `;
@@ -439,9 +361,11 @@ function renderCalendar() {
   html += "</tr>";
   cal.innerHTML = html;
 
+  // 點日期 → 跳到那一天
   cal.querySelectorAll("td[data-date]").forEach(td => {
     td.addEventListener("click", () => {
       targetDate = parseISODate(td.dataset.date);
+      // 同步月曆顯示月份（點別月日期時更直覺）
       calDate = new Date(targetDate.getFullYear(), targetDate.getMonth(), 1);
       render();
     });
@@ -449,138 +373,94 @@ function renderCalendar() {
 }
 
 // =====================
-// TTS
+// TTS（朗讀）
 // =====================
+let ttsUtterance = null;
+
 function speakToday() {
-  if (!window.speechSynthesis) return alert("此瀏覽器不支援語音朗讀");
+  if (!window.speechSynthesis) {
+    alert("此瀏覽器不支援語音朗讀");
+    return;
+  }
+
   const dayIndex = getDayIndexByDate(targetDate);
   const dayObj = getReadingsForDay(dayIndex);
   if (!dayObj) return;
 
   const grouped = groupReadings(dayObj.readings);
+
+  // 組朗讀文字（不含經文全文，避免授權問題）
   const lines = grouped.map(g => {
-    const range = (g.start === g.end) ? `第 ${g.start} 章` : `第 ${g.start} 到 ${g.end} 章`;
+    const range = (g.start === g.end)
+      ? `第 ${g.start} 章`
+      : `第 ${g.start} 到 ${g.end} 章`;
     return `${g.bookZh} ${range}`;
   });
 
   const text = `今天是第 ${dayIndex} 天。今日讀經：${lines.join("。")}。`;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "zh-TW";
-  u.rate = 1.0;
-  window.speechSynthesis.speak(u);
+
+  window.speechSynthesis.cancel(); // 停掉前一次
+  ttsUtterance = new SpeechSynthesisUtterance(text);
+  ttsUtterance.lang = "zh-TW";
+  ttsUtterance.rate = 1.0;
+  window.speechSynthesis.speak(ttsUtterance);
 }
+
 function stopSpeak() {
-  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (window.speechSynthesis) {
+    window.speechSynthesis.cancel();
+  }
 }
 
 // =====================
-// Events（安全綁定）
+// Events
 // =====================
-on("saveStartDate", "click", async () => {
-  const v = el("startDate")?.value;
+el("saveStartDate").addEventListener("click", () => {
+  const v = el("startDate").value;
   if (!v) return;
-
   setStartDate(v);
-
-  // ✅ 讓畫面立刻有「今天」可算的 dayIndex（避免顯示 -）
-  targetDate = new Date();
-  calDate = new Date(targetDate.getFullYear(), targetDate.getMonth(), 1);
-
-  await saveAllProgress();
   render();
 });
 
-on("prevDay", "click", () => { targetDate = addDays(targetDate, -1); render(); });
-on("nextDay", "click", () => { targetDate = addDays(targetDate,  1); render(); });
-on("today",   "click", () => { targetDate = new Date(); render(); });
+el("prevDay").addEventListener("click", () => {
+  targetDate = addDays(targetDate, -1);
+  render();
+});
 
-on("checkin", "click", async () => {
+el("nextDay").addEventListener("click", () => {
+  targetDate = addDays(targetDate, 1);
+  render();
+});
+
+el("today").addEventListener("click", () => {
+  targetDate = new Date();
+  render();
+});
+
+el("checkin").addEventListener("click", () => {
   const key = toISODate(targetDate);
   progress.completed[key] = true;
-  await saveAllProgress();
+  saveProgress(progress);
   render();
 });
-on("undo", "click", async () => {
+
+el("undo").addEventListener("click", () => {
   const key = toISODate(targetDate);
   delete progress.completed[key];
-  await saveAllProgress();
+  saveProgress(progress);
   render();
 });
 
-on("export", "click", () => {
-  if (!el("rawData")) return;
-  el("rawData").value = JSON.stringify(progress, null, 2);
-  el("rawData").focus();
-  el("rawData").select();
-});
-on("import", "click", async () => {
-  if (!el("rawData")) return;
-  try {
-    const obj = JSON.parse(el("rawData").value);
-    if (!obj || typeof obj !== "object") throw new Error("JSON 格式錯誤");
-    if (!obj.completed || typeof obj.completed !== "object") obj.completed = {};
-    progress = { completed: obj.completed };
-    await saveAllProgress();
-    render();
-    alert("匯入成功");
-  } catch (e) {
-    alert(`匯入失敗：${e.message || e}`);
-  }
-});
-on("reset", "click", async () => {
-  if (!confirm("確定要清空全部打卡紀錄嗎？")) return;
-  progress = { completed: {} };
-  await saveAllProgress();
-  render();
-});
-
-// Auth
-on("btnSignup", "click", async () => {
-  if (!supabaseEnabled) return alert("Supabase 未啟用（請檢查 URL/Key 或 index.html script）");
-  const email = (el("email")?.value || "").trim();
-  const password = el("password")?.value || "";
-  if (!email || !password) return alert("請輸入 Email 與密碼");
-
-  const { error } = await supabaseClient.auth.signUp({ email, password });
-  if (error) return alert(error.message);
-  alert("註冊成功！若有 Email 驗證，請先驗證後再登入。");
-});
-
-on("btnLogin", "click", async () => {
-  if (!supabaseEnabled) return alert("Supabase 未啟用（請檢查 URL/Key 或 index.html script）");
-  const email = (el("email")?.value || "").trim();
-  const password = el("password")?.value || "";
-  if (!email || !password) return alert("請輸入 Email 與密碼");
-
-  const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-  if (error) return alert(error.message);
-
-  currentUser = data.user;
-  await refreshAuthUI();
-
-  setAppVisible(true);
-  if (!plan) await loadPlan();
-  await loadAllProgress();
-  render();
-});
-
-on("btnLogout", "click", async () => {
-  if (!supabaseEnabled) return;
-  await supabaseClient.auth.signOut();
-  currentUser = null;
-  await refreshAuthUI();
-  setAppVisible(false);
-});
-
-// Open all / TTS / Calendar
-on("openAll", "click", () => {
+// 一鍵開啟今日全部章節（逐章開 Bible.com）
+el("openAll").addEventListener("click", () => {
   const start = getStartDate();
   if (!start) return;
+
   const dayIndex = getDayIndexByDate(targetDate);
   const dayObj = getReadingsForDay(dayIndex);
   if (!dayObj || !Array.isArray(dayObj.readings)) return;
 
+  // ⚠️ 可能被瀏覽器擋彈出視窗：需要允許 localhost popups
   for (const r of dayObj.readings) {
     const bookEn = r.book_en || r.bookEn || "";
     const chap = Number(r.chapter);
@@ -590,66 +470,38 @@ on("openAll", "click", () => {
   }
 });
 
-on("ttsPlay", "click", speakToday);
-on("ttsStop", "click", stopSpeak);
+el("ttsPlay").addEventListener("click", speakToday);
+el("ttsStop").addEventListener("click", stopSpeak);
 
-on("calPrev", "click", () => { calDate.setMonth(calDate.getMonth() - 1); renderCalendar(); });
-on("calNext", "click", () => { calDate.setMonth(calDate.getMonth() + 1); renderCalendar(); });
+el("calPrev").addEventListener("click", () => {
+  calDate.setMonth(calDate.getMonth() - 1);
+  renderCalendar();
+});
+
+el("calNext").addEventListener("click", () => {
+  calDate.setMonth(calDate.getMonth() + 1);
+  renderCalendar();
+});
 
 // =====================
 // Boot（程式進入點）
 // =====================
 (async function boot(){
   try {
-    // ✅ 永遠先隱藏主內容（避免閃現）
-    setAppVisible(false);
-    setSupabaseHint("");
-
-    // Supabase 啟用：必須登入才顯示
-    if (supabaseEnabled) {
-      const { data, error } = await supabaseClient.auth.getSession();
-      if (error) {
-        console.error(error);
-        setSupabaseHint("（Supabase 連線失敗：請確認 Project URL/Key）");
-        await refreshAuthUI();
-        return;
-      }
-
-      currentUser = data?.session?.user || null;
-      await refreshAuthUI();
-
-      if (!currentUser) {
-        setAppVisible(false);
-        return;
-      }
-
-      setAppVisible(true);
-      await loadPlan();
-      await loadAllProgress();
-      render();
-      return;
-    }
-
-    // 未啟用 Supabase：本機模式（如果你想完全禁用本機模式，我也可以幫你改）
-    setSupabaseHint("（未啟用 Supabase：本機模式 localStorage）");
-    setAppVisible(true);
     await loadPlan();
-    await loadAllProgress();
     render();
-
   } catch (e) {
     console.error(e);
-    const list = el("readingList");
+    const list = document.getElementById("readingList");
     if (list) {
       list.innerHTML = `
         <li>
-          載入失敗：<br/>
-          1) 請確認 reading_plan_365.json 存在<br/>
-          2) GitHub Pages 需同層路徑正確<br/>
+          載入讀經計畫失敗：<br/>
+          1) 請確認 data/reading_plan_365.json 存在<br/>
+          2) 請用 http://localhost:8000/index.html 開啟<br/>
+          3) JSON 需包含 plan
         </li>
       `;
     }
   }
 })();
-
-
