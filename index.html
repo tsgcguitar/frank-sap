@@ -35,125 +35,127 @@
 
       <div class="row">
         <div class="row" style="gap:10px; flex-wrap:wrap;">
-          <input id="email" type="email" placeholder="Email" />
-          <input id="password" type="password" placeholder="Password" />
+          <input id="email" type="email" placeholder="Email" autocomplete="username" />
+          <input id="password" type="password" placeholder="Password" autocomplete="current-password" />
           <button id="btnLogin" class="btn">登入</button>
           <button id="btnSignup" class="btn ghost">註冊</button>
         </div>
       </div>
     </section>
 
-    <section class="card" id="loginHint" style="display:none;">
+    <!-- ✅ 預設顯示：避免未登入先看到讀經內容 -->
+    <section class="card" id="loginHint">
       <div class="label">請先登入</div>
       <p class="hint">登入後才會載入你的 365 讀經計畫與打卡進度（每個帳號各自保存）。</p>
     </section>
 
-    <div id="appContent">
+    <!-- ✅ 預設隱藏：避免一開始就閃出讀經計畫 -->
+    <div id="appContent" style="display:none;">
 
-    <section class="card">
-      <div class="row">
-        <div>
-          <div class="label">讀經計畫起始日</div>
-          <div class="hint">第一次使用請設定（例如 2026-01-01）。之後可隨時調整。</div>
-        </div>
-        <div class="row right">
-          <input id="startDate" type="date" />
-          <button id="saveStartDate" class="btn">儲存</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="row">
-        <div>
-          <div class="label">
-            今天是第 <span id="dayIndex">-</span> 天
-            <span class="pill" id="rangeHint">-</span>
+      <section class="card">
+        <div class="row">
+          <div>
+            <div class="label">讀經計畫起始日</div>
+            <div class="hint">第一次使用請設定（例如 2026-01-01）。之後可隨時調整。</div>
           </div>
-          <div class="hint">（依你設定的起始日計算；可用前後天切換查看）</div>
+          <div class="row right">
+            <input id="startDate" type="date" />
+            <button id="saveStartDate" class="btn">儲存</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <div>
+            <div class="label">
+              今天是第 <span id="dayIndex">-</span> 天
+              <span class="pill" id="rangeHint">-</span>
+            </div>
+            <div class="hint">（依你設定的起始日計算；可用前後天切換查看）</div>
+          </div>
+
+          <div class="row right">
+            <button id="prevDay" class="btn ghost">← 前一天</button>
+            <button id="today" class="btn ghost">回到今天</button>
+            <button id="nextDay" class="btn ghost">後一天 →</button>
+          </div>
         </div>
 
-        <div class="row right">
-          <button id="prevDay" class="btn ghost">← 前一天</button>
-          <button id="today" class="btn ghost">回到今天</button>
-          <button id="nextDay" class="btn ghost">後一天 →</button>
+        <div class="divider"></div>
+
+        <div class="row">
+          <div>
+            <div class="label">日期：<span id="targetDateText">-</span></div>
+            <div class="hint">今日章節：</div>
+          </div>
+          <div class="row right">
+            <button id="ttsPlay" class="btn ghost">🔊 朗讀</button>
+            <button id="ttsStop" class="btn ghost">⏹ 停止</button>
+            <button id="openAll" class="btn ghost">一鍵開啟今日全部章節</button>
+            <button id="checkin" class="btn">完成今日 ✅</button>
+            <button id="undo" class="btn danger ghost">取消打卡</button>
+          </div>
         </div>
-      </div>
 
-      <div class="divider"></div>
+        <ul id="readingList" class="list"></ul>
+      </section>
 
-      <div class="row">
-        <div>
-          <div class="label">日期：<span id="targetDateText">-</span></div>
-          <div class="hint">今日章節：</div>
+      <section class="card">
+        <div class="label">進度</div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num" id="streak">-</div>
+            <div class="stat-label">連續天數（從今天往回）</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="completed">-</div>
+            <div class="stat-label">已完成天數</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="rate">-</div>
+            <div class="stat-label">完成率（以 365 天計畫）</div>
+          </div>
         </div>
-        <div class="row right">
-<button id="ttsPlay" class="btn ghost">🔊 朗讀</button>
-<button id="ttsStop" class="btn ghost">⏹ 停止</button>
-<button id="openAll" class="btn ghost">一鍵開啟今日全部章節</button>
-<button id="checkin" class="btn">完成今日 ✅</button>
-<button id="undo" class="btn danger ghost">取消打卡</button>
 
+        <div class="divider"></div>
+
+        <details>
+          <summary>查看 / 匯入匯出打卡紀錄（進階）</summary>
+          <p class="hint">資料存在瀏覽器 localStorage。清除瀏覽器資料會消失。</p>
+          <textarea id="rawData" spellcheck="false"></textarea>
+          <div class="row right">
+            <button id="export" class="btn ghost">匯出 JSON</button>
+            <button id="import" class="btn ghost">匯入 JSON</button>
+            <button id="reset" class="btn danger">全部清空</button>
+          </div>
+        </details>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <div class="label">本月讀經日曆</div>
+          <div id="calTitle" class="cal-title"></div>
+
+          <div class="row right">
+            <button id="calPrev" class="btn ghost">← 上月</button>
+            <button id="calNext" class="btn ghost">下月 →</button>
+          </div>
         </div>
-      </div>
 
-      <ul id="readingList" class="list"></ul>
-    </section>
+        <table class="calendar" id="calendar"></table>
+      </section>
 
-    <section class="card">
-      <div class="label">進度</div>
-
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-num" id="streak">-</div>
-          <div class="stat-label">連續天數（從今天往回）</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num" id="completed">-</div>
-          <div class="stat-label">已完成天數</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num" id="rate">-</div>
-          <div class="stat-label">完成率（以 365 天計畫）</div>
-        </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <details>
-        <summary>查看 / 匯入匯出打卡紀錄（進階）</summary>
-        <p class="hint">資料存在瀏覽器 localStorage。清除瀏覽器資料會消失。</p>
-        <textarea id="rawData" spellcheck="false"></textarea>
-        <div class="row right">
-          <button id="export" class="btn ghost">匯出 JSON</button>
-          <button id="import" class="btn ghost">匯入 JSON</button>
-          <button id="reset" class="btn danger">全部清空</button>
-        </div>
-      </details>
-    </section>
-
-<section class="card">
-  <div class="row">
-    <div class="label">本月讀經日曆</div>
-<div id="calTitle" class="cal-title"></div>
-
-    <div class="row right">
-      <button id="calPrev" class="btn ghost">← 上月</button>
-      <button id="calNext" class="btn ghost">下月 →</button>
-    </div>
-  </div>
-
-  <table class="calendar" id="calendar"></table>
-</section>
-
-    <footer class="footer">
-      <p class="hint">外連閱讀使用 Bible.com（YouVersion）：將逐章開啟（瀏覽器可能需要允許彈出視窗）。</p>
-    </footer>
+      <footer class="footer">
+        <p class="hint">外連閱讀使用 Bible.com（YouVersion）：將逐章開啟（瀏覽器可能需要允許彈出視窗）。</p>
+      </footer>
 
     </div><!-- /#appContent -->
 
   </main>
 
+  <!-- ✅ SDK 必須在 app.js 前 -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
