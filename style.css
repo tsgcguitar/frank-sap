@@ -77,6 +77,34 @@ input[type="date"]{
   color: var(--text);
 }
 
+/* auth inputs */
+input[type="text"],
+input[type="password"]{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(0,0,0,.25);
+  color: var(--text);
+  width: 100%;
+}
+
+.auth-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 640px){
+  .auth-grid{ grid-template-columns: 1fr; }
+}
+
+.userbar{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .list { list-style: none; padding: 0; margin: 10px 0 0; }
 .list li {
   border: 1px solid var(--line);
