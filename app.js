@@ -251,6 +251,10 @@ function groupReadings(readings) {
 // UI Render
 // =====================
 function render() {
+    // ✅ 保險：有些瀏覽器/情況 cache 可能是空，但 input 有值
+  if (!getStartDate() && el("startDate")?.value) {
+    setStartDate(el("startDate").value);
+  }
   const start = getStartDate();
   if (el("startDate")) el("startDate").value = start;
   if (el("targetDateText")) el("targetDateText").textContent = toISODate(targetDate);
@@ -476,10 +480,17 @@ function stopSpeak() {
 on("saveStartDate", "click", async () => {
   const v = el("startDate")?.value;
   if (!v) return;
+
   setStartDate(v);
+
+  // ✅ 讓畫面立刻有「今天」可算的 dayIndex（避免顯示 -）
+  targetDate = new Date();
+  calDate = new Date(targetDate.getFullYear(), targetDate.getMonth(), 1);
+
   await saveAllProgress();
   render();
 });
+
 on("prevDay", "click", () => { targetDate = addDays(targetDate, -1); render(); });
 on("nextDay", "click", () => { targetDate = addDays(targetDate,  1); render(); });
 on("today",   "click", () => { targetDate = new Date(); render(); });
@@ -640,4 +651,5 @@ on("calNext", "click", () => { calDate.setMonth(calDate.getMonth() + 1); renderC
     }
   }
 })();
+
 
