@@ -1,9 +1,72 @@
 // =====================
 // 設定
 // =====================
-const PLAN_URL = "data/reading_plan_365.json"; // 你的 reading plan
+// 讀經計畫檔案（與 index.html 同一層）
+// 如果你有放在 data/ 目錄，也可以改回 "data/reading_plan_365.json"。
+const PLAN_URL = "reading_plan_365.json";
 const STORAGE_KEY = "bible_app_progress_v1";
 const START_DATE_KEY = "bible_app_start_date_v1";
+
+// =====================
+// Supabase（登入 + 雲端同步）
+// =====================
+// 1) 到 Supabase 專案 Settings -> API
+// 2) 填入 Project URL 與 anon public key
+// 沒填也能跑：會自動退回 localStorage 模式（不登入也可打卡）。
+const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";      // e.g. https://xxxx.supabase.co
+const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s"; // e.g. eyJhbGciOi...
+
+const supabaseEnabled = !!(SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase);
+const supabase = supabaseEnabled ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+let currentUser = null; // supabase auth user
+
+function setSupabaseHint() {
+  const hint = document.getElementById("supabaseHint");
+  if (!hint) return;
+  if (supabaseEnabled) {
+    hint.textContent = "";
+  } else {
+    hint.textContent = "（目前未設定 Supabase，將使用本機模式 localStorage）";
+  }
+}
+
+async function refreshAuthUI() {
+  const who = document.getElementById("whoami");
+  const btnLogout = document.getElementById("btnLogout");
+  const btnLogin = document.getElementById("btnLogin");
+  const btnSignup = document.getElementById("btnSignup");
+  if (who) who.textContent = currentUser?.email || "未登入";
+  if (btnLogout) btnLogout.disabled = !currentUser;
+
+  // 若未設定 Supabase，登入/註冊按鈕先禁用，避免誤會
+  const disableAuth = !supabaseEnabled;
+  if (btnLogin) btnLogin.disabled = disableAuth;
+  if (btnSignup) btnSignup.disabled = disableAuth;
+}
+
+async function dbLoadProgress(userId) {
+  const { data, error } = await supabase
+    .from("user_progress")
+    .select("progress_data")
+    .eq("user_id", userId)
+    .maybeSingle();
+  if (error) throw error;
+  return data?.progress_data || { start_date: "", completed: {} };
+}
+
+async function dbSaveProgress(userId, progressData) {
+  const { error } = await supabase
+    .from("user_progress")
+    .upsert(
+      {
+        user_id: userId,
+        progress_data: progressData,
+        updated_at: new Date().toISOString(),
+      },
+      { onConflict: "user_id" }
+    );
+  if (error) throw error;
+}
 
 // =====================
 // Bible.com / YouVersion 外連（繁中：CUNP-神）
@@ -85,7 +148,7 @@ function escapeHtml(s) {
 // =====================
 // localStorage
 // =====================
-function loadProgress() {
+function loadProgressLocal() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return { completed: {} };
@@ -97,16 +160,45 @@ function loadProgress() {
   }
 }
 
-function saveProgress(p) {
+function saveProgressLocal(p) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(p, null, 2));
 }
 
-function getStartDate() {
-  return localStorage.getItem(START_DATE_KEY) || "";
+function getStartDateLocal() { return localStorage.getItem(START_DATE_KEY) || ""; }
+function setStartDateLocal(s) { localStorage.setItem(START_DATE_KEY, s); }
+
+// =====================
+// Progress（雙模式：未登入=localStorage；登入=Supabase DB）
+// =====================
+let progress = { completed: {} };
+let startDateCache = "";
+
+function getStartDate() { return startDateCache || ""; }
+function setStartDate(s) { startDateCache = s || ""; }
+
+async function loadAllProgress() {
+  if (!supabaseEnabled || !currentUser) {
+    progress = loadProgressLocal();
+    startDateCache = getStartDateLocal();
+    return;
+  }
+
+  const pd = await dbLoadProgress(currentUser.id);
+  progress = { completed: pd.completed || {} };
+  startDateCache = pd.start_date || "";
 }
 
-function setStartDate(s) {
-  localStorage.setItem(START_DATE_KEY, s);
+async function saveAllProgress() {
+  if (!supabaseEnabled || !currentUser) {
+    saveProgressLocal(progress);
+    setStartDateLocal(startDateCache);
+    return;
+  }
+
+  await dbSaveProgress(currentUser.id, {
+    start_date: startDateCache,
+    completed: progress.completed || {},
+  });
 }
 
 // =====================
@@ -114,7 +206,7 @@ function setStartDate(s) {
 // =====================
 let plan = null;
 let targetDate = new Date(); // 預設今天
-let progress = loadProgress();
+// progress 與起始日由 loadAllProgress() 初始化（依登入狀態從 DB 或 localStorage 載入）
 
 async function loadPlan() {
   const res = await fetch(PLAN_URL, { cache: "no-store" });
@@ -415,10 +507,11 @@ function stopSpeak() {
 // =====================
 // Events
 // =====================
-el("saveStartDate").addEventListener("click", () => {
+el("saveStartDate").addEventListener("click", async () => {
   const v = el("startDate").value;
   if (!v) return;
   setStartDate(v);
+  await saveAllProgress();
   render();
 });
 
@@ -437,19 +530,96 @@ el("today").addEventListener("click", () => {
   render();
 });
 
-el("checkin").addEventListener("click", () => {
+el("checkin").addEventListener("click", async () => {
   const key = toISODate(targetDate);
   progress.completed[key] = true;
-  saveProgress(progress);
+  await saveAllProgress();
   render();
 });
 
-el("undo").addEventListener("click", () => {
+el("undo").addEventListener("click", async () => {
   const key = toISODate(targetDate);
   delete progress.completed[key];
-  saveProgress(progress);
+  await saveAllProgress();
   render();
 });
+
+// 匯出 / 匯入 / 全部清空
+el("export").addEventListener("click", () => {
+  el("rawData").value = JSON.stringify(progress, null, 2);
+  el("rawData").focus();
+  el("rawData").select();
+});
+
+el("import").addEventListener("click", async () => {
+  const raw = el("rawData").value;
+  try {
+    const obj = JSON.parse(raw);
+    if (!obj || typeof obj !== "object") throw new Error("JSON 格式錯誤");
+    if (!obj.completed || typeof obj.completed !== "object") obj.completed = {};
+    progress = { completed: obj.completed };
+    await saveAllProgress();
+    render();
+    alert("匯入成功");
+  } catch (e) {
+    alert(`匯入失敗：${e.message || e}`);
+  }
+});
+
+el("reset").addEventListener("click", async () => {
+  if (!confirm("確定要清空全部打卡紀錄嗎？")) return;
+  progress = { completed: {} };
+  await saveAllProgress();
+  render();
+});
+
+// 登入 / 註冊 / 登出（Supabase）
+if (document.getElementById("btnSignup")) {
+  document.getElementById("btnSignup").addEventListener("click", async () => {
+    if (!supabaseEnabled) {
+      alert("尚未設定 Supabase（請在 app.js 填入 SUPABASE_URL 與 SUPABASE_ANON_KEY）");
+      return;
+    }
+    const email = (document.getElementById("email")?.value || "").trim();
+    const password = document.getElementById("password")?.value || "";
+    if (!email || !password) return alert("請輸入 Email 與密碼");
+
+    const { error } = await supabase.auth.signUp({ email, password });
+    if (error) return alert(error.message);
+    alert("註冊成功！若有開 Email 驗證，請先到信箱驗證後再登入。\n（Supabase Auth 設定完成即可使用）");
+  });
+}
+
+if (document.getElementById("btnLogin")) {
+  document.getElementById("btnLogin").addEventListener("click", async () => {
+    if (!supabaseEnabled) {
+      alert("尚未設定 Supabase（請在 app.js 填入 SUPABASE_URL 與 SUPABASE_ANON_KEY）");
+      return;
+    }
+    const email = (document.getElementById("email")?.value || "").trim();
+    const password = document.getElementById("password")?.value || "";
+    if (!email || !password) return alert("請輸入 Email 與密碼");
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) return alert(error.message);
+
+    currentUser = data.user;
+    await refreshAuthUI();
+    await loadAllProgress();
+    render();
+  });
+}
+
+if (document.getElementById("btnLogout")) {
+  document.getElementById("btnLogout").addEventListener("click", async () => {
+    if (!supabaseEnabled) return;
+    await supabase.auth.signOut();
+    currentUser = null;
+    await refreshAuthUI();
+    await loadAllProgress();
+    render();
+  });
+}
 
 // 一鍵開啟今日全部章節（逐章開 Bible.com）
 el("openAll").addEventListener("click", () => {
@@ -488,7 +658,17 @@ el("calNext").addEventListener("click", () => {
 // =====================
 (async function boot(){
   try {
+    setSupabaseHint();
     await loadPlan();
+
+    // 取回既有登入狀態
+    if (supabaseEnabled) {
+      const { data } = await supabase.auth.getSession();
+      currentUser = data?.session?.user || null;
+    }
+    await refreshAuthUI();
+
+    await loadAllProgress();
     render();
   } catch (e) {
     console.error(e);
@@ -497,7 +677,7 @@ el("calNext").addEventListener("click", () => {
       list.innerHTML = `
         <li>
           載入讀經計畫失敗：<br/>
-          1) 請確認 data/reading_plan_365.json 存在<br/>
+          1) 請確認 reading_plan_365.json 存在（或把 app.js 的 PLAN_URL 改對）<br/>
           2) 請用 http://localhost:8000/index.html 開啟<br/>
           3) JSON 需包含 plan
         </li>
