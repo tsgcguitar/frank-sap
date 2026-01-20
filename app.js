@@ -9,7 +9,7 @@ console.log("app.js loaded");
 // =========================================================
 const PLAN_URL = "data/reading_plan_365.json";
 
-const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
+const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.sb.co";
 const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
 
 const USERNAME_EMAIL_DOMAIN = "bible.local";
@@ -17,11 +17,12 @@ const USERNAME_EMAIL_DOMAIN = "bible.local";
 // =========================================================
 // Supabase client（只建立一次，避免重複宣告炸掉）
 // =========================================================
-window._sb = window._sb || window.supabase.createClient(
+window._sb = window._sb || window.sb.createClient(
   SUPABASE_URL,
   SUPABASE_ANON_KEY
 );
-const supabase = window._sb;
+const sb = window._sb;
+
 
 // =========================================================
 // 小工具
@@ -64,7 +65,7 @@ function normalizeProgress(p){
 }
 
 async function loadProgress(){
-  const { data:{user} } = await supabase.auth.getUser();
+  const { data:{user} } = await sb.auth.getUser();
   if (!user) throw new Error("not login");
 
   const { data } = await supabase
@@ -75,7 +76,7 @@ async function loadProgress(){
 
   if (!data){
     const empty = normalizeProgress({});
-    await supabase.from("user_progress")
+    await sb.from("user_progress")
       .insert({ user_id:user.id, progress_data: empty });
     return empty;
   }
@@ -83,10 +84,10 @@ async function loadProgress(){
 }
 
 async function saveProgress(){
-  const { data:{user} } = await supabase.auth.getUser();
+  const { data:{user} } = await sb.auth.getUser();
   if (!user) throw new Error("not login");
 
-  await supabase.from("user_progress")
+  await sb.from("user_progress")
     .upsert(
       { user_id:user.id, progress_data: progress },
       { onConflict:"user_id" }
@@ -116,7 +117,7 @@ async function showLoggedIn(session){
 }
 
 async function refreshAuth(){
-  const { data:{session} } = await supabase.auth.getSession();
+  const { data:{session} } = await sb.auth.getSession();
   if (!session) showLoggedOut();
   else await showLoggedIn(session);
 }
@@ -145,7 +146,7 @@ function bindEvents(){
       setAuthMsg("密碼至少 6 碼"); return;
     }
 
-    const { error } = await supabase.auth.signUp({
+    const { error } = await sb.auth.signUp({
       email, password,
       options:{ data:{ username } }
     });
@@ -160,7 +161,7 @@ function bindEvents(){
     const password = el("password").value;
     const email = usernameToEmail(username);
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await sb.auth.signInWithPassword({
       email, password
     });
 
@@ -169,7 +170,7 @@ function bindEvents(){
   });
 
   el("btnLogout").addEventListener("click", async ()=>{
-    await supabase.auth.signOut();
+    await sb.auth.signOut();
     showLoggedOut();
   });
 }
@@ -179,6 +180,7 @@ function bindEvents(){
 // =========================================================
 document.addEventListener("DOMContentLoaded", async ()=>{
   bindEvents();
-  supabase.auth.onAuthStateChange(()=>refreshAuth());
+  sb.auth.onAuthStateChange(()=>refreshAuth());
   await refreshAuth();
 });
+
