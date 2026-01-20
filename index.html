@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>每日讀經打卡（外連 BibleGateway CUV）</title>
+  <title>每日讀經打卡（登入同步 / Bible.com 外連）</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
     <div class="wrap">
       <h1>每日讀經打卡</h1>
-      <p class="sub">顯示今日章節、打卡進度、點擊外連 BibleGateway（CUV）閱讀</p>
+      <p class="sub">登入後同步進度（換裝置不會不見）｜點擊外連 Bible.com（CUNP-神）閱讀/聆聽</p>
     </div>
   </header>
 
@@ -35,13 +35,20 @@
 
       <div class="row">
         <div class="row" style="gap:10px; flex-wrap:wrap;">
-          <input id="email" type="email" placeholder="Email" style="min-width:220px;" />
-          <input id="password" type="password" placeholder="Password" style="min-width:180px;" />
+          <input id="email" type="email" placeholder="Email" />
+          <input id="password" type="password" placeholder="Password" />
           <button id="btnLogin" class="btn">登入</button>
           <button id="btnSignup" class="btn ghost">註冊</button>
         </div>
       </div>
     </section>
+
+    <section class="card" id="loginHint" style="display:none;">
+      <div class="label">請先登入</div>
+      <p class="hint">登入後才會載入你的 365 讀經計畫與打卡進度（每個帳號各自保存）。</p>
+    </section>
+
+    <div id="appContent">
 
     <section class="card">
       <div class="row">
@@ -140,12 +147,13 @@
 </section>
 
     <footer class="footer">
-      <p class="hint">外連閱讀使用 BibleGateway：search=「英文書名 章」+ version=CUV。</p>
+      <p class="hint">外連閱讀使用 Bible.com（YouVersion）：將逐章開啟（瀏覽器可能需要允許彈出視窗）。</p>
     </footer>
+
+    </div><!-- /#appContent -->
 
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
