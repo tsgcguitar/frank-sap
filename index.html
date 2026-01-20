@@ -16,6 +16,33 @@
 
   <main class="wrap">
 
+    <section class="card" id="authCard">
+      <div class="row">
+        <div>
+          <div class="label">登入 / 註冊</div>
+          <div class="hint">
+            登入後，讀經進度會同步到雲端（換裝置也不會不見）。
+            <span id="supabaseHint"></span>
+          </div>
+        </div>
+        <div class="row right">
+          <span class="pill" id="whoami">未登入</span>
+          <button id="btnLogout" class="btn danger ghost" disabled>登出</button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="row" style="gap:10px; flex-wrap:wrap;">
+          <input id="email" type="email" placeholder="Email" style="min-width:220px;" />
+          <input id="password" type="password" placeholder="Password" style="min-width:180px;" />
+          <button id="btnLogin" class="btn">登入</button>
+          <button id="btnSignup" class="btn ghost">註冊</button>
+        </div>
+      </div>
+    </section>
+
     <section class="card">
       <div class="row">
         <div>
@@ -118,6 +145,8 @@
 
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>
