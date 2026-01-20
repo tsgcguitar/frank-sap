@@ -8,35 +8,47 @@ const START_DATE_KEY = "bible_app_start_date_v1";
 // =====================
 // Supabase（登入 + 雲端同步）
 // =====================
-// ✅ 你原本 URL 打錯：zexm vs zem
-// 請以 Supabase 後台 Settings -> API 的 Project URL 為準（完全一致）
+// ⚠️ 請務必用 Supabase 後台 Settings -> API 的 Project URL（完全一致）
+// 你之前常見錯誤：...tykfzem vs ...tykfzexm（字母順序不同就會連不到）
 const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
 
+// ✅ Supabase CDN 會提供 window.supabase（全域物件）
 const hasSupabaseSDK = typeof window !== "undefined" && !!window.supabase;
 const hasSupabaseConfig = !!(SUPABASE_URL && SUPABASE_ANON_KEY);
 const supabaseEnabled = hasSupabaseSDK && hasSupabaseConfig;
 
-const supabase = supabaseEnabled
+// ✅ 重要：不要用 supabase 當變數名（會跟 CDN 全域撞名）
+const supabaseClient = supabaseEnabled
   ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
   : null;
 
 let currentUser = null;
 
+// =====================
+// 小工具（DOM）
+// =====================
+const el = (id) => document.getElementById(id);
+function on(id, event, handler) {
+  const node = el(id);
+  if (!node) return;
+  node.addEventListener(event, handler);
+}
+
 // Supabase 啟用時：要求先登入才顯示讀經內容
 function setAppVisible(isAuthed) {
-  const app = document.getElementById("appContent");
-  const hint = document.getElementById("loginHint");
+  const app = el("appContent");
+  const hint = el("loginHint");
   if (app) app.style.display = isAuthed ? "block" : "none";
   if (hint) hint.style.display = isAuthed ? "none" : "block";
 }
 
 function setSupabaseHint(msg = "") {
-  const hint = document.getElementById("supabaseHint");
+  const hint = el("supabaseHint");
   if (!hint) return;
 
   if (!hasSupabaseSDK) {
-    hint.textContent = "（Supabase SDK 未載入，請確認 index.html script 順序）";
+    hint.textContent = "（Supabase SDK 未載入，請確認 index.html script）";
     return;
   }
   if (!hasSupabaseConfig) {
@@ -47,22 +59,24 @@ function setSupabaseHint(msg = "") {
 }
 
 async function refreshAuthUI() {
-  const who = document.getElementById("whoami");
-  const btnLogout = document.getElementById("btnLogout");
-  const btnLogin = document.getElementById("btnLogin");
-  const btnSignup = document.getElementById("btnSignup");
+  const who = el("whoami");
+  const btnLogout = el("btnLogout");
+  const btnLogin = el("btnLogin");
+  const btnSignup = el("btnSignup");
 
   if (who) who.textContent = currentUser?.email || "未登入";
   if (btnLogout) btnLogout.disabled = !currentUser;
 
-  // Supabase 沒啟用就先禁用登入/註冊
   const disableAuth = !supabaseEnabled;
   if (btnLogin) btnLogin.disabled = disableAuth;
   if (btnSignup) btnSignup.disabled = disableAuth;
 }
 
+// =====================
+// DB
+// =====================
 async function dbLoadProgress(userId) {
-  const { data, error } = await supabase
+  const { data, error } = await supabaseClient
     .from("user_progress")
     .select("progress_data")
     .eq("user_id", userId)
@@ -73,7 +87,7 @@ async function dbLoadProgress(userId) {
 }
 
 async function dbSaveProgress(userId, progressData) {
-  const { error } = await supabase
+  const { error } = await supabaseClient
     .from("user_progress")
     .upsert(
       {
@@ -118,9 +132,8 @@ function youVersionUrl(osis, chapter) {
 }
 
 // =====================
-// 小工具
+// 小工具（日期/字串）
 // =====================
-const el = (id) => document.getElementById(id);
 function pad2(n){ return String(n).padStart(2, "0"); }
 function toISODate(d) { return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`; }
 function parseISODate(s) { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d); }
@@ -140,7 +153,7 @@ function escapeHtml(s) {
 }
 
 // =====================
-// localStorage（只在「未啟用 Supabase」時用）
+// localStorage（僅未啟用 Supabase 時用）
 // =====================
 function loadProgressLocal() {
   try {
@@ -166,28 +179,22 @@ function getStartDate() { return startDateCache || ""; }
 function setStartDate(s) { startDateCache = s || ""; }
 
 async function loadAllProgress() {
-  // ✅ Supabase 啟用但未登入：不載入任何進度（保持空）
   if (supabaseEnabled && !currentUser) {
     progress = { completed: {} };
     startDateCache = "";
     return;
   }
-
-  // 未啟用 Supabase：走 localStorage
   if (!supabaseEnabled) {
     progress = loadProgressLocal();
     startDateCache = getStartDateLocal();
     return;
   }
-
-  // Supabase + 已登入：走 DB
   const pd = await dbLoadProgress(currentUser.id);
   progress = { completed: pd.completed || {} };
   startDateCache = pd.start_date || "";
 }
 
 async function saveAllProgress() {
-  // ✅ Supabase 啟用但未登入：禁止寫入（理論上不會觸發，保護用）
   if (supabaseEnabled && !currentUser) return;
 
   if (!supabaseEnabled) {
@@ -245,13 +252,13 @@ function groupReadings(readings) {
 // =====================
 function render() {
   const start = getStartDate();
-  el("startDate").value = start;
-  el("targetDateText").textContent = toISODate(targetDate);
+  if (el("startDate")) el("startDate").value = start;
+  if (el("targetDateText")) el("targetDateText").textContent = toISODate(targetDate);
 
   if (!start) {
-    el("dayIndex").textContent = "-";
-    el("rangeHint").textContent = "先設定起始日";
-    el("readingList").innerHTML = `<li>請先設定「讀經計畫起始日」</li>`;
+    if (el("dayIndex")) el("dayIndex").textContent = "-";
+    if (el("rangeHint")) el("rangeHint").textContent = "先設定起始日";
+    if (el("readingList")) el("readingList").innerHTML = `<li>請先設定「讀經計畫起始日」</li>`;
     setButtonsDisabled(true);
     updateStats();
     updateRawData();
@@ -260,12 +267,12 @@ function render() {
   }
 
   const dayIndex = getDayIndexByDate(targetDate);
-  el("dayIndex").textContent = String(dayIndex);
+  if (el("dayIndex")) el("dayIndex").textContent = String(dayIndex);
 
   const totalDays = Number(plan?.days || 365);
   if (dayIndex < 1 || dayIndex > totalDays) {
-    el("rangeHint").textContent = `超出 ${totalDays} 天範圍`;
-    el("readingList").innerHTML = `<li>第 ${dayIndex} 天超出 ${totalDays} 天計畫範圍</li>`;
+    if (el("rangeHint")) el("rangeHint").textContent = `超出 ${totalDays} 天範圍`;
+    if (el("readingList")) el("readingList").innerHTML = `<li>第 ${dayIndex} 天超出 ${totalDays} 天計畫範圍</li>`;
     setButtonsDisabled(true);
     updateStats();
     updateRawData();
@@ -275,8 +282,8 @@ function render() {
 
   const dayObj = getReadingsForDay(dayIndex);
   if (!dayObj || !Array.isArray(dayObj.readings)) {
-    el("rangeHint").textContent = "找不到資料";
-    el("readingList").innerHTML = `<li>找不到第 ${dayIndex} 天資料</li>`;
+    if (el("rangeHint")) el("rangeHint").textContent = "找不到資料";
+    if (el("readingList")) el("readingList").innerHTML = `<li>找不到第 ${dayIndex} 天資料</li>`;
     setButtonsDisabled(true);
     updateStats();
     updateRawData();
@@ -285,56 +292,60 @@ function render() {
   }
 
   const grouped = groupReadings(dayObj.readings);
-  el("rangeHint").textContent = grouped.length ? `${grouped.length} 段` : "-";
+  if (el("rangeHint")) el("rangeHint").textContent = grouped.length ? `${grouped.length} 段` : "-";
 
   const dateKey = toISODate(targetDate);
   const checked = !!progress.completed[dateKey];
 
-  el("checkin").textContent = checked ? "今日已完成 ✅" : "完成今日 ✅";
-  el("checkin").disabled = checked;
-  el("undo").disabled = !checked;
-  el("openAll").disabled = false;
+  if (el("checkin")) {
+    el("checkin").textContent = checked ? "今日已完成 ✅" : "完成今日 ✅";
+    el("checkin").disabled = checked;
+  }
+  if (el("undo")) el("undo").disabled = !checked;
+  if (el("openAll")) el("openAll").disabled = false;
 
-  el("readingList").innerHTML = grouped.map(g => {
-    const titleZh = (g.start === g.end)
-      ? `${g.bookZh} 第 ${g.start} 章`
-      : `${g.bookZh} 第 ${g.start}–${g.end} 章`;
+  if (el("readingList")) {
+    el("readingList").innerHTML = grouped.map(g => {
+      const titleZh = (g.start === g.end)
+        ? `${g.bookZh} 第 ${g.start} 章`
+        : `${g.bookZh} 第 ${g.start}–${g.end} 章`;
 
-    const titleEn = (g.start === g.end)
-      ? `${g.bookEn} ${g.start}`
-      : `${g.bookEn} ${g.start}-${g.end}`;
+      const titleEn = (g.start === g.end)
+        ? `${g.bookEn} ${g.start}`
+        : `${g.bookEn} ${g.start}-${g.end}`;
 
-    const osis = toOsis(g.bookEn);
-    const right = osis
-      ? `<button class="btn ghost open-yv"
-           data-osis="${osis}"
-           data-start="${g.start}"
-           data-end="${g.end}">
-           開啟/聆聽（Bible.com）
-         </button>`
-      : `<span class="hint">找不到書卷代碼：${escapeHtml(g.bookEn)}</span>`;
+      const osis = toOsis(g.bookEn);
+      const right = osis
+        ? `<button class="btn ghost open-yv"
+             data-osis="${osis}"
+             data-start="${g.start}"
+             data-end="${g.end}">
+             開啟/聆聽（Bible.com）
+           </button>`
+        : `<span class="hint">找不到書卷代碼：${escapeHtml(g.bookEn)}</span>`;
 
-    return `
-      <li>
-        <div>
-          <div class="label">${escapeHtml(titleZh)}</div>
-          <div class="hint">${escapeHtml(titleEn)}</div>
-        </div>
-        <div class="row right">${right}</div>
-      </li>
-    `;
-  }).join("");
+      return `
+        <li>
+          <div>
+            <div class="label">${escapeHtml(titleZh)}</div>
+            <div class="hint">${escapeHtml(titleEn)}</div>
+          </div>
+          <div class="row right">${right}</div>
+        </li>
+      `;
+    }).join("");
 
-  document.querySelectorAll(".open-yv").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const osis = btn.dataset.osis;
-      const startC = Number(btn.dataset.start);
-      const endC = Number(btn.dataset.end);
-      for (let c = startC; c <= endC; c++) {
-        window.open(youVersionUrl(osis, c), "_blank", "noopener,noreferrer");
-      }
+    document.querySelectorAll(".open-yv").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const osis = btn.dataset.osis;
+        const startC = Number(btn.dataset.start);
+        const endC = Number(btn.dataset.end);
+        for (let c = startC; c <= endC; c++) {
+          window.open(youVersionUrl(osis, c), "_blank", "noopener,noreferrer");
+        }
+      });
     });
-  });
+  }
 
   updateStats();
   updateRawData();
@@ -342,12 +353,14 @@ function render() {
 }
 
 function setButtonsDisabled(disabled) {
-  el("checkin").disabled = disabled || el("checkin").disabled;
-  el("undo").disabled = disabled || el("undo").disabled;
-  el("openAll").disabled = disabled;
+  if (el("checkin")) el("checkin").disabled = disabled || el("checkin").disabled;
+  if (el("undo")) el("undo").disabled = disabled || el("undo").disabled;
+  if (el("openAll")) el("openAll").disabled = disabled;
 }
 
 function updateStats() {
+  if (!el("completed") || !el("rate") || !el("streak")) return;
+
   const completedDates = Object.keys(progress.completed).filter(k => progress.completed[k]);
   const completedCount = completedDates.length;
 
@@ -369,6 +382,7 @@ function updateStats() {
 }
 
 function updateRawData() {
+  if (!el("rawData")) return;
   el("rawData").value = JSON.stringify(progress, null, 2);
 }
 
@@ -452,50 +466,47 @@ function speakToday() {
   u.rate = 1.0;
   window.speechSynthesis.speak(u);
 }
-
 function stopSpeak() {
   if (window.speechSynthesis) window.speechSynthesis.cancel();
 }
 
 // =====================
-// Events
+// Events（安全綁定）
 // =====================
-el("saveStartDate").addEventListener("click", async () => {
-  const v = el("startDate").value;
+on("saveStartDate", "click", async () => {
+  const v = el("startDate")?.value;
   if (!v) return;
   setStartDate(v);
   await saveAllProgress();
   render();
 });
+on("prevDay", "click", () => { targetDate = addDays(targetDate, -1); render(); });
+on("nextDay", "click", () => { targetDate = addDays(targetDate,  1); render(); });
+on("today",   "click", () => { targetDate = new Date(); render(); });
 
-el("prevDay").addEventListener("click", () => { targetDate = addDays(targetDate, -1); render(); });
-el("nextDay").addEventListener("click", () => { targetDate = addDays(targetDate, 1); render(); });
-el("today").addEventListener("click", () => { targetDate = new Date(); render(); });
-
-el("checkin").addEventListener("click", async () => {
+on("checkin", "click", async () => {
   const key = toISODate(targetDate);
   progress.completed[key] = true;
   await saveAllProgress();
   render();
 });
-
-el("undo").addEventListener("click", async () => {
+on("undo", "click", async () => {
   const key = toISODate(targetDate);
   delete progress.completed[key];
   await saveAllProgress();
   render();
 });
 
-el("export").addEventListener("click", () => {
+on("export", "click", () => {
+  if (!el("rawData")) return;
   el("rawData").value = JSON.stringify(progress, null, 2);
   el("rawData").focus();
   el("rawData").select();
 });
-
-el("import").addEventListener("click", async () => {
-  const raw = el("rawData").value;
+on("import", "click", async () => {
+  if (!el("rawData")) return;
   try {
-    const obj = JSON.parse(raw);
+    const obj = JSON.parse(el("rawData").value);
     if (!obj || typeof obj !== "object") throw new Error("JSON 格式錯誤");
     if (!obj.completed || typeof obj.completed !== "object") obj.completed = {};
     progress = { completed: obj.completed };
@@ -506,33 +517,32 @@ el("import").addEventListener("click", async () => {
     alert(`匯入失敗：${e.message || e}`);
   }
 });
-
-el("reset").addEventListener("click", async () => {
+on("reset", "click", async () => {
   if (!confirm("確定要清空全部打卡紀錄嗎？")) return;
   progress = { completed: {} };
   await saveAllProgress();
   render();
 });
 
-// 登入/註冊/登出
-document.getElementById("btnSignup").addEventListener("click", async () => {
-  if (!supabaseEnabled) return alert("Supabase 未啟用（請檢查 URL/Key 或 index.html script 順序）");
-  const email = (document.getElementById("email")?.value || "").trim();
-  const password = document.getElementById("password")?.value || "";
+// Auth
+on("btnSignup", "click", async () => {
+  if (!supabaseEnabled) return alert("Supabase 未啟用（請檢查 URL/Key 或 index.html script）");
+  const email = (el("email")?.value || "").trim();
+  const password = el("password")?.value || "";
   if (!email || !password) return alert("請輸入 Email 與密碼");
 
-  const { error } = await supabase.auth.signUp({ email, password });
+  const { error } = await supabaseClient.auth.signUp({ email, password });
   if (error) return alert(error.message);
   alert("註冊成功！若有 Email 驗證，請先驗證後再登入。");
 });
 
-document.getElementById("btnLogin").addEventListener("click", async () => {
-  if (!supabaseEnabled) return alert("Supabase 未啟用（請檢查 URL/Key 或 index.html script 順序）");
-  const email = (document.getElementById("email")?.value || "").trim();
-  const password = document.getElementById("password")?.value || "";
+on("btnLogin", "click", async () => {
+  if (!supabaseEnabled) return alert("Supabase 未啟用（請檢查 URL/Key 或 index.html script）");
+  const email = (el("email")?.value || "").trim();
+  const password = el("password")?.value || "";
   if (!email || !password) return alert("請輸入 Email 與密碼");
 
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
   if (error) return alert(error.message);
 
   currentUser = data.user;
@@ -544,19 +554,18 @@ document.getElementById("btnLogin").addEventListener("click", async () => {
   render();
 });
 
-document.getElementById("btnLogout").addEventListener("click", async () => {
+on("btnLogout", "click", async () => {
   if (!supabaseEnabled) return;
-  await supabase.auth.signOut();
+  await supabaseClient.auth.signOut();
   currentUser = null;
   await refreshAuthUI();
   setAppVisible(false);
 });
 
-// 一鍵開啟今日全部章節
-el("openAll").addEventListener("click", () => {
+// Open all / TTS / Calendar
+on("openAll", "click", () => {
   const start = getStartDate();
   if (!start) return;
-
   const dayIndex = getDayIndexByDate(targetDate);
   const dayObj = getReadingsForDay(dayIndex);
   if (!dayObj || !Array.isArray(dayObj.readings)) return;
@@ -570,29 +579,27 @@ el("openAll").addEventListener("click", () => {
   }
 });
 
-el("ttsPlay").addEventListener("click", speakToday);
-el("ttsStop").addEventListener("click", stopSpeak);
+on("ttsPlay", "click", speakToday);
+on("ttsStop", "click", stopSpeak);
 
-el("calPrev").addEventListener("click", () => { calDate.setMonth(calDate.getMonth() - 1); renderCalendar(); });
-el("calNext").addEventListener("click", () => { calDate.setMonth(calDate.getMonth() + 1); renderCalendar(); });
+on("calPrev", "click", () => { calDate.setMonth(calDate.getMonth() - 1); renderCalendar(); });
+on("calNext", "click", () => { calDate.setMonth(calDate.getMonth() + 1); renderCalendar(); });
 
 // =====================
 // Boot（程式進入點）
 // =====================
 (async function boot(){
   try {
-    // ✅ 永遠先隱藏主內容（避免任何閃現）
+    // ✅ 永遠先隱藏主內容（避免閃現）
     setAppVisible(false);
+    setSupabaseHint("");
 
-    setSupabaseHint();
-
-    // Supabase 啟用：一定要登入才顯示
+    // Supabase 啟用：必須登入才顯示
     if (supabaseEnabled) {
-      // 先測試 session（也順便驗證 URL/Key）
-      const { data, error } = await supabase.auth.getSession();
+      const { data, error } = await supabaseClient.auth.getSession();
       if (error) {
         console.error(error);
-        setSupabaseHint("（Supabase 連線失敗：請確認 Project URL/Key 是否正確）");
+        setSupabaseHint("（Supabase 連線失敗：請確認 Project URL/Key）");
         await refreshAuthUI();
         return;
       }
@@ -601,12 +608,10 @@ el("calNext").addEventListener("click", () => { calDate.setMonth(calDate.getMont
       await refreshAuthUI();
 
       if (!currentUser) {
-        // 未登入：保持隱藏主內容
         setAppVisible(false);
         return;
       }
 
-      // 已登入：載入計畫與進度
       setAppVisible(true);
       await loadPlan();
       await loadAllProgress();
@@ -614,21 +619,22 @@ el("calNext").addEventListener("click", () => { calDate.setMonth(calDate.getMont
       return;
     }
 
-    // 未啟用 Supabase：允許本機模式（你要完全禁止本機模式的話，我也可以改）
+    // 未啟用 Supabase：本機模式（如果你想完全禁用本機模式，我也可以幫你改）
     setSupabaseHint("（未啟用 Supabase：本機模式 localStorage）");
     setAppVisible(true);
     await loadPlan();
     await loadAllProgress();
     render();
+
   } catch (e) {
     console.error(e);
-    const list = document.getElementById("readingList");
+    const list = el("readingList");
     if (list) {
       list.innerHTML = `
         <li>
           載入失敗：<br/>
           1) 請確認 reading_plan_365.json 存在<br/>
-          2) GitHub Pages/localhost 需要同層路徑正確<br/>
+          2) GitHub Pages 需同層路徑正確<br/>
         </li>
       `;
     }
