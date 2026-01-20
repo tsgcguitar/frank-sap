@@ -20,6 +20,14 @@ const supabaseEnabled = !!(SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase)
 const supabase = supabaseEnabled ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 let currentUser = null; // supabase auth user
 
+// Supabase 啟用時：要求先登入才顯示讀經內容（每個人各自的進度）
+function setAppVisible(isAuthed) {
+  const app = document.getElementById("appContent");
+  const hint = document.getElementById("loginHint");
+  if (app) app.style.display = isAuthed ? "block" : "none";
+  if (hint) hint.style.display = isAuthed ? "none" : "block";
+}
+
 function setSupabaseHint() {
   const hint = document.getElementById("supabaseHint");
   if (!hint) return;
@@ -605,6 +613,10 @@ if (document.getElementById("btnLogin")) {
 
     currentUser = data.user;
     await refreshAuthUI();
+
+    // 登入後才載入讀經計畫 + 進度
+    setAppVisible(true);
+    if (!plan) await loadPlan();
     await loadAllProgress();
     render();
   });
@@ -616,8 +628,9 @@ if (document.getElementById("btnLogout")) {
     await supabase.auth.signOut();
     currentUser = null;
     await refreshAuthUI();
-    await loadAllProgress();
-    render();
+
+    // Supabase 啟用時：登出後隱藏主內容
+    setAppVisible(false);
   });
 }
 
@@ -659,7 +672,6 @@ el("calNext").addEventListener("click", () => {
 (async function boot(){
   try {
     setSupabaseHint();
-    await loadPlan();
 
     // 取回既有登入狀態
     if (supabaseEnabled) {
@@ -668,6 +680,22 @@ el("calNext").addEventListener("click", () => {
     }
     await refreshAuthUI();
 
+    // ✅ Supabase 啟用：要求先登入
+    if (supabaseEnabled) {
+      if (!currentUser) {
+        setAppVisible(false);
+        return;
+      }
+      setAppVisible(true);
+      await loadPlan();
+      await loadAllProgress();
+      render();
+      return;
+    }
+
+    // 未設定 Supabase：維持本機模式（不登入也能使用）
+    setAppVisible(true);
+    await loadPlan();
     await loadAllProgress();
     render();
   } catch (e) {
