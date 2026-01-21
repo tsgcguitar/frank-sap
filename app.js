@@ -185,6 +185,8 @@ async function saveProgressSafe() {
 // App state
 // =====================
 let viewDate = new Date();
+let _planInitialized = false;
+
 let calMonth = new Date(); // ✅ 月曆顯示月份
 
 function getStartDate() {
@@ -598,6 +600,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
+
 
 
 
