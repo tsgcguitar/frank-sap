@@ -1,12 +1,8 @@
-/* =========================================================
-   Bible Reading App – FINAL STABLE VERSION (FIXED)
-   ========================================================= */
-
 console.log("app.js loaded");
 
-// =========================================================
-// 基本設定
-// =========================================================
+// =====================
+// 設定
+// =====================
 const PLAN_URL = "data/reading_plan_365.json";
 
 const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
@@ -14,21 +10,21 @@ const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
 
 const USERNAME_EMAIL_DOMAIN = "bible.local";
 
-// =========================================================
+// =====================
 // Supabase client（只建立一次）
-// 依賴 index.html 先載入 supabase-js CDN，才能有 window.supabase
-// =========================================================
-if (!window.supabase || !window.supabase.createClient) {
-  console.error("Supabase SDK not loaded. Check index.html script order.");
+// =====================
+if (!window.supabase?.createClient) {
+  console.error("Supabase SDK not loaded. Fix index.html script order.");
 }
-
 window._sb = window._sb || window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const sb = window._sb;
 
-// =========================================================
-// 小工具
-// =========================================================
+// =====================
+// DOM helpers
+// =====================
 const el = (id) => document.getElementById(id);
+const safeText = (id, text) => { const n = el(id); if (n) n.textContent = text; };
+const show = (id, on) => { const n = el(id); if (n) n.style.display = on ? "" : "none"; };
 
 function setAuthMsg(msg = "") {
   const box = el("authMsg");
@@ -45,11 +41,34 @@ function pad2(n) { return String(n).padStart(2, "0"); }
 function toISODate(d) {
   return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
 }
+function parseISODate(s) {
+  const [y, m, d] = String(s).split("-").map(Number);
+  return new Date(y, (m || 1) - 1, d || 1);
+}
+function addDays(d, n) {
+  const x = new Date(d);
+  x.setDate(x.getDate() + n);
+  return x;
+}
 
-// =========================================================
-// Progress（DB）
-// =========================================================
-let progress = { startDate: "", completed: {} };
+// =====================
+// Reading plan
+// 期待 JSON 格式：[{ date:"2026-01-01", ref:"創世記 1-3" }, ...]
+// 或：[{ ref:"..." }, ...]（至少要有 ref）
+// =====================
+let readingPlan = [];
+async function loadReadingPlan() {
+  const res = await fetch(PLAN_URL, { cache: "no-store" });
+  if (!res.ok) throw new Error(`讀經計畫載入失敗：${res.status} ${res.statusText}`);
+  const data = await res.json();
+  if (!Array.isArray(data)) throw new Error("讀經計畫格式錯誤：JSON 必須是 array");
+  readingPlan = data;
+}
+
+// =====================
+// Progress (DB)
+// =====================
+let progress = { startDate: "", completed: {} }; // completed: { "YYYY-MM-DD": true }
 
 function normalizeProgress(p) {
   return {
@@ -71,13 +90,11 @@ async function loadProgress() {
 
   if (error) throw error;
 
-  // 沒資料就建立一筆空的
   if (!data) {
     const empty = normalizeProgress({});
     const { error: insErr } = await sb
       .from("user_progress")
       .insert({ user_id: user.id, progress_data: empty });
-
     if (insErr) throw insErr;
     return empty;
   }
@@ -92,40 +109,61 @@ async function saveProgress() {
 
   const { error } = await sb
     .from("user_progress")
-    .upsert(
-      { user_id: user.id, progress_data: progress },
-      { onConflict: "user_id" }
-    );
+    .upsert({ user_id: user.id, progress_data: progress }, { onConflict: "user_id" });
 
   if (error) throw error;
 }
 
-// =========================================================
-// UI 狀態
-// =========================================================
+// =====================
+// App state
+// =====================
+let viewDate = new Date(); // 今天/前一天/後一天 用這個切
+function getStartDate() {
+  // 沒設定就用今天
+  if (!progress.startDate) progress.startDate = toISODate(new Date());
+  return parseISODate(progress.startDate);
+}
+
+function dayIndexFromStart(dateObj) {
+  const start = getStartDate();
+  const ms = dateObj.setHours(0,0,0,0) - start.setHours(0,0,0,0);
+  return Math.floor(ms / 86400000) + 1; // 第1天起算
+}
+
+function getPlanForDayIndex(dayIndex) {
+  if (!readingPlan.length) return null;
+  const idx = Math.max(1, dayIndex) - 1;
+  return readingPlan[idx] || null;
+}
+
+function isCompleted(isoDate) {
+  return !!progress.completed?.[isoDate];
+}
+
+function setCompleted(isoDate, done) {
+  if (!progress.completed) progress.completed = {};
+  if (done) progress.completed[isoDate] = true;
+  else delete progress.completed[isoDate];
+}
+
+// =====================
+// UI
+// =====================
 function showLoggedOut() {
-  el("authCard").style.display = "block";
-  el("appWrap").style.display = "none";
-  el("userBar").style.display = "none";
+  show("authCard", true);
+  show("appWrap", false);
+  show("userBar", false);
 }
 
 async function showLoggedIn(session) {
-  el("authCard").style.display = "none";
-  el("appWrap").style.display = "block";
-  el("userBar").style.display = "flex";
+  show("authCard", false);
+  show("appWrap", true);
+  show("userBar", true);
 
   const user = session.user;
-  el("userNameText").textContent =
-    user.user_metadata?.username || (user.email ? user.email.split("@")[0] : "user");
+  safeText("userNameText", user.user_metadata?.username || (user.email ? user.email.split("@")[0] : "user"));
 
-  try {
-    progress = await loadProgress();
-  } catch (e) {
-    console.error(e);
-    setAuthMsg(`讀取進度失敗：${e.message || e}`);
-    progress = normalizeProgress({});
-  }
-
+  progress = await loadProgress();
   render();
 }
 
@@ -140,28 +178,44 @@ async function refreshAuth() {
   else await showLoggedIn(session);
 }
 
-// =========================================================
-// Render（先保留最小可用）
-// =========================================================
 function render() {
-  el("targetDateText").textContent = toISODate(new Date());
-  el("rawData").value = JSON.stringify(progress, null, 2);
+  const iso = toISODate(viewDate);
+  safeText("targetDateText", iso);
+
+  // 第幾天
+  const dayIndex = dayIndexFromStart(new Date(viewDate));
+  safeText("dayIndexText", `今天是第 ${dayIndex} 天`);
+
+  // 今日章節
+  const plan = getPlanForDayIndex(dayIndex);
+  const refs = plan?.ref || plan?.refs || plan?.chapter || "";
+  safeText("todayRefsText", refs ? String(refs) : "（找不到今日章節，請確認 reading_plan_365.json 格式）");
+
+  // 完成狀態
+  const done = isCompleted(iso);
+  const btnDone = el("btnMarkDone");
+  const btnUndo = el("btnUndo");
+  if (btnDone) btnDone.disabled = done;
+  if (btnUndo) btnUndo.disabled = !done;
+
+  // debug
+  const raw = el("rawData");
+  if (raw) raw.value = JSON.stringify({ progress, planLoaded: readingPlan.length }, null, 2);
 }
 
-// =========================================================
-// 綁事件（唯一入口）
-// =========================================================
+// =====================
+// Events
+// =====================
 function bindEvents() {
-  el("btnRegister").addEventListener("click", async () => {
+  // Register
+  el("btnRegister")?.addEventListener("click", async () => {
     setAuthMsg("");
-    const username = el("username").value;
-    const password = el("password").value;
+    const username = el("username")?.value;
+    const password = el("password")?.value;
     const email = usernameToEmail(username);
 
     if (!email) { setAuthMsg("Username 格式錯誤"); return; }
-    if (!password || password.length < 6) {
-      setAuthMsg("密碼至少 6 碼"); return;
-    }
+    if (!password || password.length < 6) { setAuthMsg("密碼至少 6 碼"); return; }
 
     const { error } = await sb.auth.signUp({
       email,
@@ -173,10 +227,11 @@ function bindEvents() {
     setAuthMsg("註冊成功，請直接登入");
   });
 
-  el("btnLogin").addEventListener("click", async () => {
+  // Login
+  el("btnLogin")?.addEventListener("click", async () => {
     setAuthMsg("");
-    const username = el("username").value;
-    const password = el("password").value;
+    const username = el("username")?.value;
+    const password = el("password")?.value;
     const email = usernameToEmail(username);
 
     if (!email) { setAuthMsg("Username 格式錯誤"); return; }
@@ -187,20 +242,70 @@ function bindEvents() {
     await refreshAuth();
   });
 
-  el("btnLogout").addEventListener("click", async () => {
+  // Logout
+  el("btnLogout")?.addEventListener("click", async () => {
     await sb.auth.signOut();
     showLoggedOut();
   });
+
+  // Mark done
+  el("btnMarkDone")?.addEventListener("click", async () => {
+    try {
+      const iso = toISODate(viewDate);
+      setCompleted(iso, true);
+      await saveProgress();
+      render();
+    } catch (e) {
+      console.error(e);
+      alert(`保存失敗：${e.message || e}`);
+    }
+  });
+
+  // Undo
+  el("btnUndo")?.addEventListener("click", async () => {
+    try {
+      const iso = toISODate(viewDate);
+      setCompleted(iso, false);
+      await saveProgress();
+      render();
+    } catch (e) {
+      console.error(e);
+      alert(`保存失敗：${e.message || e}`);
+    }
+  });
+
+  // Prev / Next / Today (如果你有這些按鈕 id)
+  el("btnPrevDay")?.addEventListener("click", () => { viewDate = addDays(viewDate, -1); render(); });
+  el("btnNextDay")?.addEventListener("click", () => { viewDate = addDays(viewDate, 1); render(); });
+  el("btnToday")?.addEventListener("click", () => { viewDate = new Date(); render(); });
+
+  // Start date save (如果你有輸入框與按鈕 id)
+  el("btnSaveStartDate")?.addEventListener("click", async () => {
+    try {
+      const v = el("startDateInput")?.value;
+      if (!v) return;
+      progress.startDate = v;
+      await saveProgress();
+      render();
+    } catch (e) {
+      console.error(e);
+      alert(`保存起始日失敗：${e.message || e}`);
+    }
+  });
 }
 
-// =========================================================
+// =====================
 // Boot
-// =========================================================
+// =====================
 document.addEventListener("DOMContentLoaded", async () => {
-  bindEvents();
-
-  // 登入狀態變更就刷新 UI
-  sb.auth.onAuthStateChange(() => refreshAuth());
-
-  await refreshAuth();
+  try {
+    bindEvents();
+    await loadReadingPlan(); // ✅ 沒有這行，你就會「裡面東西不見」
+    sb.auth.onAuthStateChange(() => refreshAuth());
+    await refreshAuth();
+    render();
+  } catch (e) {
+    console.error(e);
+    alert(e.message || e);
+  }
 });
