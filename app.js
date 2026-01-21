@@ -58,11 +58,22 @@ function addDays(d, n) {
 // =====================
 let readingPlan = [];
 async function loadReadingPlan() {
+ async function loadReadingPlan() {
   const res = await fetch(PLAN_URL, { cache: "no-store" });
-  if (!res.ok) throw new Error(`讀經計畫載入失敗：${res.status} ${res.statusText}`);
+  if (!res.ok) {
+    throw new Error(`讀經計畫載入失敗：${res.status}`);
+  }
+
   const data = await res.json();
-  if (!Array.isArray(data)) throw new Error("讀經計畫格式錯誤：JSON 必須是 array");
-  readingPlan = data;
+
+  // ✅ 你的 JSON 是 { ..., plan: [ ... ] }
+  if (!Array.isArray(data.plan)) {
+    throw new Error("讀經計畫格式錯誤：找不到 plan array");
+  }
+
+  readingPlan = data.plan;
+}
+
 }
 
 // =====================
@@ -298,4 +309,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e.message || e);
   }
 });
+
 
