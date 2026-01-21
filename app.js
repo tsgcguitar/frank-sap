@@ -9,9 +9,10 @@ console.log("app.js loaded");
 // =========================================================
 const PLAN_URL = "data/reading_plan_365.json";
 
-const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.sb.co";
+const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
 
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const USERNAME_EMAIL_DOMAIN = "bible.local";
 
 // =========================================================
@@ -183,4 +184,5 @@ document.addEventListener("DOMContentLoaded", async ()=>{
   sb.auth.onAuthStateChange(()=>refreshAuth());
   await refreshAuth();
 });
+
 
