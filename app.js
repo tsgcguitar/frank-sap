@@ -504,40 +504,53 @@ async function showLoggedIn(session) {
 
   progress = await loadProgressSafe();
 
-  // ✅ 先吃 DB 的 planKey，再 fallback localStorage
-  if (!progress.planKey) progress.planKey = getStoredPlanKey();
+// ✅ 只看 DB：DB 沒 planKey = 新會員/第一次登入 → 才跳
+let needPick = !progress.planKey;
 
-  // ✅ 真的都沒有才問一次
-  if (!progress.planKey) {
-    const pick = prompt(`請選擇讀經計畫（輸入數字）：
-1 全本一年（365）
-2 舊約一年（365）
-3 新約一年（365）
-4 四福音一年（365）
-5 每日混讀（舊+新）（365）
-6 詩篇+箴言（靈修）（365）
-7 按時間順序（365）
+// ✅ 但如果 DB 沒 planKey、又有 localStorage（同一台曾選過），可直接帶入不跳
+//   （你要「一定要跳」就把這段整段刪掉）
+if (needPick) {
+  const cached = getStoredPlanKey();
+  if (cached && PLAN_MAP[cached]) {
+    progress.planKey = cached;
+    await saveProgressSafe(); // 回寫 DB，之後任何裝置都不會再跳
+    needPick = false;
+  }
+}
+
+if (needPick) {
+  const pick = prompt(`請選擇讀經計畫（輸入數字）：
+1 一年讀完聖經計畫
+2 一年讀完舊約計畫
+3 260天讀完新約計畫
+4 89天讀完四福音計畫
+5 每日混讀（舊約+新約)
+6 詩篇+箴言（靈修)
+7 按時間順序（一年讀完聖經）
+8 計畫趕不上變化(不讀了)
 `, "1");
 
-    const mapNumToKey = {
-      "1": "bible_365",
-      "2": "ot_365",
-      "3": "nt_365",
-      "4": "gospels_365",
-      "5": "mix_ot_nt_365",
-      "6": "psa_pro_365",
-      "7": "chrono_365",
-    };
+  const mapNumToKey = {
+    "1": "bible_365",
+    "2": "ot_365",
+    "3": "nt_365",
+    "4": "gospels_365",
+    "5": "mix_ot_nt_365",
+    "6": "psa_pro_365",
+    "7": "chrono_365",
+  };
 
-    progress.planKey = mapNumToKey[String(pick || "1")] || "bible_365";
-    setStoredPlanKey(progress.planKey);
-    await saveProgressSafe();
-  } else {
-    // ✅ 有 planKey 也同步到 localStorage，避免不同裝置第一次沒讀到 DB 時抖動
-    setStoredPlanKey(progress.planKey);
-  }
+  progress.planKey = mapNumToKey[String(pick || "1")] || "bible_365";
 
-  await loadReadingPlanByKey(progress.planKey);
+  setStoredPlanKey(progress.planKey); // 存本機
+  await saveProgressSafe();           // ✅ 存 DB（關鍵：之後不跳）
+} else {
+  // DB 有 planKey → 不跳，但順便同步本機快取
+  setStoredPlanKey(progress.planKey);
+}
+
+await loadReadingPlanByKey(progress.planKey);
+
 
   _planInitialized = true;
   ensurePlanSwitcherUI();
@@ -694,3 +707,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
+
