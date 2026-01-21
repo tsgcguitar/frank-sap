@@ -141,7 +141,7 @@ async function loadReadingPlanByKey(planKey) {
 // =====================
 let progress = { startDate: "", completed: {}, planKey: "" };
 let warnedDb = false;
-
+let _justCreatedProgressRow = false; // ✅ 新會員第一次建立 progress row
 function normalizeProgress(p) {
   return {
     startDate: p?.startDate || "",
@@ -164,16 +164,20 @@ async function loadProgressSafe() {
 
     if (error) throw error;
 
-    if (!data) {
-      const empty = normalizeProgress({});
-      const { error: insErr } = await sb
-        .from("user_progress")
-        .insert({ user_id: user.id, progress_data: empty });
-      if (insErr) throw insErr;
-      return empty;
-    }
+if (!data) {
+  _justCreatedProgressRow = true;   // ✅ 這次是第一次建立
+  const empty = normalizeProgress({});
+  const { error: insErr } = await sb
+    .from("user_progress")
+    .insert({ user_id: user.id, progress_data: empty });
+  if (insErr) throw insErr;
+  return empty;
+}
 
-    return normalizeProgress(data.progress_data);
+// ✅ 有資料代表不是第一次
+_justCreatedProgressRow = false;
+return normalizeProgress(data.progress_data);
+
   } catch (e) {
     console.error("loadProgress failed:", e);
     if (!warnedDb) {
@@ -505,19 +509,19 @@ async function showLoggedIn(session) {
 
   progress = await loadProgressSafe();
 
-// ✅ 只看 DB：DB 沒 planKey = 新會員/第一次登入 → 才跳
-let needPick = !progress.planKey;
+// ✅ 第一次建立 row 或 DB 沒 planKey → 一定要跳
+let needPick = _justCreatedProgressRow || !progress.planKey;
 
-// ✅ 但如果 DB 沒 planKey、又有 localStorage（同一台曾選過），可直接帶入不跳
-//   （你要「一定要跳」就把這段整段刪掉）
-if (needPick) {
+// ✅ 只有「不是第一次」才允許吃 localStorage（避免新註冊被舊快取跳過）
+if (needPick && !_justCreatedProgressRow) {
   const cached = getStoredPlanKey();
   if (cached && PLAN_MAP[cached]) {
     progress.planKey = cached;
-    await saveProgressSafe(); // 回寫 DB，之後任何裝置都不會再跳
+    await saveProgressSafe();
     needPick = false;
   }
 }
+
 
 if (needPick) {
   const pick = prompt(`請選擇讀經計畫（輸入數字）：
@@ -708,5 +712,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
+
 
 
