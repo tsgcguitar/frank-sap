@@ -207,9 +207,14 @@ function render() {
   safeText("dayIndexText", `今天是第 ${dayIndex} 天`);
 
   // 今日章節
-  const plan = getPlanForDayIndex(dayIndex);
-  const refs = plan?.ref || plan?.refs || plan?.chapter || "";
-  safeText("todayRefsText", refs ? String(refs) : "（找不到今日章節，請確認 reading_plan_365.json 格式）");
+ const plan = getPlanForDayIndex(dayIndex);
+
+let refs = "";
+if (plan?.readings?.length) {
+  refs = plan.readings.map(r => `${r.book_zh} ${r.chapter}`).join("、");
+}
+document.getElementById("todayRefsText").textContent = refs || "（無今日章節）";
+
 
   // 完成狀態
   const done = isCompleted(iso);
@@ -331,6 +336,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await refreshAuth();
 });
+
 
 
 
