@@ -298,16 +298,31 @@ function bindEvents() {
 // Boot
 // =====================
 document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    bindEvents();
-    await loadReadingPlan(); // ✅ 沒有這行，你就會「裡面東西不見」
-    sb.auth.onAuthStateChange(() => refreshAuth());
-    await refreshAuth();
-    render();
-  } catch (e) {
-    console.error(e);
-    alert(e.message || e);
+  bindEvents();
+  await loadReadingPlan();
+
+  // ✅ 強制檢查 localStorage 是否已有登入 token
+  const hasToken = Object.keys(localStorage)
+    .some(k => k.includes("sb-") && k.includes("auth-token"));
+
+  if (hasToken) {
+    // 直接拿 session 並顯示登入後畫面
+    const { data } = await sb.auth.getSession();
+    if (data?.session) {
+      await showLoggedIn(data.session);
+      return;
+    }
   }
+
+  // 正常 auth 流程
+  sb.auth.onAuthStateChange((_event, session) => {
+    if (session) showLoggedIn(session);
+    else showLoggedOut();
+  });
+
+  await refreshAuth();
 });
+
+
 
 
