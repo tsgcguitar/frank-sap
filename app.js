@@ -99,8 +99,11 @@ function makeBibleComChapterUrl(book_id, chapter) {
 // =====================
 let readingPlan = [];
 
-async function loadReadingPlan() {
-  const res = await fetch(PLAN_URL, { cache: "no-store" });
+async function loadReadingPlanByKey(planKey) {
+  const url = PLAN_MAP[planKey];
+  if (!url) throw new Error(`未知的計畫 planKey: ${planKey}`);
+
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`讀經計畫載入失敗：${res.status}`);
 
   const data = await res.json();
@@ -109,6 +112,7 @@ async function loadReadingPlan() {
   }
   readingPlan = data.plan;
 }
+
 
 // =====================
 // Progress (DB)
@@ -398,6 +402,37 @@ async function showLoggedIn(session) {
   safeText("userNameText", user.user_metadata?.username || user.email.split("@")[0]);
 
   progress = await loadProgressSafe();
+    // 沒選過計畫就問一次
+  if (!progress.planKey) {
+    const pick = prompt(
+`請選擇讀經計畫（輸入數字）：
+1 全本一年 (365)
+2 舊約一年 (365)
+3 新約一年 (365)
+4 四福音一年 (365)
+5 每日混讀 (舊+新)
+6 詩篇+箴言 (靈修)
+7 按時間順序 (Chronological)`,
+"1"
+    );
+
+    const mapNumToKey = {
+      "1": "bible_365",     // 如果你沒有這份，就改成你要的預設
+      "2": "ot_365",
+      "3": "nt_365",
+      "4": "gospels_365",
+      "5": "mix_ot_nt_365",
+      "6": "psa_pro_365",
+      "7": "chrono_365",
+    };
+
+    progress.planKey = mapNumToKey[String(pick || "1")] || "bible_365";
+    await saveProgressSafe(); // 存起來
+  }
+
+  // 依 planKey 載入計畫
+  await loadReadingPlanByKey(progress.planKey);
+
   render();
 }
 
@@ -533,7 +568,7 @@ function bindEvents() {
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     bindEvents();
-    await loadReadingPlan();
+  
 
     const hasToken = Object.keys(localStorage).some(k => k.includes("sb-") && k.includes("auth-token"));
     if (hasToken) {
@@ -555,5 +590,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
+
 
 
