@@ -166,17 +166,26 @@ function showLoggedOut() {
   show("userBar", false);
 }
 
-async function showLoggedIn(session) {
-  show("authCard", false);
-  show("appWrap", true);
-  show("userBar", true);
+async function showLoggedIn(session){
+  document.getElementById("authCard").style.display="none";
+  document.getElementById("appWrap").style.display="block";
+  document.getElementById("userBar").style.display="flex";
 
   const user = session.user;
-  safeText("userNameText", user.user_metadata?.username || (user.email ? user.email.split("@")[0] : "user"));
+  document.getElementById("userNameText").textContent =
+    user.user_metadata?.username || user.email.split("@")[0];
 
-  progress = await loadProgress();
+  try{
+    progress = await loadProgress();
+  }catch(e){
+    console.error("loadProgress failed:", e);
+    alert("loadProgress failed: " + (e?.message || JSON.stringify(e)));
+    progress = { startDate:"", completed:{} };
+  }
+
   render();
 }
+
 
 async function refreshAuth() {
   const { data: { session }, error } = await sb.auth.getSession();
@@ -322,6 +331,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await refreshAuth();
 });
+
 
 
 
