@@ -16,13 +16,13 @@ const PLAN_MAP = {
 };
 
 const PLAN_LABELS = {
-  bible_365: "全本一年（365）",
-  ot_365: "舊約一年（365）",
-  nt_365: "新約一年（365）",
-  gospels_365: "四福音一年（365）",
-  mix_ot_nt_365: "每日混讀（舊+新）（365）",
-  psa_pro_365: "詩篇+箴言（靈修）（365）",
-  chrono_365: "按時間順序（365）",
+  bible_365: "一年讀完聖經計畫",
+  ot_365: "一年讀完舊約計畫",
+  nt_365: "260天讀完新約計畫",
+  gospels_365: "89天讀完四福音計畫",
+  mix_ot_nt_365: "每日混讀（舊約+新約)",
+  psa_pro_365: "詩篇+箴言（靈修)",
+  chrono_365: "按時間順序（一年讀完聖經）",
 };
 
 const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
@@ -270,13 +270,14 @@ function ensurePlanSwitcherUI() {
 
   btn.addEventListener("click", async () => {
     const next = prompt(`切換讀經計畫（輸入數字）：
-1 全本一年（365）
-2 舊約一年（365）
-3 新約一年（365）
-4 四福音一年（365）
-5 每日混讀（舊+新）（365）
-6 詩篇+箴言（靈修）（365）
-7 按時間順序（365）
+1 一年讀完聖經計畫
+2 一年讀完舊約計畫
+3 260天讀完新約計畫
+4 89天讀完四福音計畫
+5 每日混讀（舊約+新約)
+6 詩篇+箴言（靈修)
+7 按時間順序（一年讀完聖經）
+8 計畫趕不上變化(不讀了)
 `, "1");
 
     const mapNumToKey = {
@@ -707,4 +708,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
+
 
