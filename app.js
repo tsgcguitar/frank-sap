@@ -1,5 +1,5 @@
 /* =========================================================
-   Bible Reading App – FINAL STABLE VERSION
+   Bible Reading App – FINAL STABLE VERSION (FIXED)
    ========================================================= */
 
 console.log("app.js loaded");
@@ -12,18 +12,18 @@ const PLAN_URL = "data/reading_plan_365.json";
 const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const USERNAME_EMAIL_DOMAIN = "bible.local";
 
 // =========================================================
-// Supabase client（只建立一次，避免重複宣告炸掉）
+// Supabase client（只建立一次）
+// 依賴 index.html 先載入 supabase-js CDN，才能有 window.supabase
 // =========================================================
-window._sb = window._sb || window.sb.createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
-const sb = window._sb;
+if (!window.supabase || !window.supabase.createClient) {
+  console.error("Supabase SDK not loaded. Check index.html script order.");
+}
 
+window._sb = window._sb || window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const sb = window._sb;
 
 // =========================================================
 // 小工具
@@ -41,136 +41,153 @@ function usernameToEmail(username) {
   return `${u}@${USERNAME_EMAIL_DOMAIN}`;
 }
 
-function pad2(n){ return String(n).padStart(2,"0"); }
-function toISODate(d){
-  return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`;
-}
-function parseISODate(s){
-  const [y,m,d]=s.split("-").map(Number);
-  return new Date(y,m-1,d);
-}
-function addDays(d,n){
-  const x=new Date(d); x.setDate(x.getDate()+n); return x;
+function pad2(n) { return String(n).padStart(2, "0"); }
+function toISODate(d) {
+  return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
 }
 
 // =========================================================
 // Progress（DB）
 // =========================================================
-let progress = { startDate:"", completed:{} };
+let progress = { startDate: "", completed: {} };
 
-function normalizeProgress(p){
+function normalizeProgress(p) {
   return {
     startDate: p?.startDate || "",
     completed: p?.completed || {}
   };
 }
 
-async function loadProgress(){
-  const { data:{user} } = await sb.auth.getUser();
+async function loadProgress() {
+  const { data: { user }, error: userErr } = await sb.auth.getUser();
+  if (userErr) throw userErr;
   if (!user) throw new Error("not login");
 
-  const { data } = await supabase
+  const { data, error } = await sb
     .from("user_progress")
     .select("progress_data")
     .eq("user_id", user.id)
     .maybeSingle();
 
-  if (!data){
+  if (error) throw error;
+
+  // 沒資料就建立一筆空的
+  if (!data) {
     const empty = normalizeProgress({});
-    await sb.from("user_progress")
-      .insert({ user_id:user.id, progress_data: empty });
+    const { error: insErr } = await sb
+      .from("user_progress")
+      .insert({ user_id: user.id, progress_data: empty });
+
+    if (insErr) throw insErr;
     return empty;
   }
+
   return normalizeProgress(data.progress_data);
 }
 
-async function saveProgress(){
-  const { data:{user} } = await sb.auth.getUser();
+async function saveProgress() {
+  const { data: { user }, error: userErr } = await sb.auth.getUser();
+  if (userErr) throw userErr;
   if (!user) throw new Error("not login");
 
-  await sb.from("user_progress")
+  const { error } = await sb
+    .from("user_progress")
     .upsert(
-      { user_id:user.id, progress_data: progress },
-      { onConflict:"user_id" }
+      { user_id: user.id, progress_data: progress },
+      { onConflict: "user_id" }
     );
+
+  if (error) throw error;
 }
 
 // =========================================================
 // UI 狀態
 // =========================================================
-function showLoggedOut(){
-  el("authCard").style.display="block";
-  el("appWrap").style.display="none";
-  el("userBar").style.display="none";
+function showLoggedOut() {
+  el("authCard").style.display = "block";
+  el("appWrap").style.display = "none";
+  el("userBar").style.display = "none";
 }
 
-async function showLoggedIn(session){
-  el("authCard").style.display="none";
-  el("appWrap").style.display="block";
-  el("userBar").style.display="flex";
+async function showLoggedIn(session) {
+  el("authCard").style.display = "none";
+  el("appWrap").style.display = "block";
+  el("userBar").style.display = "flex";
 
   const user = session.user;
   el("userNameText").textContent =
-    user.user_metadata?.username || user.email.split("@")[0];
+    user.user_metadata?.username || (user.email ? user.email.split("@")[0] : "user");
 
-  progress = await loadProgress();
+  try {
+    progress = await loadProgress();
+  } catch (e) {
+    console.error(e);
+    setAuthMsg(`讀取進度失敗：${e.message || e}`);
+    progress = normalizeProgress({});
+  }
+
   render();
 }
 
-async function refreshAuth(){
-  const { data:{session} } = await sb.auth.getSession();
+async function refreshAuth() {
+  const { data: { session }, error } = await sb.auth.getSession();
+  if (error) {
+    console.error(error);
+    showLoggedOut();
+    return;
+  }
   if (!session) showLoggedOut();
   else await showLoggedIn(session);
 }
 
 // =========================================================
-// Render（簡化，只留必要）
+// Render（先保留最小可用）
 // =========================================================
-function render(){
+function render() {
   el("targetDateText").textContent = toISODate(new Date());
-  el("rawData").value = JSON.stringify(progress,null,2);
+  el("rawData").value = JSON.stringify(progress, null, 2);
 }
 
 // =========================================================
 // 綁事件（唯一入口）
 // =========================================================
-function bindEvents(){
-
-  el("btnRegister").addEventListener("click", async ()=>{
+function bindEvents() {
+  el("btnRegister").addEventListener("click", async () => {
     setAuthMsg("");
     const username = el("username").value;
     const password = el("password").value;
     const email = usernameToEmail(username);
 
-    if (!email){ setAuthMsg("Username 格式錯誤"); return; }
-    if (!password || password.length<6){
+    if (!email) { setAuthMsg("Username 格式錯誤"); return; }
+    if (!password || password.length < 6) {
       setAuthMsg("密碼至少 6 碼"); return;
     }
 
     const { error } = await sb.auth.signUp({
-      email, password,
-      options:{ data:{ username } }
+      email,
+      password,
+      options: { data: { username } }
     });
 
-    if (error){ setAuthMsg(error.message); return; }
+    if (error) { setAuthMsg(error.message); return; }
     setAuthMsg("註冊成功，請直接登入");
   });
 
-  el("btnLogin").addEventListener("click", async ()=>{
+  el("btnLogin").addEventListener("click", async () => {
     setAuthMsg("");
     const username = el("username").value;
     const password = el("password").value;
     const email = usernameToEmail(username);
 
-    const { error } = await sb.auth.signInWithPassword({
-      email, password
-    });
+    if (!email) { setAuthMsg("Username 格式錯誤"); return; }
 
-    if (error){ setAuthMsg(error.message); return; }
+    const { error } = await sb.auth.signInWithPassword({ email, password });
+    if (error) { setAuthMsg(error.message); return; }
+
     await refreshAuth();
   });
 
-  el("btnLogout").addEventListener("click", async ()=>{
+  el("btnLogout").addEventListener("click", async () => {
     await sb.auth.signOut();
     showLoggedOut();
   });
@@ -179,10 +196,11 @@ function bindEvents(){
 // =========================================================
 // Boot
 // =========================================================
-document.addEventListener("DOMContentLoaded", async ()=>{
+document.addEventListener("DOMContentLoaded", async () => {
   bindEvents();
-  sb.auth.onAuthStateChange(()=>refreshAuth());
+
+  // 登入狀態變更就刷新 UI
+  sb.auth.onAuthStateChange(() => refreshAuth());
+
   await refreshAuth();
 });
-
-
