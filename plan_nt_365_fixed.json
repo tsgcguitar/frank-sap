@@ -1,0 +1,4022 @@
+{
+  "source": "New Testament 365 (daily, repeats after 260)",
+  "days": 365,
+  "total_chapters": 365,
+  "plan": [
+    {
+      "day": 1,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 25
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 26
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 27
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 28
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 31,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 32,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 33,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 34,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 35,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 36,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 37,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 38,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 39,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 40,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 41,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 42,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 43,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 44,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 45,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 46,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 47,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 48,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 49,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 50,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 51,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 52,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 53,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 54,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 55,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 56,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 57,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 58,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 59,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 60,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 61,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 62,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 63,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 64,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 65,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 66,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 67,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 68,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 69,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 70,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 71,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 72,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 73,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 74,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 75,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 76,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 77,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 78,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 79,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 80,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 81,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 82,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 83,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 84,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 85,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 86,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 87,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 88,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 89,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 90,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 91,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 92,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 93,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 94,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 95,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 96,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 97,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 98,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 99,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 100,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 101,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 102,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 103,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 104,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 105,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 106,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 107,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 108,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 109,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 110,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 111,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 112,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 113,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 114,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 25
+        }
+      ]
+    },
+    {
+      "day": 115,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 26
+        }
+      ]
+    },
+    {
+      "day": 116,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 27
+        }
+      ]
+    },
+    {
+      "day": 117,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 28
+        }
+      ]
+    },
+    {
+      "day": 118,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 119,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 120,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 121,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 122,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 123,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 124,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 125,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 126,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 127,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 128,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 129,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 130,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 131,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 132,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 133,
+      "readings": [
+        {
+          "book_id": "rom",
+          "book_zh": "羅馬書",
+          "book_en": "Romans",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 134,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 135,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 136,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 137,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 138,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 139,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 140,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 141,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 142,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 143,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 144,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 145,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 146,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 147,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 148,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 149,
+      "readings": [
+        {
+          "book_id": "1co",
+          "book_zh": "哥林多前書",
+          "book_en": "1 Corinthians",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 150,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 151,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 152,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 153,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 154,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 155,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 156,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 157,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 158,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 159,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 160,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 161,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 162,
+      "readings": [
+        {
+          "book_id": "2co",
+          "book_zh": "哥林多後書",
+          "book_en": "2 Corinthians",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 163,
+      "readings": [
+        {
+          "book_id": "gal",
+          "book_zh": "加拉太書",
+          "book_en": "Galatians",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 164,
+      "readings": [
+        {
+          "book_id": "gal",
+          "book_zh": "加拉太書",
+          "book_en": "Galatians",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 165,
+      "readings": [
+        {
+          "book_id": "gal",
+          "book_zh": "加拉太書",
+          "book_en": "Galatians",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 166,
+      "readings": [
+        {
+          "book_id": "gal",
+          "book_zh": "加拉太書",
+          "book_en": "Galatians",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 167,
+      "readings": [
+        {
+          "book_id": "gal",
+          "book_zh": "加拉太書",
+          "book_en": "Galatians",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 168,
+      "readings": [
+        {
+          "book_id": "gal",
+          "book_zh": "加拉太書",
+          "book_en": "Galatians",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 169,
+      "readings": [
+        {
+          "book_id": "eph",
+          "book_zh": "以弗所書",
+          "book_en": "Ephesians",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 170,
+      "readings": [
+        {
+          "book_id": "eph",
+          "book_zh": "以弗所書",
+          "book_en": "Ephesians",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 171,
+      "readings": [
+        {
+          "book_id": "eph",
+          "book_zh": "以弗所書",
+          "book_en": "Ephesians",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 172,
+      "readings": [
+        {
+          "book_id": "eph",
+          "book_zh": "以弗所書",
+          "book_en": "Ephesians",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 173,
+      "readings": [
+        {
+          "book_id": "eph",
+          "book_zh": "以弗所書",
+          "book_en": "Ephesians",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 174,
+      "readings": [
+        {
+          "book_id": "eph",
+          "book_zh": "以弗所書",
+          "book_en": "Ephesians",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 175,
+      "readings": [
+        {
+          "book_id": "php",
+          "book_zh": "腓立比書",
+          "book_en": "Philippians",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 176,
+      "readings": [
+        {
+          "book_id": "php",
+          "book_zh": "腓立比書",
+          "book_en": "Philippians",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 177,
+      "readings": [
+        {
+          "book_id": "php",
+          "book_zh": "腓立比書",
+          "book_en": "Philippians",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 178,
+      "readings": [
+        {
+          "book_id": "php",
+          "book_zh": "腓立比書",
+          "book_en": "Philippians",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 179,
+      "readings": [
+        {
+          "book_id": "col",
+          "book_zh": "歌羅西書",
+          "book_en": "Colossians",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 180,
+      "readings": [
+        {
+          "book_id": "col",
+          "book_zh": "歌羅西書",
+          "book_en": "Colossians",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 181,
+      "readings": [
+        {
+          "book_id": "col",
+          "book_zh": "歌羅西書",
+          "book_en": "Colossians",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 182,
+      "readings": [
+        {
+          "book_id": "col",
+          "book_zh": "歌羅西書",
+          "book_en": "Colossians",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 183,
+      "readings": [
+        {
+          "book_id": "1th",
+          "book_zh": "帖撒羅尼迦前書",
+          "book_en": "1 Thessalonians",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 184,
+      "readings": [
+        {
+          "book_id": "1th",
+          "book_zh": "帖撒羅尼迦前書",
+          "book_en": "1 Thessalonians",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 185,
+      "readings": [
+        {
+          "book_id": "1th",
+          "book_zh": "帖撒羅尼迦前書",
+          "book_en": "1 Thessalonians",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 186,
+      "readings": [
+        {
+          "book_id": "1th",
+          "book_zh": "帖撒羅尼迦前書",
+          "book_en": "1 Thessalonians",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 187,
+      "readings": [
+        {
+          "book_id": "1th",
+          "book_zh": "帖撒羅尼迦前書",
+          "book_en": "1 Thessalonians",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 188,
+      "readings": [
+        {
+          "book_id": "2th",
+          "book_zh": "帖撒羅尼迦後書",
+          "book_en": "2 Thessalonians",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 189,
+      "readings": [
+        {
+          "book_id": "2th",
+          "book_zh": "帖撒羅尼迦後書",
+          "book_en": "2 Thessalonians",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 190,
+      "readings": [
+        {
+          "book_id": "2th",
+          "book_zh": "帖撒羅尼迦後書",
+          "book_en": "2 Thessalonians",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 191,
+      "readings": [
+        {
+          "book_id": "1ti",
+          "book_zh": "提摩太前書",
+          "book_en": "1 Timothy",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 192,
+      "readings": [
+        {
+          "book_id": "1ti",
+          "book_zh": "提摩太前書",
+          "book_en": "1 Timothy",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 193,
+      "readings": [
+        {
+          "book_id": "1ti",
+          "book_zh": "提摩太前書",
+          "book_en": "1 Timothy",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 194,
+      "readings": [
+        {
+          "book_id": "1ti",
+          "book_zh": "提摩太前書",
+          "book_en": "1 Timothy",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 195,
+      "readings": [
+        {
+          "book_id": "1ti",
+          "book_zh": "提摩太前書",
+          "book_en": "1 Timothy",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 196,
+      "readings": [
+        {
+          "book_id": "1ti",
+          "book_zh": "提摩太前書",
+          "book_en": "1 Timothy",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 197,
+      "readings": [
+        {
+          "book_id": "2ti",
+          "book_zh": "提摩太後書",
+          "book_en": "2 Timothy",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 198,
+      "readings": [
+        {
+          "book_id": "2ti",
+          "book_zh": "提摩太後書",
+          "book_en": "2 Timothy",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 199,
+      "readings": [
+        {
+          "book_id": "2ti",
+          "book_zh": "提摩太後書",
+          "book_en": "2 Timothy",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 200,
+      "readings": [
+        {
+          "book_id": "2ti",
+          "book_zh": "提摩太後書",
+          "book_en": "2 Timothy",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 201,
+      "readings": [
+        {
+          "book_id": "tit",
+          "book_zh": "提多書",
+          "book_en": "Titus",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 202,
+      "readings": [
+        {
+          "book_id": "tit",
+          "book_zh": "提多書",
+          "book_en": "Titus",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 203,
+      "readings": [
+        {
+          "book_id": "tit",
+          "book_zh": "提多書",
+          "book_en": "Titus",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 204,
+      "readings": [
+        {
+          "book_id": "phm",
+          "book_zh": "腓利門書",
+          "book_en": "Philemon",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 205,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 206,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 207,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 208,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 209,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 210,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 211,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 212,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 213,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 214,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 215,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 216,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 217,
+      "readings": [
+        {
+          "book_id": "heb",
+          "book_zh": "希伯來書",
+          "book_en": "Hebrews",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 218,
+      "readings": [
+        {
+          "book_id": "jas",
+          "book_zh": "雅各書",
+          "book_en": "James",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 219,
+      "readings": [
+        {
+          "book_id": "jas",
+          "book_zh": "雅各書",
+          "book_en": "James",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 220,
+      "readings": [
+        {
+          "book_id": "jas",
+          "book_zh": "雅各書",
+          "book_en": "James",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 221,
+      "readings": [
+        {
+          "book_id": "jas",
+          "book_zh": "雅各書",
+          "book_en": "James",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 222,
+      "readings": [
+        {
+          "book_id": "jas",
+          "book_zh": "雅各書",
+          "book_en": "James",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 223,
+      "readings": [
+        {
+          "book_id": "1pe",
+          "book_zh": "彼得前書",
+          "book_en": "1 Peter",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 224,
+      "readings": [
+        {
+          "book_id": "1pe",
+          "book_zh": "彼得前書",
+          "book_en": "1 Peter",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 225,
+      "readings": [
+        {
+          "book_id": "1pe",
+          "book_zh": "彼得前書",
+          "book_en": "1 Peter",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 226,
+      "readings": [
+        {
+          "book_id": "1pe",
+          "book_zh": "彼得前書",
+          "book_en": "1 Peter",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 227,
+      "readings": [
+        {
+          "book_id": "1pe",
+          "book_zh": "彼得前書",
+          "book_en": "1 Peter",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 228,
+      "readings": [
+        {
+          "book_id": "2pe",
+          "book_zh": "彼得後書",
+          "book_en": "2 Peter",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 229,
+      "readings": [
+        {
+          "book_id": "2pe",
+          "book_zh": "彼得後書",
+          "book_en": "2 Peter",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 230,
+      "readings": [
+        {
+          "book_id": "2pe",
+          "book_zh": "彼得後書",
+          "book_en": "2 Peter",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 231,
+      "readings": [
+        {
+          "book_id": "1jn",
+          "book_zh": "約翰一書",
+          "book_en": "1 John",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 232,
+      "readings": [
+        {
+          "book_id": "1jn",
+          "book_zh": "約翰一書",
+          "book_en": "1 John",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 233,
+      "readings": [
+        {
+          "book_id": "1jn",
+          "book_zh": "約翰一書",
+          "book_en": "1 John",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 234,
+      "readings": [
+        {
+          "book_id": "1jn",
+          "book_zh": "約翰一書",
+          "book_en": "1 John",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 235,
+      "readings": [
+        {
+          "book_id": "1jn",
+          "book_zh": "約翰一書",
+          "book_en": "1 John",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 236,
+      "readings": [
+        {
+          "book_id": "2jn",
+          "book_zh": "約翰二書",
+          "book_en": "2 John",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 237,
+      "readings": [
+        {
+          "book_id": "3jn",
+          "book_zh": "約翰三書",
+          "book_en": "3 John",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 238,
+      "readings": [
+        {
+          "book_id": "jud",
+          "book_zh": "猶大書",
+          "book_en": "Jude",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 239,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 240,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 241,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 242,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 243,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 244,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 245,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 246,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 247,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 248,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 249,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 250,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 251,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 252,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 253,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 254,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 255,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 256,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 257,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 258,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 259,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 260,
+      "readings": [
+        {
+          "book_id": "rev",
+          "book_zh": "啟示錄",
+          "book_en": "Revelation",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 261,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 262,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 263,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 264,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 265,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 266,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 267,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 268,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 269,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 270,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 271,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 272,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 273,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 274,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 275,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 276,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 277,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 278,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 279,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 280,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 281,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 282,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 283,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 284,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 285,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 25
+        }
+      ]
+    },
+    {
+      "day": 286,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 26
+        }
+      ]
+    },
+    {
+      "day": 287,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 27
+        }
+      ]
+    },
+    {
+      "day": 288,
+      "readings": [
+        {
+          "book_id": "mat",
+          "book_zh": "馬太福音",
+          "book_en": "Matthew",
+          "chapter": 28
+        }
+      ]
+    },
+    {
+      "day": 289,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 290,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 291,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 292,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 293,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 294,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 295,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 296,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 297,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 298,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 299,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 300,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 301,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 302,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 303,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 304,
+      "readings": [
+        {
+          "book_id": "mrk",
+          "book_zh": "馬可福音",
+          "book_en": "Mark",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 305,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 306,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 307,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 308,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 309,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 310,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 311,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 312,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 313,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 314,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 315,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 316,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 317,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 318,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 319,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 320,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 321,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 322,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 323,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 324,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 325,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 326,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 327,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 328,
+      "readings": [
+        {
+          "book_id": "luk",
+          "book_zh": "路加福音",
+          "book_en": "Luke",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 329,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 330,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 331,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 332,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 333,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 334,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 335,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 336,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 337,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 338,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 339,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 340,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 341,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 342,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 343,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 344,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 345,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 346,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 347,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 348,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 349,
+      "readings": [
+        {
+          "book_id": "jhn",
+          "book_zh": "約翰福音",
+          "book_en": "John",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 350,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 351,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 352,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 353,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 354,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 355,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 356,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 357,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 358,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 359,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 360,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 361,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 362,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 363,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 364,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 365,
+      "readings": [
+        {
+          "book_id": "act",
+          "book_zh": "使徒行傳",
+          "book_en": "Acts",
+          "chapter": 16
+        }
+      ]
+    }
+  ]
+}
