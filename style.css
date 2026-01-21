@@ -261,3 +261,15 @@ h1, h2, .label {
   font-weight: 700;
 }
 
+/* 讀經章節標題（連結） */
+#readingList a {
+  color: #7dd3fc;              /* 淺藍色 */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#readingList a:hover {
+  color: #bae6fd;              /* hover 更亮 */
+  text-decoration: underline;
+}
+
