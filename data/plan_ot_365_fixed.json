@@ -1,0 +1,7406 @@
+{
+  "source": "Old Testament 365 (finish OT)",
+  "days": 365,
+  "total_chapters": 929,
+  "plan": [
+    {
+      "day": 1,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 1
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 2
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 4
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 5
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 7
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 8
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 10
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 11
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 13
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 14
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 16
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 17
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 19
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 20
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 22
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 23
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 25
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 26
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 27
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 28
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 29
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 30
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 31
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 32
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 33
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 34
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 35
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 36
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 37
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 38
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 39
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 40
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 41
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 42
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 43
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 44
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 45
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 46
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 47
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 48
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "readings": [
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 49
+        },
+        {
+          "book_id": "gen",
+          "book_zh": "創世記",
+          "book_en": "Genesis",
+          "chapter": 50
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 2
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 3
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 5
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 6
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 8
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 9
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 11
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 12
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 14
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 15
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 17
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 18
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 20
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 21
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 23
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 24
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 25
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 26
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 27
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 28
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 29
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 30
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 31
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 32
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 33
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 34
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 35
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 36
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 37
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "readings": [
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 38
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 39
+        },
+        {
+          "book_id": "exo",
+          "book_zh": "出埃及記",
+          "book_en": "Exodus",
+          "chapter": 40
+        }
+      ]
+    },
+    {
+      "day": 31,
+      "readings": [
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 1
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 2
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 32,
+      "readings": [
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 4
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 5
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 33,
+      "readings": [
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 7
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 8
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 34,
+      "readings": [
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 10
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 11
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 35,
+      "readings": [
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 13
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 14
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 36,
+      "readings": [
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 16
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 17
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 37,
+      "readings": [
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 19
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 20
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 38,
+      "readings": [
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 22
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 23
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 39,
+      "readings": [
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 25
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 26
+        },
+        {
+          "book_id": "lev",
+          "book_zh": "利未記",
+          "book_en": "Leviticus",
+          "chapter": 27
+        }
+      ]
+    },
+    {
+      "day": 40,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 1
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 2
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 41,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 4
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 5
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 42,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 7
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 8
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 43,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 10
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 11
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 44,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 13
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 14
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 45,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 16
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 17
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 46,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 19
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 20
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 47,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 22
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 23
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 48,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 25
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 26
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 27
+        }
+      ]
+    },
+    {
+      "day": 49,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 28
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 29
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 30
+        }
+      ]
+    },
+    {
+      "day": 50,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 31
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 32
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 33
+        }
+      ]
+    },
+    {
+      "day": 51,
+      "readings": [
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 34
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 35
+        },
+        {
+          "book_id": "num",
+          "book_zh": "民數記",
+          "book_en": "Numbers",
+          "chapter": 36
+        }
+      ]
+    },
+    {
+      "day": 52,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 1
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 2
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 53,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 4
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 5
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 54,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 7
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 8
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 55,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 10
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 11
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 56,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 13
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 14
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 57,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 16
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 17
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 58,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 19
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 20
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 59,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 22
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 23
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 60,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 25
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 26
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 27
+        }
+      ]
+    },
+    {
+      "day": 61,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 28
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 29
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 30
+        }
+      ]
+    },
+    {
+      "day": 62,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 31
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 32
+        },
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 33
+        }
+      ]
+    },
+    {
+      "day": 63,
+      "readings": [
+        {
+          "book_id": "deu",
+          "book_zh": "申命記",
+          "book_en": "Deuteronomy",
+          "chapter": 34
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 1
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 64,
+      "readings": [
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 3
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 4
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 65,
+      "readings": [
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 6
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 7
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 66,
+      "readings": [
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 9
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 10
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 67,
+      "readings": [
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 12
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 13
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 68,
+      "readings": [
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 15
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 16
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 69,
+      "readings": [
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 18
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 19
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 70,
+      "readings": [
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 21
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 22
+        },
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 71,
+      "readings": [
+        {
+          "book_id": "jos",
+          "book_zh": "約書亞記",
+          "book_en": "Joshua",
+          "chapter": 24
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 1
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 72,
+      "readings": [
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 3
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 4
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 73,
+      "readings": [
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 6
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 7
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 74,
+      "readings": [
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 9
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 10
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 75,
+      "readings": [
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 12
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 13
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 76,
+      "readings": [
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 15
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 16
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 77,
+      "readings": [
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 18
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 19
+        },
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 78,
+      "readings": [
+        {
+          "book_id": "jdg",
+          "book_zh": "士師記",
+          "book_en": "Judges",
+          "chapter": 21
+        },
+        {
+          "book_id": "rut",
+          "book_zh": "路得記",
+          "book_en": "Ruth",
+          "chapter": 1
+        },
+        {
+          "book_id": "rut",
+          "book_zh": "路得記",
+          "book_en": "Ruth",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 79,
+      "readings": [
+        {
+          "book_id": "rut",
+          "book_zh": "路得記",
+          "book_en": "Ruth",
+          "chapter": 3
+        },
+        {
+          "book_id": "rut",
+          "book_zh": "路得記",
+          "book_en": "Ruth",
+          "chapter": 4
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 80,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 2
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 3
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 81,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 5
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 6
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 82,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 8
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 9
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 83,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 11
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 12
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 84,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 14
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 15
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 85,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 17
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 18
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 86,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 20
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 21
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 87,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 23
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 24
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 25
+        }
+      ]
+    },
+    {
+      "day": 88,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 26
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 27
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 28
+        }
+      ]
+    },
+    {
+      "day": 89,
+      "readings": [
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 29
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 30
+        },
+        {
+          "book_id": "1sa",
+          "book_zh": "撒母耳記上",
+          "book_en": "1 Samuel",
+          "chapter": 31
+        }
+      ]
+    },
+    {
+      "day": 90,
+      "readings": [
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 1
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 2
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 91,
+      "readings": [
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 4
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 5
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 92,
+      "readings": [
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 7
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 8
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 93,
+      "readings": [
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 10
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 11
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 94,
+      "readings": [
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 13
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 14
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 95,
+      "readings": [
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 16
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 17
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 96,
+      "readings": [
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 19
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 20
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 97,
+      "readings": [
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 22
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 23
+        },
+        {
+          "book_id": "2sa",
+          "book_zh": "撒母耳記下",
+          "book_en": "2 Samuel",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 98,
+      "readings": [
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 1
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 2
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 99,
+      "readings": [
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 4
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 5
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 100,
+      "readings": [
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 7
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 8
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 101,
+      "readings": [
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 10
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 11
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 102,
+      "readings": [
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 13
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 14
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 103,
+      "readings": [
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 16
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 17
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 104,
+      "readings": [
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 19
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 20
+        },
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 105,
+      "readings": [
+        {
+          "book_id": "1ki",
+          "book_zh": "列王紀上",
+          "book_en": "1 Kings",
+          "chapter": 22
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 1
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 106,
+      "readings": [
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 3
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 4
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 107,
+      "readings": [
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 6
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 7
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 108,
+      "readings": [
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 9
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 10
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 109,
+      "readings": [
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 12
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 13
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 110,
+      "readings": [
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 15
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 16
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 111,
+      "readings": [
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 18
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 19
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 112,
+      "readings": [
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 21
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 22
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 113,
+      "readings": [
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 24
+        },
+        {
+          "book_id": "2ki",
+          "book_zh": "列王紀下",
+          "book_en": "2 Kings",
+          "chapter": 25
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 114,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 2
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 3
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 115,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 5
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 6
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 116,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 8
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 9
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 117,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 11
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 12
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 118,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 14
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 15
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 119,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 17
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 18
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 120,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 20
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 21
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 121,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 23
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 24
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 25
+        }
+      ]
+    },
+    {
+      "day": 122,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 26
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 27
+        },
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 28
+        }
+      ]
+    },
+    {
+      "day": 123,
+      "readings": [
+        {
+          "book_id": "1ch",
+          "book_zh": "歷代志上",
+          "book_en": "1 Chronicles",
+          "chapter": 29
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 1
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 124,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 3
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 4
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 125,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 6
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 7
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 126,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 9
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 10
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 127,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 12
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 13
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 128,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 15
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 16
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 129,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 18
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 19
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 130,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 21
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 22
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 131,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 24
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 25
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 26
+        }
+      ]
+    },
+    {
+      "day": 132,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 27
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 28
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 29
+        }
+      ]
+    },
+    {
+      "day": 133,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 30
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 31
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 32
+        }
+      ]
+    },
+    {
+      "day": 134,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 33
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 34
+        },
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 35
+        }
+      ]
+    },
+    {
+      "day": 135,
+      "readings": [
+        {
+          "book_id": "2ch",
+          "book_zh": "歷代志下",
+          "book_en": "2 Chronicles",
+          "chapter": 36
+        },
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 1
+        },
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 136,
+      "readings": [
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 3
+        },
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 4
+        },
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 137,
+      "readings": [
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 6
+        },
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 7
+        },
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 138,
+      "readings": [
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 9
+        },
+        {
+          "book_id": "ezr",
+          "book_zh": "以斯拉記",
+          "book_en": "Ezra",
+          "chapter": 10
+        },
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 139,
+      "readings": [
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 2
+        },
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 3
+        },
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 140,
+      "readings": [
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 5
+        },
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 6
+        },
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 141,
+      "readings": [
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 8
+        },
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 9
+        },
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 142,
+      "readings": [
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 11
+        },
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 12
+        },
+        {
+          "book_id": "neh",
+          "book_zh": "尼希米記",
+          "book_en": "Nehemiah",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 143,
+      "readings": [
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 1
+        },
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 2
+        },
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 144,
+      "readings": [
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 4
+        },
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 5
+        },
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 145,
+      "readings": [
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 7
+        },
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 8
+        },
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 146,
+      "readings": [
+        {
+          "book_id": "est",
+          "book_zh": "以斯帖記",
+          "book_en": "Esther",
+          "chapter": 10
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 1
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 147,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 3
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 4
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 148,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 6
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 7
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 149,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 9
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 10
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 150,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 12
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 13
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 151,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 15
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 16
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 152,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 18
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 19
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 153,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 21
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 22
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 154,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 24
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 25
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 26
+        }
+      ]
+    },
+    {
+      "day": 155,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 27
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 28
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 29
+        }
+      ]
+    },
+    {
+      "day": 156,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 30
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 31
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 32
+        }
+      ]
+    },
+    {
+      "day": 157,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 33
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 34
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 35
+        }
+      ]
+    },
+    {
+      "day": 158,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 36
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 37
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 38
+        }
+      ]
+    },
+    {
+      "day": 159,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 39
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 40
+        },
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 41
+        }
+      ]
+    },
+    {
+      "day": 160,
+      "readings": [
+        {
+          "book_id": "job",
+          "book_zh": "約伯記",
+          "book_en": "Job",
+          "chapter": 42
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 1
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 161,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 3
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 4
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 162,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 6
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 7
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 163,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 9
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 10
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 164,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 12
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 13
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 165,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 15
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 16
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 166,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 18
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 19
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 167,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 21
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 22
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 168,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 24
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 25
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 26
+        }
+      ]
+    },
+    {
+      "day": 169,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 27
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 28
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 29
+        }
+      ]
+    },
+    {
+      "day": 170,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 30
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 31
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 32
+        }
+      ]
+    },
+    {
+      "day": 171,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 33
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 34
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 35
+        }
+      ]
+    },
+    {
+      "day": 172,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 36
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 37
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 38
+        }
+      ]
+    },
+    {
+      "day": 173,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 39
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 40
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 41
+        }
+      ]
+    },
+    {
+      "day": 174,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 42
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 43
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 44
+        }
+      ]
+    },
+    {
+      "day": 175,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 45
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 46
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 47
+        }
+      ]
+    },
+    {
+      "day": 176,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 48
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 49
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 50
+        }
+      ]
+    },
+    {
+      "day": 177,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 51
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 52
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 53
+        }
+      ]
+    },
+    {
+      "day": 178,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 54
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 55
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 56
+        }
+      ]
+    },
+    {
+      "day": 179,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 57
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 58
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 59
+        }
+      ]
+    },
+    {
+      "day": 180,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 60
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 61
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 62
+        }
+      ]
+    },
+    {
+      "day": 181,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 63
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 64
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 65
+        }
+      ]
+    },
+    {
+      "day": 182,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 66
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 67
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 68
+        }
+      ]
+    },
+    {
+      "day": 183,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 69
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 70
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 71
+        }
+      ]
+    },
+    {
+      "day": 184,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 72
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 73
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 74
+        }
+      ]
+    },
+    {
+      "day": 185,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 75
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 76
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 77
+        }
+      ]
+    },
+    {
+      "day": 186,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 78
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 79
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 80
+        }
+      ]
+    },
+    {
+      "day": 187,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 81
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 82
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 83
+        }
+      ]
+    },
+    {
+      "day": 188,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 84
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 85
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 86
+        }
+      ]
+    },
+    {
+      "day": 189,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 87
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 88
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 89
+        }
+      ]
+    },
+    {
+      "day": 190,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 90
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 91
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 92
+        }
+      ]
+    },
+    {
+      "day": 191,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 93
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 94
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 95
+        }
+      ]
+    },
+    {
+      "day": 192,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 96
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 97
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 98
+        }
+      ]
+    },
+    {
+      "day": 193,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 99
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 100
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 101
+        }
+      ]
+    },
+    {
+      "day": 194,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 102
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 103
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 104
+        }
+      ]
+    },
+    {
+      "day": 195,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 105
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 106
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 107
+        }
+      ]
+    },
+    {
+      "day": 196,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 108
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 109
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 110
+        }
+      ]
+    },
+    {
+      "day": 197,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 111
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 112
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 113
+        }
+      ]
+    },
+    {
+      "day": 198,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 114
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 115
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 116
+        }
+      ]
+    },
+    {
+      "day": 199,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 117
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 118
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 119
+        }
+      ]
+    },
+    {
+      "day": 200,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 120
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 121
+        }
+      ]
+    },
+    {
+      "day": 201,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 122
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 123
+        }
+      ]
+    },
+    {
+      "day": 202,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 124
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 125
+        }
+      ]
+    },
+    {
+      "day": 203,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 126
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 127
+        }
+      ]
+    },
+    {
+      "day": 204,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 128
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 129
+        }
+      ]
+    },
+    {
+      "day": 205,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 130
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 131
+        }
+      ]
+    },
+    {
+      "day": 206,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 132
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 133
+        }
+      ]
+    },
+    {
+      "day": 207,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 134
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 135
+        }
+      ]
+    },
+    {
+      "day": 208,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 136
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 137
+        }
+      ]
+    },
+    {
+      "day": 209,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 138
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 139
+        }
+      ]
+    },
+    {
+      "day": 210,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 140
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 141
+        }
+      ]
+    },
+    {
+      "day": 211,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 142
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 143
+        }
+      ]
+    },
+    {
+      "day": 212,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 144
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 145
+        }
+      ]
+    },
+    {
+      "day": 213,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 146
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 147
+        }
+      ]
+    },
+    {
+      "day": 214,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 148
+        },
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 149
+        }
+      ]
+    },
+    {
+      "day": 215,
+      "readings": [
+        {
+          "book_id": "psa",
+          "book_zh": "詩篇",
+          "book_en": "Psalms",
+          "chapter": 150
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 216,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 2
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 217,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 4
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 218,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 6
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 219,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 8
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 220,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 10
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 221,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 12
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 222,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 14
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 223,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 16
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 224,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 18
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 225,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 20
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 226,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 22
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 227,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 24
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 25
+        }
+      ]
+    },
+    {
+      "day": 228,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 26
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 27
+        }
+      ]
+    },
+    {
+      "day": 229,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 28
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 29
+        }
+      ]
+    },
+    {
+      "day": 230,
+      "readings": [
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 30
+        },
+        {
+          "book_id": "pro",
+          "book_zh": "箴言",
+          "book_en": "Proverbs",
+          "chapter": 31
+        }
+      ]
+    },
+    {
+      "day": 231,
+      "readings": [
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 1
+        },
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 232,
+      "readings": [
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 3
+        },
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 233,
+      "readings": [
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 5
+        },
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 234,
+      "readings": [
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 7
+        },
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 235,
+      "readings": [
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 9
+        },
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 236,
+      "readings": [
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 11
+        },
+        {
+          "book_id": "ecc",
+          "book_zh": "傳道書",
+          "book_en": "Ecclesiastes",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 237,
+      "readings": [
+        {
+          "book_id": "sng",
+          "book_zh": "雅歌",
+          "book_en": "Song of Songs",
+          "chapter": 1
+        },
+        {
+          "book_id": "sng",
+          "book_zh": "雅歌",
+          "book_en": "Song of Songs",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 238,
+      "readings": [
+        {
+          "book_id": "sng",
+          "book_zh": "雅歌",
+          "book_en": "Song of Songs",
+          "chapter": 3
+        },
+        {
+          "book_id": "sng",
+          "book_zh": "雅歌",
+          "book_en": "Song of Songs",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 239,
+      "readings": [
+        {
+          "book_id": "sng",
+          "book_zh": "雅歌",
+          "book_en": "Song of Songs",
+          "chapter": 5
+        },
+        {
+          "book_id": "sng",
+          "book_zh": "雅歌",
+          "book_en": "Song of Songs",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 240,
+      "readings": [
+        {
+          "book_id": "sng",
+          "book_zh": "雅歌",
+          "book_en": "Song of Songs",
+          "chapter": 7
+        },
+        {
+          "book_id": "sng",
+          "book_zh": "雅歌",
+          "book_en": "Song of Songs",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 241,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 1
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 242,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 3
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 243,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 5
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 244,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 7
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 245,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 9
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 246,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 11
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 247,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 13
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 248,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 15
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 249,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 17
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 250,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 19
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 251,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 21
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 252,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 23
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 253,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 25
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 26
+        }
+      ]
+    },
+    {
+      "day": 254,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 27
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 28
+        }
+      ]
+    },
+    {
+      "day": 255,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 29
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 30
+        }
+      ]
+    },
+    {
+      "day": 256,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 31
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 32
+        }
+      ]
+    },
+    {
+      "day": 257,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 33
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 34
+        }
+      ]
+    },
+    {
+      "day": 258,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 35
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 36
+        }
+      ]
+    },
+    {
+      "day": 259,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 37
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 38
+        }
+      ]
+    },
+    {
+      "day": 260,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 39
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 40
+        }
+      ]
+    },
+    {
+      "day": 261,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 41
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 42
+        }
+      ]
+    },
+    {
+      "day": 262,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 43
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 44
+        }
+      ]
+    },
+    {
+      "day": 263,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 45
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 46
+        }
+      ]
+    },
+    {
+      "day": 264,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 47
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 48
+        }
+      ]
+    },
+    {
+      "day": 265,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 49
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 50
+        }
+      ]
+    },
+    {
+      "day": 266,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 51
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 52
+        }
+      ]
+    },
+    {
+      "day": 267,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 53
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 54
+        }
+      ]
+    },
+    {
+      "day": 268,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 55
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 56
+        }
+      ]
+    },
+    {
+      "day": 269,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 57
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 58
+        }
+      ]
+    },
+    {
+      "day": 270,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 59
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 60
+        }
+      ]
+    },
+    {
+      "day": 271,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 61
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 62
+        }
+      ]
+    },
+    {
+      "day": 272,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 63
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 64
+        }
+      ]
+    },
+    {
+      "day": 273,
+      "readings": [
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 65
+        },
+        {
+          "book_id": "isa",
+          "book_zh": "以賽亞書",
+          "book_en": "Isaiah",
+          "chapter": 66
+        }
+      ]
+    },
+    {
+      "day": 274,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 1
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 275,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 3
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 276,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 5
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 277,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 7
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 278,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 9
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 279,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 11
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 280,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 13
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 281,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 15
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 16
+        }
+      ]
+    },
+    {
+      "day": 282,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 17
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 18
+        }
+      ]
+    },
+    {
+      "day": 283,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 19
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 20
+        }
+      ]
+    },
+    {
+      "day": 284,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 21
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 22
+        }
+      ]
+    },
+    {
+      "day": 285,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 23
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 24
+        }
+      ]
+    },
+    {
+      "day": 286,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 25
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 26
+        }
+      ]
+    },
+    {
+      "day": 287,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 27
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 28
+        }
+      ]
+    },
+    {
+      "day": 288,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 29
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 30
+        }
+      ]
+    },
+    {
+      "day": 289,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 31
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 32
+        }
+      ]
+    },
+    {
+      "day": 290,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 33
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 34
+        }
+      ]
+    },
+    {
+      "day": 291,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 35
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 36
+        }
+      ]
+    },
+    {
+      "day": 292,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 37
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 38
+        }
+      ]
+    },
+    {
+      "day": 293,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 39
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 40
+        }
+      ]
+    },
+    {
+      "day": 294,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 41
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 42
+        }
+      ]
+    },
+    {
+      "day": 295,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 43
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 44
+        }
+      ]
+    },
+    {
+      "day": 296,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 45
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 46
+        }
+      ]
+    },
+    {
+      "day": 297,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 47
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 48
+        }
+      ]
+    },
+    {
+      "day": 298,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 49
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 50
+        }
+      ]
+    },
+    {
+      "day": 299,
+      "readings": [
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 51
+        },
+        {
+          "book_id": "jer",
+          "book_zh": "耶利米書",
+          "book_en": "Jeremiah",
+          "chapter": 52
+        }
+      ]
+    },
+    {
+      "day": 300,
+      "readings": [
+        {
+          "book_id": "lam",
+          "book_zh": "耶利米哀歌",
+          "book_en": "Lamentations",
+          "chapter": 1
+        },
+        {
+          "book_id": "lam",
+          "book_zh": "耶利米哀歌",
+          "book_en": "Lamentations",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 301,
+      "readings": [
+        {
+          "book_id": "lam",
+          "book_zh": "耶利米哀歌",
+          "book_en": "Lamentations",
+          "chapter": 3
+        },
+        {
+          "book_id": "lam",
+          "book_zh": "耶利米哀歌",
+          "book_en": "Lamentations",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 302,
+      "readings": [
+        {
+          "book_id": "lam",
+          "book_zh": "耶利米哀歌",
+          "book_en": "Lamentations",
+          "chapter": 5
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 303,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 2
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 304,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 4
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 305,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 6
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 306,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 8
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 307,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 10
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 308,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 12
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 309,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 14
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 15
+        }
+      ]
+    },
+    {
+      "day": 310,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 16
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 17
+        }
+      ]
+    },
+    {
+      "day": 311,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 18
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 19
+        }
+      ]
+    },
+    {
+      "day": 312,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 20
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 21
+        }
+      ]
+    },
+    {
+      "day": 313,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 22
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 23
+        }
+      ]
+    },
+    {
+      "day": 314,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 24
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 25
+        }
+      ]
+    },
+    {
+      "day": 315,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 26
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 27
+        }
+      ]
+    },
+    {
+      "day": 316,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 28
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 29
+        }
+      ]
+    },
+    {
+      "day": 317,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 30
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 31
+        }
+      ]
+    },
+    {
+      "day": 318,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 32
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 33
+        }
+      ]
+    },
+    {
+      "day": 319,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 34
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 35
+        }
+      ]
+    },
+    {
+      "day": 320,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 36
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 37
+        }
+      ]
+    },
+    {
+      "day": 321,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 38
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 39
+        }
+      ]
+    },
+    {
+      "day": 322,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 40
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 41
+        }
+      ]
+    },
+    {
+      "day": 323,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 42
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 43
+        }
+      ]
+    },
+    {
+      "day": 324,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 44
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 45
+        }
+      ]
+    },
+    {
+      "day": 325,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 46
+        },
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 47
+        }
+      ]
+    },
+    {
+      "day": 326,
+      "readings": [
+        {
+          "book_id": "ezk",
+          "book_zh": "以西結書",
+          "book_en": "Ezekiel",
+          "chapter": 48
+        },
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 327,
+      "readings": [
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 2
+        },
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 328,
+      "readings": [
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 4
+        },
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 329,
+      "readings": [
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 6
+        },
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 330,
+      "readings": [
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 8
+        },
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 331,
+      "readings": [
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 10
+        },
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 332,
+      "readings": [
+        {
+          "book_id": "dan",
+          "book_zh": "但以理書",
+          "book_en": "Daniel",
+          "chapter": 12
+        },
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 333,
+      "readings": [
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 2
+        },
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 334,
+      "readings": [
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 4
+        },
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "day": 335,
+      "readings": [
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 6
+        },
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "day": 336,
+      "readings": [
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 8
+        },
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "day": 337,
+      "readings": [
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 10
+        },
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "day": 338,
+      "readings": [
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 12
+        },
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "day": 339,
+      "readings": [
+        {
+          "book_id": "hos",
+          "book_zh": "何西阿書",
+          "book_en": "Hosea",
+          "chapter": 14
+        },
+        {
+          "book_id": "jol",
+          "book_zh": "約珥書",
+          "book_en": "Joel",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 340,
+      "readings": [
+        {
+          "book_id": "jol",
+          "book_zh": "約珥書",
+          "book_en": "Joel",
+          "chapter": 2
+        },
+        {
+          "book_id": "jol",
+          "book_zh": "約珥書",
+          "book_en": "Joel",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 341,
+      "readings": [
+        {
+          "book_id": "amo",
+          "book_zh": "阿摩司書",
+          "book_en": "Amos",
+          "chapter": 1
+        },
+        {
+          "book_id": "amo",
+          "book_zh": "阿摩司書",
+          "book_en": "Amos",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 342,
+      "readings": [
+        {
+          "book_id": "amo",
+          "book_zh": "阿摩司書",
+          "book_en": "Amos",
+          "chapter": 3
+        },
+        {
+          "book_id": "amo",
+          "book_zh": "阿摩司書",
+          "book_en": "Amos",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 343,
+      "readings": [
+        {
+          "book_id": "amo",
+          "book_zh": "阿摩司書",
+          "book_en": "Amos",
+          "chapter": 5
+        },
+        {
+          "book_id": "amo",
+          "book_zh": "阿摩司書",
+          "book_en": "Amos",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 344,
+      "readings": [
+        {
+          "book_id": "amo",
+          "book_zh": "阿摩司書",
+          "book_en": "Amos",
+          "chapter": 7
+        },
+        {
+          "book_id": "amo",
+          "book_zh": "阿摩司書",
+          "book_en": "Amos",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 345,
+      "readings": [
+        {
+          "book_id": "amo",
+          "book_zh": "阿摩司書",
+          "book_en": "Amos",
+          "chapter": 9
+        },
+        {
+          "book_id": "oba",
+          "book_zh": "俄巴底亞書",
+          "book_en": "Obadiah",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 346,
+      "readings": [
+        {
+          "book_id": "jon",
+          "book_zh": "約拿書",
+          "book_en": "Jonah",
+          "chapter": 1
+        },
+        {
+          "book_id": "jon",
+          "book_zh": "約拿書",
+          "book_en": "Jonah",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 347,
+      "readings": [
+        {
+          "book_id": "jon",
+          "book_zh": "約拿書",
+          "book_en": "Jonah",
+          "chapter": 3
+        },
+        {
+          "book_id": "jon",
+          "book_zh": "約拿書",
+          "book_en": "Jonah",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 348,
+      "readings": [
+        {
+          "book_id": "mic",
+          "book_zh": "彌迦書",
+          "book_en": "Micah",
+          "chapter": 1
+        },
+        {
+          "book_id": "mic",
+          "book_zh": "彌迦書",
+          "book_en": "Micah",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 349,
+      "readings": [
+        {
+          "book_id": "mic",
+          "book_zh": "彌迦書",
+          "book_en": "Micah",
+          "chapter": 3
+        },
+        {
+          "book_id": "mic",
+          "book_zh": "彌迦書",
+          "book_en": "Micah",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 350,
+      "readings": [
+        {
+          "book_id": "mic",
+          "book_zh": "彌迦書",
+          "book_en": "Micah",
+          "chapter": 5
+        },
+        {
+          "book_id": "mic",
+          "book_zh": "彌迦書",
+          "book_en": "Micah",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 351,
+      "readings": [
+        {
+          "book_id": "mic",
+          "book_zh": "彌迦書",
+          "book_en": "Micah",
+          "chapter": 7
+        },
+        {
+          "book_id": "nam",
+          "book_zh": "那鴻書",
+          "book_en": "Nahum",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 352,
+      "readings": [
+        {
+          "book_id": "nam",
+          "book_zh": "那鴻書",
+          "book_en": "Nahum",
+          "chapter": 2
+        },
+        {
+          "book_id": "nam",
+          "book_zh": "那鴻書",
+          "book_en": "Nahum",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 353,
+      "readings": [
+        {
+          "book_id": "hab",
+          "book_zh": "哈巴谷書",
+          "book_en": "Habakkuk",
+          "chapter": 1
+        },
+        {
+          "book_id": "hab",
+          "book_zh": "哈巴谷書",
+          "book_en": "Habakkuk",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 354,
+      "readings": [
+        {
+          "book_id": "hab",
+          "book_zh": "哈巴谷書",
+          "book_en": "Habakkuk",
+          "chapter": 3
+        },
+        {
+          "book_id": "zep",
+          "book_zh": "西番雅書",
+          "book_en": "Zephaniah",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "day": 355,
+      "readings": [
+        {
+          "book_id": "zep",
+          "book_zh": "西番雅書",
+          "book_en": "Zephaniah",
+          "chapter": 2
+        },
+        {
+          "book_id": "zep",
+          "book_zh": "西番雅書",
+          "book_en": "Zephaniah",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "day": 356,
+      "readings": [
+        {
+          "book_id": "hag",
+          "book_zh": "哈該書",
+          "book_en": "Haggai",
+          "chapter": 1
+        },
+        {
+          "book_id": "hag",
+          "book_zh": "哈該書",
+          "book_en": "Haggai",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 357,
+      "readings": [
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 1
+        },
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 358,
+      "readings": [
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 3
+        },
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "day": 359,
+      "readings": [
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 5
+        },
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "day": 360,
+      "readings": [
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 7
+        },
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "day": 361,
+      "readings": [
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 9
+        },
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "day": 362,
+      "readings": [
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 11
+        },
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "day": 363,
+      "readings": [
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 13
+        },
+        {
+          "book_id": "zec",
+          "book_zh": "撒迦利亞書",
+          "book_en": "Zechariah",
+          "chapter": 14
+        }
+      ]
+    },
+    {
+      "day": 364,
+      "readings": [
+        {
+          "book_id": "mal",
+          "book_zh": "瑪拉基書",
+          "book_en": "Malachi",
+          "chapter": 1
+        },
+        {
+          "book_id": "mal",
+          "book_zh": "瑪拉基書",
+          "book_en": "Malachi",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "day": 365,
+      "readings": [
+        {
+          "book_id": "mal",
+          "book_zh": "瑪拉基書",
+          "book_en": "Malachi",
+          "chapter": 3
+        },
+        {
+          "book_id": "mal",
+          "book_zh": "瑪拉基書",
+          "book_en": "Malachi",
+          "chapter": 4
+        }
+      ]
+    }
+  ]
+}
