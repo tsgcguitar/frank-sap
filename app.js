@@ -4,7 +4,9 @@ console.log("app.js loaded");
 // 設定
 // =====================
 const PLAN_MAP = {
-  bible_365: "data/plan_full_365.json",         // 你原本那份（如果還要留）
+  // ✅ 改回你原本那份，避免 404
+  bible_365: "data/reading_plan_365.json",
+
   ot_365: "data/plan_ot_365_fixed.json",
   nt_365: "data/plan_nt_365_fixed.json",
   gospels_365: "data/plan_gospels_365_fixed.json",
@@ -13,11 +15,23 @@ const PLAN_MAP = {
   chrono_365: "data/plan_chrono_365_fixed.json",
 };
 
+const PLAN_LABELS = {
+  bible_365: "全本一年（365）",
+  ot_365: "舊約一年（365）",
+  nt_365: "新約一年（365）",
+  gospels_365: "四福音一年（365）",
+  mix_ot_nt_365: "每日混讀（舊+新）（365）",
+  psa_pro_365: "詩篇+箴言（靈修）（365）",
+  chrono_365: "按時間順序（365）",
+};
+
 const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
 
 const USERNAME_EMAIL_DOMAIN = "bible.local";
 const TOTAL_DAYS = 365;
+
+const STORAGE_PLANKEY = "bible_app_plan_key_v2"; // ✅ localStorage key
 
 // =====================
 // Supabase client（只建立一次）
@@ -63,6 +77,16 @@ function clamp(n, min, max) {
 }
 
 // =====================
+// ✅ PlanKey localStorage helpers
+// =====================
+function getStoredPlanKey() {
+  try { return localStorage.getItem(STORAGE_PLANKEY) || ""; } catch { return ""; }
+}
+function setStoredPlanKey(k) {
+  try { localStorage.setItem(STORAGE_PLANKEY, String(k || "")); } catch {}
+}
+
+// =====================
 // Bible.com 外連（和合本）
 // =====================
 const BIBLE_COM_BASE = "https://www.bible.com/bible";
@@ -95,7 +119,6 @@ function makeBibleComChapterUrl(book_id, chapter) {
 
 // =====================
 // Reading plan
-// JSON: { plan: [ { day:1, readings:[{book_zh,chapter,book_id,...}, ...] }, ... ] }
 // =====================
 let readingPlan = [];
 
@@ -104,7 +127,7 @@ async function loadReadingPlanByKey(planKey) {
   if (!url) throw new Error(`未知的計畫 planKey: ${planKey}`);
 
   const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) throw new Error(`讀經計畫載入失敗：${res.status}`);
+  if (!res.ok) throw new Error(`讀經計畫載入失敗：${res.status}（${url}）`);
 
   const data = await res.json();
   if (!Array.isArray(data?.plan)) {
@@ -113,17 +136,17 @@ async function loadReadingPlanByKey(planKey) {
   readingPlan = data.plan;
 }
 
-
 // =====================
 // Progress (DB)
 // =====================
-let progress = { startDate: "", completed: {} }; // completed: { "YYYY-MM-DD": true }
+let progress = { startDate: "", completed: {}, planKey: "" };
 let warnedDb = false;
 
 function normalizeProgress(p) {
   return {
     startDate: p?.startDate || "",
-    completed: p?.completed || {}
+    completed: p?.completed || {},
+    planKey: p?.planKey || "",
   };
 }
 
@@ -158,7 +181,7 @@ async function loadProgressSafe() {
       setAuthMsg("⚠️ 進度資料庫讀取失敗（可使用，但無法同步進度）");
       alert("loadProgress failed: " + (e?.message || JSON.stringify(e)));
     }
-    return { startDate: "", completed: {} };
+    return normalizeProgress({});
   }
 }
 
@@ -185,28 +208,20 @@ async function saveProgressSafe() {
 // App state
 // =====================
 let viewDate = new Date();
-let _planInitialized = false;
-
-let calMonth = new Date(); // ✅ 月曆顯示月份
+let calMonth = new Date();
+let _planInitialized = false; // ✅ 防止登入後一直 prompt
 
 function getStartDate() {
-  if (!progress.startDate) {
-    progress.startDate = toISODate(new Date());
-  }
+  if (!progress.startDate) progress.startDate = toISODate(new Date());
   return parseISODate(progress.startDate);
 }
 
 function dayIndexFromStart(dateObj) {
   const start = getStartDate();
-
-  const a = new Date(dateObj);
-  a.setHours(0, 0, 0, 0);
-
-  const b = new Date(start);
-  b.setHours(0, 0, 0, 0);
-
+  const a = new Date(dateObj); a.setHours(0, 0, 0, 0);
+  const b = new Date(start);   b.setHours(0, 0, 0, 0);
   const ms = a.getTime() - b.getTime();
-  return Math.floor(ms / 86400000) + 1; // Day 1 start
+  return Math.floor(ms / 86400000) + 1;
 }
 
 function getPlanForDayIndex(dayIndex) {
@@ -225,24 +240,96 @@ function setCompleted(isoDate, done) {
   else delete progress.completed[isoDate];
 }
 
-// ✅ 微調：總天數固定 365 + 完成率用 completed/365
+// ✅ 完成率固定用 365
 function computeStats() {
-  const keys = Object.keys(progress.completed || {});
-  const completedDays = keys.length;
+  const completedDays = Object.keys(progress.completed || {}).length;
+  const rateFloat = TOTAL_DAYS ? (completedDays / TOTAL_DAYS) * 100 : 0;
+  return { totalDays: TOTAL_DAYS, completedDays, rateFloat };
+}
 
-  const totalDays = TOTAL_DAYS;
-  const rateFloat = totalDays ? (completedDays / totalDays) * 100 : 0;
+// =====================
+// Plan Switcher UI（右上角顯示 + 切換）
+// =====================
+function ensurePlanSwitcherUI() {
+  const bar = el("userBar");
+  if (!bar) return;
 
-  return { totalDays, completedDays, rateFloat };
+  // 已經建好就不重複建
+  if (el("planBadge") && el("btnChangePlan")) return;
+
+  const badge = document.createElement("span");
+  badge.id = "planBadge";
+  badge.className = "pill";
+  badge.style.marginLeft = "8px";
+  badge.textContent = "計畫：-";
+
+  const btn = document.createElement("button");
+  btn.id = "btnChangePlan";
+  btn.className = "btn ghost";
+  btn.textContent = "切換計畫";
+
+  btn.addEventListener("click", async () => {
+    const next = prompt(`切換讀經計畫（輸入數字）：
+1 全本一年（365）
+2 舊約一年（365）
+3 新約一年（365）
+4 四福音一年（365）
+5 每日混讀（舊+新）（365）
+6 詩篇+箴言（靈修）（365）
+7 按時間順序（365）
+`, "1");
+
+    const mapNumToKey = {
+      "1": "bible_365",
+      "2": "ot_365",
+      "3": "nt_365",
+      "4": "gospels_365",
+      "5": "mix_ot_nt_365",
+      "6": "psa_pro_365",
+      "7": "chrono_365",
+    };
+
+    const newKey = mapNumToKey[String(next || "")];
+    if (!newKey) return;
+
+    if (newKey === progress.planKey) return;
+
+    const ok = confirm("切換計畫會「清空目前打卡進度」並可重新設定起始日。\n\n確定要切換嗎？");
+    if (!ok) return;
+
+    progress.planKey = newKey;
+    setStoredPlanKey(newKey);
+
+    // ✅ 清空進度避免混
+    progress.completed = {};
+    progress.startDate = toISODate(new Date());
+    await saveProgressSafe();
+
+    await loadReadingPlanByKey(progress.planKey);
+    updatePlanSwitcherUI();
+
+    viewDate = new Date();
+    calMonth = new Date();
+    render();
+  });
+
+  // 插在登出按鈕前面（右上角）
+  bar.appendChild(badge);
+  bar.appendChild(btn);
+}
+
+function updatePlanSwitcherUI() {
+  const badge = el("planBadge");
+  if (!badge) return;
+  const key = progress.planKey || "";
+  badge.textContent = `計畫：${PLAN_LABELS[key] || key || "-"}`;
 }
 
 // =====================
 // Calendar（月曆）
 // =====================
 function monthTitle(d) {
-  const y = d.getFullYear();
-  const m = d.getMonth() + 1;
-  return `${y} 年 ${m} 月`;
+  return `${d.getFullYear()} 年 ${d.getMonth() + 1} 月`;
 }
 
 function renderCalendar() {
@@ -257,14 +344,14 @@ function renderCalendar() {
   const first = new Date(year, month, 1);
   const last = new Date(year, month + 1, 0);
 
-  const startDow = first.getDay(); // 0=日
+  const startDow = first.getDay();
   const daysInMonth = last.getDate();
 
   table.innerHTML = "";
 
   const thead = document.createElement("thead");
   const trh = document.createElement("tr");
-  ["日", "一", "二", "三", "四", "五", "六"].forEach((w) => {
+  ["日","一","二","三","四","五","六"].forEach(w => {
     const th = document.createElement("th");
     th.textContent = w;
     trh.appendChild(th);
@@ -273,8 +360,8 @@ function renderCalendar() {
   table.appendChild(thead);
 
   const tbody = document.createElement("tbody");
-
   let day = 1 - startDow;
+
   for (let row = 0; row < 6; row++) {
     const tr = document.createElement("tr");
 
@@ -374,13 +461,13 @@ function render() {
 
   renderReadingList(dayIndex);
 
-  // ✅ 微調：左格顯示 365、完成率顯示 1/365（0.27%）
   const { totalDays, completedDays, rateFloat } = computeStats();
   safeText("streak", String(totalDays));
   safeText("completed", String(completedDays));
   safeText("rate", `${completedDays} / ${totalDays}（${rateFloat.toFixed(2)}%）`);
 
   renderCalendar();
+  updatePlanSwitcherUI();
 
   const raw = el("rawData");
   if (raw) raw.value = JSON.stringify({ progress, planLoaded: readingPlan.length, dayIndex }, null, 2);
@@ -393,6 +480,10 @@ function showLoggedOut() {
   show("authCard", true);
   show("appWrap", false);
   show("userBar", false);
+
+  // ✅ 登出要允許下次登入重新初始化
+  _planInitialized = false;
+  readingPlan = [];
 }
 
 async function showLoggedIn(session) {
@@ -403,23 +494,29 @@ async function showLoggedIn(session) {
   const user = session.user;
   safeText("userNameText", user.user_metadata?.username || user.email.split("@")[0]);
 
-  // ⚠️ 已經初始化過就直接 return（最重要的一行）
-  if (_planInitialized) return;
+  // ✅ 已經初始化過：只更新 UI / render，不再 prompt
+  if (_planInitialized) {
+    ensurePlanSwitcherUI();
+    updatePlanSwitcherUI();
+    render();
+    return;
+  }
 
   progress = await loadProgressSafe();
 
-  // 保證 planKey 來源
-  progress.planKey = progress.planKey || getStoredPlanKey();
+  // ✅ 先吃 DB 的 planKey，再 fallback localStorage
+  if (!progress.planKey) progress.planKey = getStoredPlanKey();
 
+  // ✅ 真的都沒有才問一次
   if (!progress.planKey) {
     const pick = prompt(`請選擇讀經計畫（輸入數字）：
-1 一年讀完全本聖經
-2 一年讀完舊約
-3 260天讀完新約
-4 89天讀完四福音書
-5 每日混讀 (舊約+新約)
-6 詩篇+箴言 (靈修)
-7 按時間順序 (365天讀完一次)
+1 全本一年（365）
+2 舊約一年（365）
+3 新約一年（365）
+4 四福音一年（365）
+5 每日混讀（舊+新）（365）
+6 詩篇+箴言（靈修）（365）
+7 按時間順序（365）
 `, "1");
 
     const mapNumToKey = {
@@ -435,16 +532,18 @@ async function showLoggedIn(session) {
     progress.planKey = mapNumToKey[String(pick || "1")] || "bible_365";
     setStoredPlanKey(progress.planKey);
     await saveProgressSafe();
+  } else {
+    // ✅ 有 planKey 也同步到 localStorage，避免不同裝置第一次沒讀到 DB 時抖動
+    setStoredPlanKey(progress.planKey);
   }
 
   await loadReadingPlanByKey(progress.planKey);
 
-  _planInitialized = true;   // ✅ 關門！之後不准再跑
+  _planInitialized = true;
   ensurePlanSwitcherUI();
   updatePlanSwitcherUI();
   render();
 }
-
 
 async function refreshAuth() {
   const { data: { session }, error } = await sb.auth.getSession();
@@ -500,7 +599,6 @@ function bindEvents() {
     e.stopPropagation();
 
     setAuthMsg("");
-    const username = el("usernameusername")?.value; // ✅ 保留你的 UI 不動（這行沒用到就不影響）
     const password = el("password")?.value;
     const email = usernameToEmail(el("username")?.value);
 
@@ -512,7 +610,6 @@ function bindEvents() {
     await refreshAuth();
   });
 
-  // 你 HTML 有兩個 btnLogout（userBar 一個、authCard 一個）
   document.querySelectorAll("#btnLogout").forEach(btn => {
     btn.addEventListener("click", async (e) => {
       e.preventDefault();
@@ -559,17 +656,15 @@ function bindEvents() {
     }
   });
 
-  // 月曆：上月/下月
   el("calPrev")?.addEventListener("click", () => {
     calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth() - 1, 1);
     renderCalendar();
   });
+
   el("calNext")?.addEventListener("click", () => {
     calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth() + 1, 1);
     renderCalendar();
   });
-
-  
 }
 
 // =====================
@@ -578,7 +673,6 @@ function bindEvents() {
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     bindEvents();
-  
 
     const hasToken = Object.keys(localStorage).some(k => k.includes("sb-") && k.includes("auth-token"));
     if (hasToken) {
@@ -600,9 +694,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
-
-
-
-
-
-
