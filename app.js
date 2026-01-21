@@ -206,9 +206,23 @@ function render() {
 // =====================
 // Events
 // =====================
+let _bound = false;
+
 function bindEvents() {
-  // Register
-  el("btnRegister")?.addEventListener("click", async () => {
+  if (_bound) return;
+  _bound = true;
+
+  const btnRegister = el("btnRegister");
+  const btnLogin = el("btnLogin");
+  const btnLogout = el("btnLogout");
+
+  // 防止 form submit 造成錯誤觸發 signup
+  document.addEventListener("submit", (e) => e.preventDefault());
+
+  btnRegister?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     setAuthMsg("");
     const username = el("username")?.value;
     const password = el("password")?.value;
@@ -223,12 +237,23 @@ function bindEvents() {
       options: { data: { username } }
     });
 
-    if (error) { setAuthMsg(error.message); return; }
+    if (error) {
+      const msg = String(error.message || "");
+      if (msg.toLowerCase().includes("already")) {
+        setAuthMsg("此帳號已註冊，請直接按「登入」");
+      } else {
+        setAuthMsg(msg);
+      }
+      return;
+    }
+
     setAuthMsg("註冊成功，請直接登入");
   });
 
-  // Login
-  el("btnLogin")?.addEventListener("click", async () => {
+  btnLogin?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     setAuthMsg("");
     const username = el("username")?.value;
     const password = el("password")?.value;
@@ -236,63 +261,27 @@ function bindEvents() {
 
     if (!email) { setAuthMsg("Username 格式錯誤"); return; }
 
-    const { error } = await sb.auth.signInWithPassword({ email, password });
-    if (error) { setAuthMsg(error.message); return; }
+    const { error } = await sb.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    if (error) {
+      setAuthMsg(error.message || "登入失敗");
+      return;
+    }
 
     await refreshAuth();
   });
 
-  // Logout
-  el("btnLogout")?.addEventListener("click", async () => {
+  btnLogout?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     await sb.auth.signOut();
     showLoggedOut();
   });
-
-  // Mark done
-  el("btnMarkDone")?.addEventListener("click", async () => {
-    try {
-      const iso = toISODate(viewDate);
-      setCompleted(iso, true);
-      await saveProgress();
-      render();
-    } catch (e) {
-      console.error(e);
-      alert(`保存失敗：${e.message || e}`);
-    }
-  });
-
-  // Undo
-  el("btnUndo")?.addEventListener("click", async () => {
-    try {
-      const iso = toISODate(viewDate);
-      setCompleted(iso, false);
-      await saveProgress();
-      render();
-    } catch (e) {
-      console.error(e);
-      alert(`保存失敗：${e.message || e}`);
-    }
-  });
-
-  // Prev / Next / Today (如果你有這些按鈕 id)
-  el("btnPrevDay")?.addEventListener("click", () => { viewDate = addDays(viewDate, -1); render(); });
-  el("btnNextDay")?.addEventListener("click", () => { viewDate = addDays(viewDate, 1); render(); });
-  el("btnToday")?.addEventListener("click", () => { viewDate = new Date(); render(); });
-
-  // Start date save (如果你有輸入框與按鈕 id)
-  el("btnSaveStartDate")?.addEventListener("click", async () => {
-    try {
-      const v = el("startDateInput")?.value;
-      if (!v) return;
-      progress.startDate = v;
-      await saveProgress();
-      render();
-    } catch (e) {
-      console.error(e);
-      alert(`保存起始日失敗：${e.message || e}`);
-    }
-  });
 }
+
 
 // =====================
 // Boot
@@ -309,3 +298,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e.message || e);
   }
 });
+
