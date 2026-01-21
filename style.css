@@ -1,22 +1,36 @@
 :root {
-  --bg: #0b1020;
-  --card: #121a33;
-  --text: #e9ecf5;
-  --muted: #b8c0d9;
-  --line: rgba(255,255,255,.12);
-  --btn: #2a63ff;
-  --danger: #ff4d4d;
+  --bg-main: radial-gradient(
+      900px 600px at 20% 0%,
+      #1e3a8a,
+      #0f172a 45%,
+      #020617 80%
+  );
+
+  --card-bg: rgba(255, 255, 255, 0.10);
+  --card-border: rgba(255, 255, 255, 0.18);
+
+  --text-main: #f8fafc;
+  --text-muted: #c7d2fe;
+
+  --primary: linear-gradient(135deg, #38bdf8, #a78bfa);
+  --primary-solid: #60a5fa;
+
+  --success: linear-gradient(135deg, #4ade80, #22c55e);
+  --danger: #fb7185;
 }
 
+
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", Arial;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Noto Sans TC", Arial;
   background:
-    radial-gradient(800px 500px at 20% 0%, #1a2a6c33, transparent),
-    radial-gradient(700px 450px at 100% 30%, #2a63ff22, transparent),
-    var(--bg);
-  color: var(--text);
+    radial-gradient(600px 400px at 80% 0%, rgba(167,139,250,.25), transparent),
+    radial-gradient(700px 450px at 10% 20%, rgba(56,189,248,.25), transparent),
+    var(--bg-main);
+  color: var(--text-main);
 }
 
 .wrap { max-width: 980px; margin: 0 auto; padding: 16px; }
@@ -25,13 +39,17 @@ body {
 .sub { margin: 6px 0 14px; color: var(--muted); }
 
 .card {
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
   padding: 16px;
   margin: 14px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.18);
 }
+
 
 .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .right { justify-content: flex-end; }
@@ -53,21 +71,32 @@ body {
 .divider { height: 1px; background: var(--line); margin: 14px 0; }
 
 .btn {
-  border: 0;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: var(--btn);
-  color: white;
-  cursor: pointer;
+  background: var(--primary);
+  color: #020617;
   font-weight: 800;
+  border-radius: 14px;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
 }
-.btn:disabled { opacity: .55; cursor: not-allowed; }
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(99,102,241,.45);
+}
+
 .btn.ghost {
-  background: transparent;
-  border: 1px solid var(--line);
+  background: rgba(255,255,255,.12);
+  color: var(--text-main);
+  border: 1px solid var(--card-border);
 }
-.btn.danger { background: var(--danger); }
-.btn.danger.ghost { background: transparent; border: 1px solid rgba(255,77,77,.6); color: #ffb3b3; }
+
+.btn.danger {
+  background: var(--danger);
+  color: white;
+}
+
 
 input[type="date"]{
   padding: 10px 12px;
@@ -251,15 +280,17 @@ h1, h2, .label {
   background: rgba(255,255,255,0.06);
 }
 
-.calendar td.today {
-  outline: 2px solid #7bb0ff;
+.calendar td.done {
+  background: var(--success);
+  color: #052e16;
+  font-weight: 900;
 }
 
-.calendar td.done {
-  background: linear-gradient(135deg, #66d9a3, #8ee6c1);
-  color: #062012;
-  font-weight: 700;
+.calendar td.today {
+  outline: 2px solid #a78bfa;
+  box-shadow: 0 0 0 2px rgba(167,139,250,.35);
 }
+
 
 /* 讀經章節標題（連結） */
 #readingList a {
@@ -272,5 +303,6 @@ h1, h2, .label {
   color: #bae6fd;              /* hover 更亮 */
   text-decoration: underline;
 }
+
 
 
