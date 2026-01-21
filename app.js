@@ -401,23 +401,27 @@ async function showLoggedIn(session) {
   const user = session.user;
   safeText("userNameText", user.user_metadata?.username || user.email.split("@")[0]);
 
+  // ⚠️ 已經初始化過就直接 return（最重要的一行）
+  if (_planInitialized) return;
+
   progress = await loadProgressSafe();
-    // 沒選過計畫就問一次
+
+  // 保證 planKey 來源
+  progress.planKey = progress.planKey || getStoredPlanKey();
+
   if (!progress.planKey) {
-    const pick = prompt(
-`請選擇要挑戰的讀經計畫（輸入數字）：
-1 365天 讀完一次聖經
-2 365天 讀完一次舊約
-3 260天 讀完一次新約
-4 89天 讀完四福音書
+    const pick = prompt(`請選擇讀經計畫（輸入數字）：
+1 一年讀完全本聖經
+2 一年讀完舊約
+3 260天讀完新約
+4 89天讀完四福音書
 5 每日混讀 (舊約+新約)
 6 詩篇+箴言 (靈修)
-7 按時間順序 (365天讀完一次)`,
-"1"
-    );
+7 按時間順序 (365天讀完一次)
+`, "1");
 
     const mapNumToKey = {
-      "1": "bible_365",     // 如果你沒有這份，就改成你要的預設
+      "1": "bible_365",
       "2": "ot_365",
       "3": "nt_365",
       "4": "gospels_365",
@@ -427,14 +431,18 @@ async function showLoggedIn(session) {
     };
 
     progress.planKey = mapNumToKey[String(pick || "1")] || "bible_365";
-    await saveProgressSafe(); // 存起來
+    setStoredPlanKey(progress.planKey);
+    await saveProgressSafe();
   }
 
-  // 依 planKey 載入計畫
   await loadReadingPlanByKey(progress.planKey);
 
+  _planInitialized = true;   // ✅ 關門！之後不准再跑
+  ensurePlanSwitcherUI();
+  updatePlanSwitcherUI();
   render();
 }
+
 
 async function refreshAuth() {
   const { data: { session }, error } = await sb.auth.getSession();
@@ -590,6 +598,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
+
 
 
 
