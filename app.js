@@ -54,6 +54,39 @@ function clamp(n, min, max) {
 }
 
 // =====================
+// Bible.com 外連（和合本）
+// 你要改這個：BIBLE_ID
+// 方式：打開 Bible.com 的和合本任一章，網址 /bible/XXXX/GEN.1 的 XXXX
+// =====================
+const BIBLE_COM_BASE = "https://www.bible.com/bible";
+let BIBLE_ID = "46"; // ← 改成你 Bible.com 和合本的 XXXX（很重要）
+
+const BOOK_MAP = {
+  gen: "GEN", exo: "EXO", lev: "LEV", num: "NUM", deu: "DEU",
+  jos: "JOS", jdg: "JDG", rut: "RUT",
+  "1sa": "1SA", "2sa": "2SA",
+  "1ki": "1KI", "2ki": "2KI",
+  "1ch": "1CH", "2ch": "2CH",
+  ezr: "EZR", neh: "NEH", est: "EST",
+  job: "JOB", psa: "PSA", pro: "PRO", ecc: "ECC", sng: "SNG",
+  isa: "ISA", jer: "JER", lam: "LAM", ezk: "EZK", dan: "DAN",
+  hos: "HOS", jol: "JOL", amo: "AMO", oba: "OBA", jon: "JON", mic: "MIC",
+  nam: "NAM", hab: "HAB", zep: "ZEP", hag: "HAG", zec: "ZEC", mal: "MAL",
+  mat: "MAT", mrk: "MRK", luk: "LUK", jhn: "JHN", act: "ACT",
+  rom: "ROM", "1co": "1CO", "2co": "2CO", gal: "GAL", eph: "EPH", php: "PHP",
+  col: "COL", "1th": "1TH", "2th": "2TH", "1ti": "1TI", "2ti": "2TI",
+  tit: "TIT", phm: "PHM", heb: "HEB", jas: "JAS",
+  "1pe": "1PE", "2pe": "2PE", "1jn": "1JN", "2jn": "2JN", "3jn": "3JN",
+  jud: "JUD", rev: "REV",
+};
+
+function makeBibleComChapterUrl(book_id, chapter) {
+  const code = BOOK_MAP[String(book_id || "").toLowerCase()];
+  if (!code) return null;
+  return `${BIBLE_COM_BASE}/${BIBLE_ID}/${code}.${chapter}`;
+}
+
+// =====================
 // Reading plan
 // JSON: { plan: [ { day:1, readings:[{book_zh,chapter,book_id,...}, ...] }, ... ] }
 // =====================
@@ -74,6 +107,7 @@ async function loadReadingPlan() {
 // Progress (DB)
 // =====================
 let progress = { startDate: "", completed: {} }; // completed: { "YYYY-MM-DD": true }
+let warnedDb = false;
 
 function normalizeProgress(p) {
   return {
@@ -82,8 +116,6 @@ function normalizeProgress(p) {
   };
 }
 
-// ⚠️ 你目前 DB 400，很可能是 RLS/constraint/欄位名問題
-// 我先讓畫面不會因為 DB 壞掉而沒內容：讀不到就用空 progress
 async function loadProgressSafe() {
   try {
     const { data: { user }, error: userErr } = await sb.auth.getUser();
@@ -110,8 +142,11 @@ async function loadProgressSafe() {
     return normalizeProgress(data.progress_data);
   } catch (e) {
     console.error("loadProgress failed:", e);
-    // 只提示一次，避免一直跳
-    safeText("authMsg", "⚠️ 進度資料庫讀取失敗（先可正常使用，但無法同步進度）");
+    if (!warnedDb) {
+      warnedDb = true;
+      setAuthMsg("⚠️ 進度資料庫讀取失敗（可使用，但無法同步進度）");
+      alert("loadProgress failed: " + (e?.message || JSON.stringify(e)));
+    }
     return { startDate: "", completed: {} };
   }
 }
@@ -193,11 +228,11 @@ function computeStats() {
     }
   }
 
-  // rate：已完成 / 計畫天數（或已過天數）
+  // rate：已完成 / 已過天數（上限 365）
   const start = getStartDate();
   const today = new Date();
-  today.setHours(0,0,0,0);
-  start.setHours(0,0,0,0);
+  today.setHours(0, 0, 0, 0);
+  start.setHours(0, 0, 0, 0);
   const passed = Math.max(1, Math.floor((today - start) / 86400000) + 1);
   const denom = Math.min(passed, readingPlan.length || passed);
   const rate = denom ? Math.round((completedDays / denom) * 100) : 0;
@@ -224,12 +259,23 @@ function renderReadingList(dayIndex) {
     return;
   }
 
-  // 依 book_id/英文名 生成 Bible.com 連結（用 NIV/和合本你可再調）
-  // 這裡先用你已有資料顯示「中文 + 章」
   for (const r of readings) {
     const li = document.createElement("li");
+    const a = document.createElement("a");
+
     const text = `${r.book_zh || r.book_en || r.book_id || ""} ${r.chapter || ""}`.trim();
-    li.textContent = text;
+    a.textContent = text;
+
+    const url = makeBibleComChapterUrl(r.book_id, r.chapter);
+    if (url) {
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+    } else {
+      a.href = "#";
+    }
+
+    li.appendChild(a);
     list.appendChild(li);
   }
 }
@@ -241,22 +287,17 @@ function render() {
   const dayIndex = dayIndexFromStart(new Date(viewDate));
   safeText("dayIndex", String(dayIndex));
 
-  // 顯示章節清單
-  renderReadingList(dayIndex);
-
-  // 範圍提示
   safeText("rangeHint", readingPlan.length ? `共 ${readingPlan.length} 天` : "-");
 
-  // 起始日 input
   if (el("startDate")) el("startDate").value = progress.startDate || "";
 
-  // 進度 stats
+  renderReadingList(dayIndex);
+
   const { streak, completedDays, rate } = computeStats();
   safeText("streak", String(streak));
   safeText("completed", String(completedDays));
   safeText("rate", String(rate));
 
-  // debug
   const raw = el("rawData");
   if (raw) raw.value = JSON.stringify({ progress, planLoaded: readingPlan.length, dayIndex }, null, 2);
 }
@@ -302,10 +343,8 @@ function bindEvents() {
   if (_bound) return;
   _bound = true;
 
-  // 防止 form submit
   document.addEventListener("submit", (e) => e.preventDefault());
 
-  // Register/Login/Logout
   el("btnRegister")?.addEventListener("click", async (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -350,8 +389,7 @@ function bindEvents() {
     await refreshAuth();
   });
 
-  // 你 HTML 有兩個 btnLogout（上面 userBar 一個、authCard 也一個）
-  // 用 querySelectorAll 綁兩個
+  // 你 HTML 有兩個 btnLogout（userBar 一個、authCard 一個）
   document.querySelectorAll("#btnLogout").forEach(btn => {
     btn.addEventListener("click", async (e) => {
       e.preventDefault();
@@ -361,7 +399,6 @@ function bindEvents() {
     });
   });
 
-  // 起始日儲存
   el("saveStartDate")?.addEventListener("click", async () => {
     const v = el("startDate")?.value;
     if (v) progress.startDate = v;
@@ -369,12 +406,10 @@ function bindEvents() {
     render();
   });
 
-  // 日期切換
   el("prevDay")?.addEventListener("click", () => { viewDate = addDays(viewDate, -1); render(); });
   el("today")?.addEventListener("click", () => { viewDate = new Date(); render(); });
   el("nextDay")?.addEventListener("click", () => { viewDate = addDays(viewDate, +1); render(); });
 
-  // 打卡/取消
   el("checkin")?.addEventListener("click", async () => {
     const iso = toISODate(viewDate);
     setCompleted(iso, true);
@@ -389,14 +424,25 @@ function bindEvents() {
     render();
   });
 
-  // 一鍵開啟：把今日章節逐一開啟（先用 alert/console，避免被 popup 擋）
   el("openAll")?.addEventListener("click", () => {
     const dayIndex = dayIndexFromStart(new Date(viewDate));
     const plan = getPlanForDayIndex(dayIndex);
     const readings = plan?.readings || [];
     if (!readings.length) { alert("無今日章節"); return; }
-    alert("若瀏覽器擋彈出視窗，請允許此網站彈出視窗。\n將逐章開啟：" + readings.length + " 章");
-    // TODO：你想用 Bible.com 連結，我再幫你接 URL
+
+    // 依序開啟（可能被 popup 擋，建議使用者允許）
+    for (const r of readings) {
+      const url = makeBibleComChapterUrl(r.book_id, r.chapter);
+      if (url) window.open(url, "_blank", "noopener,noreferrer");
+    }
+  });
+
+  // 朗讀/停止：先保留按鈕不報錯（你要朗讀內容，之後要有經文來源才行）
+  el("ttsPlay")?.addEventListener("click", () => {
+    alert("朗讀需要有「經文內容」來源。外連 Bible.com 沒辦法直接抓全文朗讀。若你要朗讀，我可以幫你做『開啟外連後朗讀標題』或改用可授權 API。");
+  });
+  el("ttsStop")?.addEventListener("click", () => {
+    try { window.speechSynthesis?.cancel?.(); } catch {}
   });
 }
 
@@ -408,7 +454,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     bindEvents();
     await loadReadingPlan();
 
-    // localStorage 有 token 的話，先嘗試直接顯示登入
     const hasToken = Object.keys(localStorage).some(k => k.includes("sb-") && k.includes("auth-token"));
     if (hasToken) {
       const { data } = await sb.auth.getSession();
@@ -418,7 +463,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     }
 
-    // 正常 auth 流程
     sb.auth.onAuthStateChange((_event, session) => {
       if (session) showLoggedIn(session);
       else showLoggedOut();
