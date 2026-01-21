@@ -3,7 +3,15 @@ console.log("app.js loaded");
 // =====================
 // 設定
 // =====================
-const PLAN_URL = "data/reading_plan_365.json";
+const PLAN_MAP = {
+  bible_365: "data/plan_full_365.json",         // 你原本那份（如果還要留）
+  ot_365: "data/plan_ot_365_fixed.json",
+  nt_365: "data/plan_nt_365_fixed.json",
+  gospels_365: "data/plan_gospels_365_fixed.json",
+  mix_ot_nt_365: "data/plan_mix_ot_nt_365_fixed.json",
+  psa_pro_365: "data/plan_psa_pro_365_fixed.json",
+  chrono_365: "data/plan_chrono_365_fixed.json",
+};
 
 const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
@@ -547,4 +555,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
+
 
