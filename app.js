@@ -9,6 +9,7 @@ const SUPABASE_URL = "https://wqrcszwtakkxtykfzexm.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_p89YaCGUKJJ9WnVenxrbGQ_RrkPYu1s";
 
 const USERNAME_EMAIL_DOMAIN = "bible.local";
+const TOTAL_DAYS = 365;
 
 // =====================
 // Supabase client（只建立一次）
@@ -55,11 +56,9 @@ function clamp(n, min, max) {
 
 // =====================
 // Bible.com 外連（和合本）
-// 你要改這個：BIBLE_ID
-// 方式：打開 Bible.com 的和合本任一章，網址 /bible/XXXX/GEN.1 的 XXXX
 // =====================
 const BIBLE_COM_BASE = "https://www.bible.com/bible";
-let BIBLE_ID = "46"; // ← 改成你 Bible.com 和合本的 XXXX（很重要）
+let BIBLE_ID = "46"; // CUNP-神
 
 const BOOK_MAP = {
   gen: "GEN", exo: "EXO", lev: "LEV", num: "NUM", deu: "DEU",
@@ -174,6 +173,7 @@ async function saveProgressSafe() {
 // App state
 // =====================
 let viewDate = new Date();
+let calMonth = new Date(); // ✅ 月曆顯示月份
 
 function getStartDate() {
   if (!progress.startDate) {
@@ -211,33 +211,100 @@ function setCompleted(isoDate, done) {
   else delete progress.completed[isoDate];
 }
 
+// ✅ 微調：總天數固定 365 + 完成率用 completed/365
 function computeStats() {
   const keys = Object.keys(progress.completed || {});
   const completedDays = keys.length;
 
-  // streak：從今天往回算連續完成
-  let streak = 0;
-  let d = new Date();
-  for (;;) {
-    const iso = toISODate(d);
-    if (progress.completed?.[iso]) {
-      streak += 1;
-      d = addDays(d, -1);
-    } else {
-      break;
+  const totalDays = TOTAL_DAYS;
+  const rateFloat = totalDays ? (completedDays / totalDays) * 100 : 0;
+
+  return { totalDays, completedDays, rateFloat };
+}
+
+// =====================
+// Calendar（月曆）
+// =====================
+function monthTitle(d) {
+  const y = d.getFullYear();
+  const m = d.getMonth() + 1;
+  return `${y} 年 ${m} 月`;
+}
+
+function renderCalendar() {
+  const table = el("calendar");
+  if (!table) return;
+
+  safeText("calTitle", monthTitle(calMonth));
+
+  const year = calMonth.getFullYear();
+  const month = calMonth.getMonth();
+
+  const first = new Date(year, month, 1);
+  const last = new Date(year, month + 1, 0);
+
+  const startDow = first.getDay(); // 0=日
+  const daysInMonth = last.getDate();
+
+  table.innerHTML = "";
+
+  const thead = document.createElement("thead");
+  const trh = document.createElement("tr");
+  ["日", "一", "二", "三", "四", "五", "六"].forEach((w) => {
+    const th = document.createElement("th");
+    th.textContent = w;
+    trh.appendChild(th);
+  });
+  thead.appendChild(trh);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+
+  let day = 1 - startDow;
+  for (let row = 0; row < 6; row++) {
+    const tr = document.createElement("tr");
+
+    for (let col = 0; col < 7; col++, day++) {
+      const td = document.createElement("td");
+
+      if (day < 1 || day > daysInMonth) {
+        td.className = "muted";
+        td.innerHTML = "&nbsp;";
+      } else {
+        const d = new Date(year, month, day);
+        const iso = toISODate(d);
+
+        const top = document.createElement("div");
+        top.className = "cal-day";
+        top.textContent = String(day);
+
+        const done = isCompleted(iso);
+        const badge = document.createElement("div");
+        badge.className = "cal-badge";
+        badge.textContent = done ? "✅" : "";
+
+        td.appendChild(top);
+        td.appendChild(badge);
+
+        td.style.cursor = "pointer";
+        td.addEventListener("click", () => {
+          viewDate = d;
+          render();
+        });
+
+        const todayIso = toISODate(new Date());
+        if (iso === todayIso) td.classList.add("today");
+        if (done) td.classList.add("done");
+      }
+
+      tr.appendChild(td);
     }
+
+    tbody.appendChild(tr);
+    if (day > daysInMonth) break;
   }
 
-  // rate：已完成 / 已過天數（上限 365）
-  const start = getStartDate();
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  start.setHours(0, 0, 0, 0);
-  const passed = Math.max(1, Math.floor((today - start) / 86400000) + 1);
-  const denom = Math.min(passed, readingPlan.length || passed);
-  const rate = denom ? Math.round((completedDays / denom) * 100) : 0;
-
-  return { streak, completedDays, rate };
+  table.appendChild(tbody);
 }
 
 // =====================
@@ -293,10 +360,13 @@ function render() {
 
   renderReadingList(dayIndex);
 
-  const { streak, completedDays, rate } = computeStats();
-  safeText("streak", String(streak));
+  // ✅ 微調：左格顯示 365、完成率顯示 1/365（0.27%）
+  const { totalDays, completedDays, rateFloat } = computeStats();
+  safeText("streak", String(totalDays));
   safeText("completed", String(completedDays));
-  safeText("rate", String(rate));
+  safeText("rate", `${completedDays} / ${totalDays}（${rateFloat.toFixed(2)}%）`);
+
+  renderCalendar();
 
   const raw = el("rawData");
   if (raw) raw.value = JSON.stringify({ progress, planLoaded: readingPlan.length, dayIndex }, null, 2);
@@ -377,9 +447,9 @@ function bindEvents() {
     e.stopPropagation();
 
     setAuthMsg("");
-    const username = el("username")?.value;
+    const username = el("usernameusername")?.value; // ✅ 保留你的 UI 不動（這行沒用到就不影響）
     const password = el("password")?.value;
-    const email = usernameToEmail(username);
+    const email = usernameToEmail(el("username")?.value);
 
     if (!email) { setAuthMsg("Username 格式錯誤"); return; }
 
@@ -430,16 +500,25 @@ function bindEvents() {
     const readings = plan?.readings || [];
     if (!readings.length) { alert("無今日章節"); return; }
 
-    // 依序開啟（可能被 popup 擋，建議使用者允許）
     for (const r of readings) {
       const url = makeBibleComChapterUrl(r.book_id, r.chapter);
       if (url) window.open(url, "_blank", "noopener,noreferrer");
     }
   });
 
-  // 朗讀/停止：先保留按鈕不報錯（你要朗讀內容，之後要有經文來源才行）
+  // 月曆：上月/下月
+  el("calPrev")?.addEventListener("click", () => {
+    calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth() - 1, 1);
+    renderCalendar();
+  });
+  el("calNext")?.addEventListener("click", () => {
+    calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth() + 1, 1);
+    renderCalendar();
+  });
+
+  // 朗讀/停止：保留不爆
   el("ttsPlay")?.addEventListener("click", () => {
-    alert("朗讀需要有「經文內容」來源。外連 Bible.com 沒辦法直接抓全文朗讀。若你要朗讀，我可以幫你做『開啟外連後朗讀標題』或改用可授權 API。");
+    alert("朗讀需要有「經文內容」來源。外連 Bible.com 不能直接抓全文朗讀。若你要朗讀，我可以幫你改成『開外連後朗讀』或接可授權 API。");
   });
   el("ttsStop")?.addEventListener("click", () => {
     try { window.speechSynthesis?.cancel?.(); } catch {}
