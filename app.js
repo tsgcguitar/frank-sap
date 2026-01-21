@@ -405,14 +405,14 @@ async function showLoggedIn(session) {
     // 沒選過計畫就問一次
   if (!progress.planKey) {
     const pick = prompt(
-`請選擇讀經計畫（輸入數字）：
-1 全本一年 (365)
-2 舊約一年 (365)
-3 新約一年 (365)
-4 四福音一年 (365)
-5 每日混讀 (舊+新)
+`請選擇要挑戰的讀經計畫（輸入數字）：
+1 365天 讀完一次聖經
+2 365天 讀完一次舊約
+3 260天 讀完一次新約
+4 89天 讀完四福音書
+5 每日混讀 (舊約+新約)
 6 詩篇+箴言 (靈修)
-7 按時間順序 (Chronological)`,
+7 按時間順序 (365天讀完一次)`,
 "1"
     );
 
@@ -590,6 +590,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
+
 
 
 
