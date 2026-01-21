@@ -516,13 +516,7 @@ function bindEvents() {
     renderCalendar();
   });
 
-  // 朗讀/停止：保留不爆
-  el("ttsPlay")?.addEventListener("click", () => {
-    alert("朗讀需要有「經文內容」來源。外連 Bible.com 不能直接抓全文朗讀。若你要朗讀，我可以幫你改成『開外連後朗讀』或接可授權 API。");
-  });
-  el("ttsStop")?.addEventListener("click", () => {
-    try { window.speechSynthesis?.cancel?.(); } catch {}
-  });
+  
 }
 
 // =====================
@@ -553,3 +547,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert(e?.message || String(e));
   }
 });
+
